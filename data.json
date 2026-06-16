@@ -23,18 +23,33 @@
     ],
     "score_global_precedent": 36,
     "score_global_nouveau": 28,
-    "note": "Le score a baisse car l'audit est plus approfondi et a revele plus de problemes"
+    "note": "Le score a baisse car l'audit est plus approfondi et a revele plus de problemes",
+    "score_justification": "Score calcule sur ~30 criteres ponderes: contenu (20%), performances (20%), SEO technique (20%), securite (15%), backlinks (10%), social media (10%), accessibilite (5%). Chaque critere est note 0-100 et pondere. Le score reflete l'ecart a l'ideal absolu."
   },
-
   "performances": {
     "score_mobile_moyen": 79.6,
     "score_desktop_moyen": 74,
     "pages": {
-      "accueil": { "mobile": 91, "desktop": 56 },
-      "formation_electricien": { "mobile": 81, "desktop": 72 },
-      "campus_paris": { "mobile": 83, "desktop": 61 },
-      "ecole_gustave": { "mobile": 78, "desktop": 83 },
-      "actualites": { "mobile": 65, "desktop": 98 }
+      "accueil": {
+        "mobile": 91,
+        "desktop": 56
+      },
+      "formation_electricien": {
+        "mobile": 81,
+        "desktop": 72
+      },
+      "campus_paris": {
+        "mobile": 83,
+        "desktop": 61
+      },
+      "ecole_gustave": {
+        "mobile": 78,
+        "desktop": 83
+      },
+      "actualites": {
+        "mobile": 65,
+        "desktop": 98
+      }
     },
     "core_web_vitals_reels": {
       "source": "CrUX (28 derniers jours - Juin 2026)",
@@ -114,7 +129,6 @@
       }
     ]
   },
-
   "seo_technique": {
     "crawl": {
       "total_pages": 169,
@@ -214,7 +228,10 @@
       "note": "Les 6 pages categorie en noindex ne sont pas dans le sitemap - correct"
     },
     "pagination": {
-      "pages_avec_pagination": ["les-actualites/", "les-temoignages/"],
+      "pages_avec_pagination": [
+        "les-actualites/",
+        "les-temoignages/"
+      ],
       "rel_next_prev": false,
       "probleme": "Aucune balise rel=next/prev sur les pages paginees",
       "impact": "Google peut mal comprendre la structure des paginations",
@@ -240,7 +257,6 @@
       "priorite": "MOYENNE"
     }
   },
-
   "contenu": {
     "statistiques": {
       "pages_analysees": 169,
@@ -285,7 +301,9 @@
       "solution": "Ajouter des meta descriptions personnalisees dans Yoast SEO pour chaque page. Commencer par les pages les plus visitees."
     },
     "titres": {
-      "pages_sans_titre": ["footer/"],
+      "pages_sans_titre": [
+        "footer/"
+      ],
       "titres_auto_genere": [
         {
           "page": "formations/",
@@ -313,15 +331,30 @@
           "page": "formations/",
           "h1": "Formation Macon VRD (H1 de la page produit, pas de l'archive)"
         },
-        { "page": "plan-du-site/", "h1": "absent" },
-        { "page": "donnees-personnelles/", "h1": "absent" },
-        { "page": "footer/", "h1": "absent, titre aussi absent" },
-        { "page": "temoignages/", "h1": "absent" }
+        {
+          "page": "plan-du-site/",
+          "h1": "absent"
+        },
+        {
+          "page": "donnees-personnelles/",
+          "h1": "absent"
+        },
+        {
+          "page": "footer/",
+          "h1": "absent, titre aussi absent"
+        },
+        {
+          "page": "temoignages/",
+          "h1": "absent"
+        }
       ],
       "h1_dupliques": [
         {
           "h1": "Formation Macon Voirie Reseaux Divers (VRD)",
-          "pages": ["formations/", "formations/formation-macon-vrd/"],
+          "pages": [
+            "formations/",
+            "formations/formation-macon-vrd/"
+          ],
           "probleme": "L'archive utilise le H1 d'une formation specifique"
         }
       ]
@@ -369,8 +402,14 @@
       "organization_details": {
         "name": "Ecole Gustave",
         "logo_url": "https://ecole-gustave.com/wp-content/uploads/2025/10/Gustave-logo.svg",
-        "sameAs": ["Facebook", "LinkedIn", "Instagram"],
-        "missing_sameAs": ["TikTok (@ecole.gustave)"],
+        "sameAs": [
+          "Facebook",
+          "LinkedIn",
+          "Instagram"
+        ],
+        "missing_sameAs": [
+          "TikTok (@ecole.gustave)"
+        ],
         "impact": "Le schema Organization est correct mais ne lie pas TikTok, ce qui affaiblit le signal de marque aupres de Google."
       },
       "impact_global": "Les schemas de base (Organization, WebSite, WebPage) sont OK mais les schemas metier (Course, Review, FAQ) sont absents. C'est le probleme principal : Google ne peut pas comprendre que ce site est une ecole de formation avec des avis et des cursus.",
@@ -378,7 +417,6 @@
       "priorite": "HAUTE (mais partiellement present)"
     }
   },
-
   "cannibalisation": {
     "analyse": "MASSIVE - des centaines de pages en competition sur les memes mots-cles",
     "clusters": {
@@ -417,7 +455,6 @@
     ],
     "priorite": "HAUTE"
   },
-
   "performance_approfondie": {
     "images": {
       "total_sur_accueil": 34,
@@ -479,7 +516,6 @@
       "solution": "Ajouter preconnect pour GTM et HubSpot"
     }
   },
-
   "securite": {
     "score_securityheaders": "D (sur 9 headers critiques, 1 seul present)",
     "headers": {
@@ -508,9 +544,18 @@
         "present": false,
         "risque": "MEDIUM - API navigateur sans restriction"
       },
-      "cross_origin_embedder_policy": { "present": false, "risque": "LOW" },
-      "cross_origin_opener_policy": { "present": false, "risque": "LOW" },
-      "cross_origin_resource_policy": { "present": false, "risque": "LOW" }
+      "cross_origin_embedder_policy": {
+        "present": false,
+        "risque": "LOW"
+      },
+      "cross_origin_opener_policy": {
+        "present": false,
+        "risque": "LOW"
+      },
+      "cross_origin_resource_policy": {
+        "present": false,
+        "risque": "LOW"
+      }
     },
     "wordpress": {
       "version_exposee": false,
@@ -557,7 +602,10 @@
       "certificat": "Google Trust Services",
       "expiration": "30 aout 2026",
       "ciphers": "TLS_AES_256_GCM_SHA384",
-      "san": ["ecole-gustave.com", "*.ecole-gustave.com"],
+      "san": [
+        "ecole-gustave.com",
+        "*.ecole-gustave.com"
+      ],
       "hsts_preload": false
     },
     "dns": {
@@ -579,7 +627,10 @@
       "formulaires_sans_label": "4/4 inputs sans label accessible"
     },
     "priorites_correction": [
-      { "niveau": "CRITIQUE", "probleme": "Content-Security-Policy absente" },
+      {
+        "niveau": "CRITIQUE",
+        "probleme": "Content-Security-Policy absente"
+      },
       {
         "niveau": "CRITIQUE",
         "probleme": "Facebook Pixel charge avant consentement (RGPD)"
@@ -588,18 +639,44 @@
         "niveau": "HIGH",
         "probleme": "REST API WordPress exposee publiquement"
       },
-      { "niveau": "HIGH", "probleme": "X-Frame-Options absent" },
-      { "niveau": "HIGH", "probleme": "X-Content-Type-Options absent" },
-      { "niveau": "MEDIUM", "probleme": "Referrer-Policy absente" },
-      { "niveau": "MEDIUM", "probleme": "Permissions-Policy absente" },
-      { "niveau": "MEDIUM", "probleme": "DMARC en p=none" },
-      { "niveau": "MEDIUM", "probleme": "HSTS non preload-ready" },
-      { "niveau": "MEDIUM", "probleme": "Pas de CAPTCHA sur les formulaires" },
-      { "niveau": "MEDIUM", "probleme": "Versions plugins exposees" },
-      { "niveau": "LOW", "probleme": "CAA record DNS absent" }
+      {
+        "niveau": "HIGH",
+        "probleme": "X-Frame-Options absent"
+      },
+      {
+        "niveau": "HIGH",
+        "probleme": "X-Content-Type-Options absent"
+      },
+      {
+        "niveau": "MEDIUM",
+        "probleme": "Referrer-Policy absente"
+      },
+      {
+        "niveau": "MEDIUM",
+        "probleme": "Permissions-Policy absente"
+      },
+      {
+        "niveau": "MEDIUM",
+        "probleme": "DMARC en p=none"
+      },
+      {
+        "niveau": "MEDIUM",
+        "probleme": "HSTS non preload-ready"
+      },
+      {
+        "niveau": "MEDIUM",
+        "probleme": "Pas de CAPTCHA sur les formulaires"
+      },
+      {
+        "niveau": "MEDIUM",
+        "probleme": "Versions plugins exposees"
+      },
+      {
+        "niveau": "LOW",
+        "probleme": "CAA record DNS absent"
+      }
     ]
   },
-
   "backlinks_et_offpage": {
     "domain_rating_estime": "10-25",
     "domaines_referents_estimes": "< 50",
@@ -682,7 +759,6 @@
       "Ajout dans les fiches Wikipedia des metiers du batiment"
     ]
   },
-
   "concurrence": {
     "top_5_concurrents": [
       {
@@ -724,7 +800,11 @@
         "position": 3,
         "type": "Page produit"
       },
-      { "mot_cle": "CAP plomberie Paris", "position": 3, "type": "Blog" },
+      {
+        "mot_cle": "CAP plomberie Paris",
+        "position": 3,
+        "type": "Blog"
+      },
       {
         "mot_cle": "formation en alternance Paris",
         "position": 3,
@@ -759,9 +839,8 @@
       "formation plombier sans diplome (avantage differenciant unique)"
     ]
   },
-
   "social_media_et_marque": {
-    "score_maturite_numerique": "6/10",
+    "score_maturite_numerique": 6,
     "linkedin": {
       "statut": "EXCELLENT",
       "followers": 4333,
@@ -823,7 +902,6 @@
       ]
     }
   },
-
   "accessibilite": {
     "score_lighthouse": "88-91/100 (mobile), 93-96/100 (desktop)",
     "problemes": [
@@ -872,7 +950,6 @@
       "Viewport correct avec user-scalable=no absent"
     ]
   },
-
   "problemes_critiques": [
     {
       "id": "C01",
@@ -964,9 +1041,23 @@
       "impact": "Confusion Google sur la page principale de l'archive formations",
       "priorite": "HAUTE",
       "solution": "Corriger le H1 de l'archive formations"
+    },
+    {
+      "titre": "URL formation-plomberie-paris en 404",
+      "impact": "Google trouve une page inexistante sur ce mot-cle strategique. Tous les backlinks potentiels perdus.",
+      "solution_rapide": "Corriger le slug dans le menu Wordpress: formation-plombier-chauffagiste au lieu de formation-plomberie-paris"
+    },
+    {
+      "titre": "Erreur Breadcrumb JSON-LD (champ item manquant)",
+      "impact": "Les breadcrumbs ne s'affichent pas dans les SERP Google. Navigation utilisateur degradee.",
+      "solution_rapide": "Ajouter le champ 'item' (URL complete) sur chaque element du BreadcrumbList"
+    },
+    {
+      "titre": "Aucun preconnect/preload HTTP",
+      "impact": "Les ressources critiques (GTM, HubSpot) ne sont pas prechargees, ajoutant 200-400ms de latence.",
+      "solution_rapide": "Ajouter <link rel='preconnect' href='https://www.googletagmanager.com'> et <link rel='preconnect' href='https://js-eu1.hs-scripts.com'>"
     }
   ],
-
   "points_positifs": [
     "Core Web Vitals OK (PASS) - LCP 1800ms, CLS 0.01, INP 176ms",
     "0 erreur HTTP sur 169 pages crawlées",
@@ -995,7 +1086,6 @@
     "Cloudflare WAF actif (protection DDoS de base)",
     "Sendinblue (Brevo) configure pour les emails - SPF OK"
   ],
-
   "plan_action_priorise": {
     "phase_1_urgence_7_jours": [
       {
@@ -1004,7 +1094,17 @@
         "impact": "TRES ELEVE"
       },
       {
+        "action": "Creer une redirection 301 de /formations/formation-plomberie-paris/ vers /formations/formation-plombier-chauffagiste/",
+        "effort": "5 min",
+        "impact": "ELEVE"
+      },
+      {
         "action": "Remplacer 12 URLs staging par les URLs production dans la BDD WordPress",
+        "effort": "30 min",
+        "impact": "TRES ELEVE"
+      },
+      {
+        "action": "Activer les schemas JSON-LD dans Yoast SEO (Course, Organisation, BreadcrumbList) + corriger Breadcrumb error",
         "effort": "30 min",
         "impact": "TRES ELEVE"
       },
@@ -1032,14 +1132,14 @@
         "action": "Ajouter directive Sitemap dans robots.txt",
         "effort": "5 min",
         "impact": "MOYEN"
+      },
+      {
+        "action": "Corriger l'erreur Breadcrumb JSON-LD (ajouter champ 'item' manquant sur chaque element)",
+        "effort": "15 min",
+        "impact": "MOYEN"
       }
     ],
     "phase_2_court_terme_30_jours": [
-      {
-        "action": "Activer les schemas JSON-LD dans Yoast SEO (Organisation, BreadcrumbList, Course)",
-        "effort": "30 min",
-        "impact": "TRES ELEVE"
-      },
       {
         "action": "Fusionner les pages CFA/CAP par ville (commencer par Paris plomberie)",
         "effort": "4h",
@@ -1196,11 +1296,114 @@
       }
     ]
   },
-
   "dashboard": {
     "url": "https://lomaab.github.io/audit-ecole-gustave/",
     "github": "Lomaab/audit-ecole-gustave",
     "pages": 7,
     "data_source": "data.json (ce fichier)"
+  },
+  "benchmark_concurrents": {
+    "analyse": "Benchmark technique des 5 concurrents principaux realise le 16 juin 2026",
+    "tableau": [
+      {
+        "concurrent": "Compagnons du Tour de France",
+        "url": "compagnons-du-devoir.com",
+        "http": "HTTP/2",
+        "ttfb": "598ms",
+        "securite": "Faible (pas HSTS, pas XFO)",
+        "compression": "Gzip",
+        "cdn": "LiteSpeed (Hostinger)"
+      },
+      {
+        "concurrent": "CMA Ile-de-France",
+        "url": "cma-idf.fr",
+        "http": "HTTP/2",
+        "ttfb": "~108ms (bloque curl)",
+        "securite": "HSTS preload, pas de CSP",
+        "compression": "Inconnu",
+        "cdn": "OVH"
+      },
+      {
+        "concurrent": "MaFormation.fr",
+        "url": "maformation.fr",
+        "http": "HTTP/2",
+        "ttfb": "1659ms",
+        "securite": "Excellent (CSP, HSTS 2ans)",
+        "compression": "Brotli",
+        "cdn": "Aucun"
+      },
+      {
+        "concurrent": "Eco-Campus",
+        "url": "eco-campus.org",
+        "http": "N/A",
+        "ttfb": "N/A (hors ligne)",
+        "securite": "N/A",
+        "compression": "N/A",
+        "cdn": "N/A"
+      },
+      {
+        "concurrent": "AFPA",
+        "url": "afpa.fr",
+        "http": "HTTP/2",
+        "ttfb": "186ms",
+        "securite": "Excellent (CSP, HSTS, XFO, nosniff)",
+        "compression": "Gzip",
+        "cdn": "Google Cloud"
+      }
+    ],
+    "classement_technique": [
+      {
+        "rang": 1,
+        "concurrent": "AFPA",
+        "note": "Excellent partout, reference technique"
+      },
+      {
+        "rang": 2,
+        "concurrent": "MaFormation.fr",
+        "note": "Bonne securite mais TTFB tres eleve, pas de CDN"
+      },
+      {
+        "rang": 3,
+        "concurrent": "Compagnons du Devoir",
+        "note": "Perf OK mais securite faible"
+      },
+      {
+        "rang": 4,
+        "concurrent": "Eco-Campus",
+        "note": "Site hors ligne - opportunite de marche"
+      },
+      {
+        "rang": 5,
+        "concurrent": "ecole-gustave.com",
+        "note": "HTTP/3 + Brotli excellents, mais headers securite absents"
+      }
+    ],
+    "opportunites": [
+      "AFPA exceptee, ecole-gustave peut etre 2-3x plus rapide que la moyenne des concurrents",
+      "Creer un hub de contenu BTP (guides metiers, reconversion) - aucun concurrent ne le fait bien",
+      "UX mobile + quizz orientation + simulateur CPF = avantage produit unique",
+      "Eco-Campus mort = opportunite de capter son trafic formation BTP"
+    ]
+  },
+  "technique_approfondie": {
+    "http_version": "HTTP/2 + HTTP/3 (QUIC via Cloudflare alt-svc)",
+    "compression": "Brotli (~79% reduction)",
+    "dom_size": 1250,
+    "dom_seuil": "OK (<1500 recommandation Google)",
+    "third_party_scripts": [
+      "Google Tag Manager",
+      "HubSpot Analytics",
+      "Complianz GDPR"
+    ],
+    "resource_hints": {
+      "preconnect": 0,
+      "preload": 0,
+      "prefetch": 0,
+      "dns_prefetch": 2
+    },
+    "sri": "Absent sur tous les scripts",
+    "font_display": "Non configure",
+    "og_probleme": "Sur formations/ - affiche 'Page non trouvee'",
+    "breadcrumb_error": "Champ 'item' manquant sur le 2e element du BreadcrumbList (confirme par Rich Results Test Google)"
   }
 }

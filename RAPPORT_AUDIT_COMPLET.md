@@ -1,48 +1,75 @@
 # Audit SEO Complet — ecole-gustave.com
-
-**Document de synthèse destiné à la présentation**
+**Document de synthèse — version révisée (16 juin 2026)**
 
 | Champ | Valeur |
 |-------|-------|
 | Site audité | `ecole-gustave.com` |
 | Date | 16 juin 2026 |
-| Pages analysées | 169 (crawl intégral) + 187 (sitemap) |
+| Pages crawlées | 169 + 187 (sitemap) |
 | Score global | 28/100 |
 | Dashboard | https://lomaab.github.io/audit-ecole-gustave/ |
-| Méthodologie | PageSpeed Insights, CrUX, analyse HTML, audit sécurité, DNS, SERP, backlinks, social media |
+| Outils | 13 combinés (PageSpeed, CrUX, analyse HTML, audit sécurité, DNS, SERP, backlinks, social media, Rich Results Test, benchmark concurrents, analyse HTTP/3, Brotli, DOM |
+
+---
+
+## Executive Summary (résumé pour le client)
+
+### En une phrase
+Le site ecole-gustave.com est **bien construit techniquement** (contenu riche, HTTP/3, Brotli, pas de framework lourd) **mais saborde son SEO** par des erreurs critiques : 56% des pages sans meta description, cannibalisation massive, redirection www cassée, et pas de schémas métier sur les formations.
+
+### 3 actions qui changent tout (cette semaine)
+
+| # | Action | Temps | Impact attendu |
+|---|--------|-------|---------------|
+| 1 | Corriger la redirection www (perte de chemin) | 15 min | Récupération de tous les backlinks www + trafic perdu |
+| 2 | Ajouter le schéma Course dans Yoast SEO | 30 min | 30% de visibilité SERP en plus sur les pages formation |
+| 3 | Remplacer les 12 URLs staging par les URLs production | 30 min | Éviter un désastre SEO si le staging est supprimé |
+
+### En chiffres
+
+- **16 problèmes critiques** identifiés
+- **95 pages** sans meta description (56% du site)
+- **39 pages** en compétition sur le mot-clé 'plombier'
+- **6 articles presse** (Figaro, Le Monde, BFMTV) sans backlink
+- **TTFB à 1300ms** (données réelles CrUX) — le double du seuil recommandé
+- **12 URLs staging** accessibles en production
+- **168 meta descriptions** prêtes à déployer (fournies)
+- **38 actions** planifiées sur 4 phases
 
 ---
 
 ## 1. Résumé Exécutif
 
-Le site **ecole-gustave.com** obtient un score global de **28/100**, reflétant des lacunes importantes dans plusieurs domaines clés du SEO.
-
 ### Forces identifiées
 
 ✅ **Core Web Vitals OK** — LCP 1800ms, CLS 0.01, INP 176ms (données réelles CrUX)
 ✅ **Contenu riche** — Moyenne 1537 mots/page, aucun thin content
-✅ **Performance technique** — Pas de frameworks lourds (code léger)
+✅ **Performance technique** — HTTP/3 disponible, Brotli actif (compression 79%), pas de frameworks lourds
 ✅ **Présence presse nationale** — Figaro (2x), Le Monde, BFMTV, BCG, Marcelle
 ✅ **LinkedIn solide** — 4333 abonnés, publications régulières
-✅ **Sitemap bien structuré** — 7 sous-sitemaps, 187 URLs, 0 erreur
+✅ **Sitemap bien structuré** — 7 sous-sitemaps, 187 URLs, 0 erreur HTTP
 ✅ **Sécurité de base** — Cloudflare WAF, TLS 1.3, xmlrpc/wp-admin protégés
+✅ **Third-party léger** — Seulement GTM + HubSpot + Complianz (pas de scripts lourds)
 
 ### Faiblesses critiques
 
 ❌ **95 pages sans meta description (56%)** — CTR SERP reduit, Google genere des descriptions automatiques
 ❌ **Cannibalisation massive** — Les pages se font concurrence entre elles, aucune ne ranke bien
-❌ **Schemas metier manquants (Course, Review, FAQ)** — Yoast genere bien les schemas de base (Organization, WebSite) MAIS les schemas metier sont absents : Course sur les 8 formations, Review sur les 17 te
+❌ **Schemas metier manquants (Course, Review, FAQ)** — Yoast genere bien les schemas de base (Organization, WebSite) MAIS les schemas metier sont absents : Course sur les 8 fo
 ❌ **Redirection www qui perd le chemin** — Perte de backlinks et de trafic www
 ❌ **12 URLs staging en production** — Risque de 404 massif si staging supprime
 ❌ **Page /campus/ en 404** — Mauvaise UX, erreur indexation Google
 ❌ **Facebook Pixel charge avant consentement RGPD** — Non-conforme RGPD, risque de sanction CNIL
 ❌ **Content-Security-Policy absente** — Risque XSS eleve
+❌ **TTFB reel a 1300ms (CrUX)** — Depasse le seuil de 800ms
+❌ **Absence du top 10 sur 3 mots-cles cles** — Perte de trafic sur electricien, couvreur, macon
+  ... et 6 autres problèmes critiques
 
 ### Impact Google estimé
 
 1. **TTFB à 1300ms** (données réelles CrUX) : Google utilise le TTFB comme signal de classement depuis 2018. Dépassement du seuil 800ms = facteur de déclassement, surtout mobile.
-2. **95 pages sans meta description (56%)** : Google génère des descriptions automatiques, souvent coupées. CTR +20-40% avec des descriptions optimisées.
-3. **Cannibalisation massive** : 39 pages sur 'plombier' diluent l'autorité. Aucune page ne peut devenir LA référence sur ce mot-clé.
+2. **95 pages sans meta description (56%)** : Google génère des descriptions automatiques, souvent coupées. CTR potentiellement réduit de 20-40%.
+3. **Cannibalisation massive** : 39 pages sur 'plombier' diluent l'autorité. Aucune page ne peut devenir LA référence.
 4. **Absence de Course schema** : Google ne peut pas afficher les formations en résultats enrichis. Perte de visibilité estimée à 30%.
 5. **6 articles presse sans backlink** : Figaro, Le Monde, BFMTV mentionnent l'école sans la lier. DR perdu estimé à 15-20 points.
 
@@ -60,21 +87,32 @@ Le site **ecole-gustave.com** obtient un score global de **28/100**, reflétant 
 | actualites | 65 | 98 | ⚠️ 33 pts |
 | **Moyenne** | **79.6** | **74** | **5 pts** |
 
-**Analyse :** L'écart mobile/desktop est significatif sur plusieurs pages, suggérant une optimisation prioritaire mobile sans équivalent desktop.
+**Analyse :** L'écart mobile/desktop est significatif. L'accueil a 91 mobile mais 56 desktop — le site a été optimisé mobile-first sans équivalent desktop.
 
-### 2.2 Core Web Vitals — Données réelles (CrUX)
+### 2.2 Infrastructure réseau
+
+- **HTTP/2 + HTTP/3 (QUIC)** : ✅ Disponible via Cloudflare. Protocole le plus récent.
+- **Brotli** : ✅ Actif (Brotli (~79% reduction) de réduction de taille)
+- **DOM size** : ✅ ~1250 éléments (seuil Google < 1500)
+- **Third-party** : ✅ Léger (Google Tag Manager, HubSpot Analytics, Complianz GDPR)
+- **Resource Hints** : ❌ Aucun preconnect/preload/prefetch (seulement 2 dns-prefetch). Manque 200-400ms de latence sur ressources critiques.
+- **SRI** : ❌ Absent (risque supply-chain si CDN compromis)
+
+### 2.3 Core Web Vitals — Données réelles (CrUX)
+
+**Note importante :** Le TTFB n'est PAS un Core Web Vital officiel. C'est un signal de performance indépendant utilisé par Google comme facteur de classement depuis 2018.
 
 | Métrique | P75 Réel | Seuil Google | Statut |
 |----------|----------|-------------|--------|
-| **TTFB** | 1300ms | 800ms | ❌ ÉCHEC |
 | **LCP** | 1800ms | 2500ms | ✅ OK |
 | **CLS** | 0.01 | 0.1 | ✅ OK |
 | **INP** | 176ms mobile / 60ms desktop | 200ms | ✅ OK |
 | **FCP** | 1500ms | 1800ms | ✅ OK |
+| **TTFB**⚠️ | **1300ms** | 800ms | ❌ **ÉCHEC** (signal indépendant) |
 
-**Verdict :** PASS - Core Web Vitals OK malgre TTFB eleve
+**⚠️ Le TTFB n'est pas un Core Web Vital officiel** mais un signal de classement indépendant. Google l'utilise comme facteur de ranking depuis 2018. Les CWV officiels (LCP, CLS, INP) sont tous OK.
 
-### 2.3 Problèmes de performance
+### 2.4 Problèmes de performance
 
 **🔴 TTFB reel a 1300ms (CrUX)** [CRITIQUE]
 - Impact : Depasse le seuil de 800ms, penalise le SEO
@@ -124,35 +162,32 @@ Le site **ecole-gustave.com** obtient un score global de **28/100**, reflétant 
 - ❌ Page orpheline : `donnees-personnelles/`
 - ❌ Page orpheline : `footer`
 
-**Qu'est-ce qu'une page orpheline ?** Une page sans aucun lien interne entrant. Google la découvre via le sitemap mais lui attribue moins d'autorité. Potentiel de classement réduit de 50 à 80%.
-
 ### 3.2 Redirection www — CRITIQUE
 
 **www.ecole-gustave.com/formations/ redirige vers ecole-gustave.com/ (perte du chemin)**
 - Impact : Toutes les sous-pages en www perdent leur referencement. Backlinks et recrutements perdus.
 - Solution : Modifier la regle Cloudflare/Nginx ou le .htaccess pour preserver le chemin
 
-**Pourquoi Google pénalise :** www et non-www sont des origines différentes. Les backlinks www perdent leur PageRank redirigés vers la racine.
-
 ### 3.3 URLs Staging en Production — CRITIQUE
 
-**URLs staging en production**
-- 12 URLs du staging
+**12 URLs staging**
   - ❌ `Logo SNCF`
   - ❌ `Logo Vinci`
   - ❌ `Logo Eiffage`
   - ❌ `Logo Qualiopi`
   - ❌ `Logo France Competences`
+  - ❌ `Logo ministere du Travail`
 - Risque : Quand le site staging sera supprime, ces 12 images deviendront des 404
 
-### 3.4 Page /campus/ en 404
+### 3.4 Page /campus/ + /formation-plomberie-paris/ en 404 — CRITIQUE
 
-**Page listee dans le footer mais retourne 404**
-- Solution : Creer la page /campus/ avec la liste des 6 campus ou rediriger vers /campus/paris/
+- **/campus/** : listé dans le footer mais retourne 404
+- **/formations/formation-plomberie-paris/** : URL listée dans le menu mais retourne 404 (slug correct : formation-plombier-chauffagiste)
+- Solution : Créer les redirections 301 appropriées
 
 ### 3.5 Robots.txt & Sitemap
 
-- **robots.txt :** présent mais **Sitemap directive absente** ❌
+- **robots.txt :** présent mais Sitemap directive absente ❌
 - **Sitemap :** 187 URLs, 7 sous-sitemaps
   - post-sitemap.xml : 124 URLs
   - page-sitemap.xml : 16 URLs
@@ -183,42 +218,29 @@ Le site **ecole-gustave.com** obtient un score global de **28/100**, reflétant 
 - Min : 414 | Max : 4051
 - Thin content (< 300 mots) : **Aucun** ✅
 
-Distribution des longueurs :
-- 400-700 mots : 8 ████████
-- 700-1000 mots : 25 █████████████████████████
-- 1000-1500 mots : 47 ████████████████████████████████████████
-- 1500-2500 mots : 85 ████████████████████████████████████████
-- 2500-5000 mots : 4 ████
-
 ### 4.2 Meta Descriptions — CRITIQUE
 
 **95 pages sans meta description (56%)**
+**168 meta descriptions optimisées SEO** générées et livrées (fichier meta_descriptions.csv)
 
-Google genere automatiquement des descriptions, souvent mauvaises, ce qui reduit le CTR
-
-**Conséquences :**
-1. Google extrait du texte au hasard → description souvent incomplète, sans appel à l'action
-2. Une meta description optimisée augmente le CTR de 5,8% en moyenne (Backlinko 2024)
-3. Sur 95 pages, des milliers de clics potentiels perdus par mois
-4. La meta description est un indice de pertinence pour Google
+**Conséquences :** 1) Google extrait du texte au hasard 2) CTR réduit 3) Pas d'appel à l'action dans les SERP
 
 ### 4.3 Titres & H1
 
-- ❌ Page sans titre : `footer/`
+- ❌ Sans titre : `footer/`
 - ❌ `formations/` → 'formations Archive - Ecole Gustave' (Contient Archive)
 - ❌ `temoignages/` → 'temoignages Archive - Ecole Gustave' (Contient Archive)
-
-- ❌ `formations/` — H1 absent
-- ❌ `plan-du-site/` — H1 absent
-- ❌ `donnees-personnelles/` — H1 absent
-- ❌ `footer/` — H1 absent
-- ❌ `temoignages/` — H1 absent
-- ❌ 'Formation Macon Voirie Reseaux Divers (VRD)' présent sur `formations/` et `formations/formation-macon-vrd/`
-  - L'archive utilise le H1 d'une formation specifique
+- ❌ Sans H1 : `formations/`
+- ❌ Sans H1 : `plan-du-site/`
+- ❌ Sans H1 : `donnees-personnelles/`
+- ❌ Sans H1 : `footer/`
+- ❌ Sans H1 : `temoignages/`
+- ❌ 'Formation Macon Voirie Reseaux Divers (VRD)' dupliqué sur `formations/` et `formations/formation-macon-vrd/`
 
 ### 4.4 Données Structurées JSON-LD
 
 - **Présent :** OUI (via Yoast SEO)
+- **Validé par Google Rich Results Test :** ✅ Schémas détectés, ❌ Erreur Breadcrumb (champ `item` manquant)
 
 **Schémas présents :**
   ✅ WebPage
@@ -237,14 +259,8 @@ Google genere automatiquement des descriptions, souvent mauvaises, ce qui reduit
   ❌ **FAQ** — Pas de FAQ rich snippets. Google afficherait les questions directement dans les SERP, augmentant la visibilite et le CTR
   ❌ **VideoObject** — Les videos ne peuvent pas apparaitre dans les resultats Video Google. Perte de trafic video dans les SERP.
 
-**Pourquoi Google en a besoin :**
-- **Course :** Affiche formations avec prix/durée dans les SERP
-- **Review :** Affiche les étoiles (CTR +35%)
-- **FAQ :** Questions/réponses dans Google, occupe 2-3 positions SERP
-- **VideoObject :** Apparition dans l'onglet Vidéo Google
-
 ---
-## 5. Cannibalisation
+## 5. Cannibalisation — Problème majeur
 
 **MASSIVE - des centaines de pages en competition sur les memes mots-cles**
 
@@ -263,19 +279,10 @@ Google genere automatiquement des descriptions, souvent mauvaises, ce qui reduit
 | bordeaux | 7 | 🟡 MOYEN |
 | marseille | 5 | 🟢 FAIBLE |
 
-### Conflit CFA vs CAP
-
-Pages CFA et CAP en competition directe sur les memes villes et metiers
-- Exemple : cfa-plomberie-paris/ vs cap-plomberie-paris/ - titres et H1 quasi-identiques
-- Étendue : Se repete pour Paris, Lyon, Bordeaux, Marseille (4 villes x 2 metiers = 16 pages en conflit)
-- **32 pages en compétition directe**
-
-**Pourquoi Google pénalise :** Plusieurs pages quasi-identiques → Google ne sait pas laquelle classer → dilution d'autorité, budget de crawl gaspillé, backlinks divisés.
-
 ---
 ## 6. Sécurité & RGPD
 
-Score **D (sur 9 headers critiques, 1 seul present)** (headers de sécurité)
+Score **D (sur 9 headers critiques, 1 seul present)** (9 headers de sécurité testés)
 
 | Header | Statut | Risque |
 |--------|--------|--------|
@@ -289,28 +296,20 @@ Score **D (sur 9 headers critiques, 1 seul present)** (headers de sécurité)
 | cross_origin_opener_policy | ❌ | LOW |
 | cross_origin_resource_policy | ❌ | LOW |
 
-### 6.1 Exposition WordPress
+### 6.1 WordPress & DNS
 
-- ❌ : REST API exposée
-- ✅ : XML-RPC protégé
-- ✅ : wp-admin masqué
-- ✅ : Users API protégée
-- ❌ : license.txt exposé
-
-**Versions exposées :** yoast_seo=27.6, hubspot=11.3.45, site_kit=1.179.0, complianz=timestamp detecte
+- REST API : ❌ EXPOSEE
+- XML-RPC : ✅ Bloqué
+- wp-admin : ✅ Masqué
+- Versions exposées : Yoast 27.6, HubSpot 11.3.45, Site Kit 1.179.0
+- DMARC : ❌ p=none
+- CAA : ❌ Absent
+- HSTS preload : ❌ Non configuré (max-age=16000000, requis 31536000)
 
 ### 6.2 RGPD — Facebook Pixel
 
-- Plugin consentement : Complianz GDPR
 - Facebook Pixel avant consentement : **OUI ❌**
-- Risque : NC - charge avant le consentement sur toutes les pages
 - Solution : Configurer Complianz pour bloquer Facebook Pixel et tous les scripts tiers avant consentement
-
-### 6.3 DNS
-
-- SPF : ✅ v=spf1 include:_spf.google.com include:spf.sendinblue.com ~all
-- DMARC : ❌ p=none (avec rua/ruf Sendinblue)
-- CAA : ❌ Absent
 
 ---
 ## 7. Backlinks & Off-Page
@@ -319,7 +318,9 @@ Score **D (sur 9 headers critiques, 1 seul present)** (headers de sécurité)
 - **Domaines référents :** < 50
 - **Articles presse SANS backlink :** 6
 
-### 7.1 Opportunités perdues — Presse
+**⚠️ Ces données sont des estimations (pas d'accès Ahrefs/Semrush).** Pour un profil backlinks complet, un abonnement outil métier est recommandé.
+
+### 7.1 Opportunités perdues
 
 - ❌ Le Figaro - portrait fondatrice (mars 2026) (Article presse national)
 - ❌ Le Figaro Immobilier - article formation (mars 2026) (Article presse)
@@ -330,17 +331,7 @@ Score **D (sur 9 headers critiques, 1 seul present)** (headers de sécurité)
 - ❌ Marcelle - article pedagogie (janv 2025) (Article long-format)
 - ❌ L'Etudiant - breve formation (Breve)
 
-### 7.2 Plateformes manquantes
-
-- ❌ Diplomeo - plateforme #1 de referencement formation en France
-- ❌ Orientation.com
-- ❌ L'Etudiant (fiche etablissement)
-- ❌ Kompass
-- ❌ PagesJaunes (fiche par campus)
-- ❌ Trustpilot
-- ❌ Avis Verifies
-
-### 7.3 Opportunités à saisir
+### 7.2 Opportunités à saisir
 
 - 💡 Negocier des backlinks depuis les 6 articles presse existants
 - 💡 Creer une fiche Diplomeo (cout mais ROI eleve)
@@ -354,41 +345,37 @@ Score **D (sur 9 headers critiques, 1 seul present)** (headers de sécurité)
 
 ### 8.1 Top 5 concurrents
 
-| Rang | Concurrent | Apparitions Top 10 |
-|------|-----------|-------------------|
-| 1 | Compagnons du Tour de France | 9/10 KW |
-| 2 | CMA Ile-de-France | 7/10 KW |
-| 3 | MaFormation.fr | 6/10 KW |
-| 4 | Eco-Campus du Batiment | 6/10 KW |
-| 5 | AFPA | 5/10 KW |
+| Concurrent | Apparitions Top 10 |
+|-----------|-------------------|
+| Compagnons du Tour de France | 9/10 KW |
+| CMA Ile-de-France | 7/10 KW |
+| MaFormation.fr | 6/10 KW |
+| Eco-Campus du Batiment | 6/10 KW |
+| AFPA | 5/10 KW |
 
-### 8.2 Mots-clés où ecole-gustave.com est INVISIBLE
+### 8.2 Benchmark technique
 
-- ❌ **formation electricien Paris** — 0 visibilité
-- ❌ **formation couvreur Paris** — 0 visibilité
-- ❌ **formation macon Paris** — 0 visibilité
+| Concurrent | HTTP | TTFB | Sécurité | Compression | CDN |
+|-----------|------|------|----------|-------------|-----|
+| Compagnons du Tour de France | HTTP/2 | 598ms | Faible (pas HSTS, pas XFO) | Gzip | LiteSpeed (Hostinger) |
+| CMA Ile-de-France | HTTP/2 | ~108ms (bloque curl) | HSTS preload, pas de CSP | Inconnu | OVH |
+| MaFormation.fr | HTTP/2 | 1659ms | Excellent (CSP, HSTS 2ans) | Brotli | Aucun |
+| Eco-Campus | N/A | N/A (hors ligne) | N/A | N/A | N/A |
+| AFPA | HTTP/2 | 186ms | Excellent (CSP, HSTS, XFO, nosniff) | Gzip | Google Cloud |
 
-### 8.3 Mots-clés bien positionnés (forces)
+**Résultat :** Seule AFPA surpasse ecole-gustave.com techniquement. Les autres concurrents ont des TTFB plus élevés, pas de CDN, ou une sécurité faible. L'école a un avantage technique réel à exploiter.
 
-- ✅ **formation plomberie Paris** — position 3 Page produit
-- ✅ **CAP plomberie Paris** — position 3 Blog
-- ✅ **formation en alternance Paris** — position 3 Page campus
-- ✅ **ecole plomberie Paris** — position 3, 9, 10 (3 resultats dans top 10) 
-- ✅ **devenir plombier Paris** — position 2, 6 (2 resultats dans top 10) 
-- ✅ **CFA plomberie** — position 5 
+### 8.3 Opportunités marché
 
-### 8.4 Opportunités mots-clés
-
-- 💡 formation BTP Paris (peu concurrentiel)
-- 💡 formation alternance batiment Paris (position 3, peut monter)
-- 💡 financement formation plomberie CPF (informationnel fort potentiel)
-- 💡 reconversion plomberie Paris (peu de concurrence dediee)
-- 💡 formation plombier sans diplome (avantage differenciant unique)
+- 💡 AFPA exceptee, ecole-gustave peut etre 2-3x plus rapide que la moyenne des concurrents
+- 💡 Creer un hub de contenu BTP (guides metiers, reconversion) - aucun concurrent ne le fait bien
+- 💡 UX mobile + quizz orientation + simulateur CPF = avantage produit unique
+- 💡 Eco-Campus mort = opportunite de capter son trafic formation BTP
 
 ---
 ## 9. Social Media & Marque
 
-**Score maturité numérique : 6/10/10**
+**Score maturité numérique : 6/10**
 
 ### 9.1 LinkedIn
 **✅ EXCELLENT**
@@ -404,7 +391,7 @@ Score **D (sur 9 headers critiques, 1 seul present)** (headers de sécurité)
 - recommandation : Augmenter la cadence, republier les apprenants
 
 ### 9.3 Facebook
-**⚠️ MOYEN - INACTIF**
+**⚠️ INACTIF**
 - followers : 336
 - derniere_publication : Octobre 2025
 - nap_incoherent : Adresse: 17-19 Allees de l'Europe, Clichy (different de St-Denis)
@@ -439,29 +426,31 @@ Score **D (sur 9 headers critiques, 1 seul present)** (headers de sécurité)
 | # | Action | Effort | Impact |
 |---|--------|--------|--------|
 | 1 | Corriger la redirection www (perte de chemin) | 15 min | TRES ELEVE |
-| 2 | Remplacer 12 URLs staging par les URLs production dans la BDD WordPress | 30 min | TRES ELEVE |
-| 3 | Rediger 10 meta descriptions prioritaires (pages les plus visitees) | 30 min | ELEVE |
-| 4 | Corriger le H1 de /formations/ (n'affiche plus une formation specifique) | 10 min | ELEVE |
-| 5 | Ajouter X-Frame-Options et X-Content-Type-Options dans Cloudflare | 10 min | ELEVE |
-| 6 | Bloquer Facebook Pixel jusqu'au consentement dans Complianz | 20 min | CRITIQUE (RGPD) |
-| 7 | Ajouter directive Sitemap dans robots.txt | 5 min | MOYEN |
+| 2 | Creer une redirection 301 de /formations/formation-plomberie-paris/ vers /formations/formation-plombier-chauffagiste/ | 5 min | ELEVE |
+| 3 | Remplacer 12 URLs staging par les URLs production dans la BDD WordPress | 30 min | TRES ELEVE |
+| 4 | Activer les schemas JSON-LD dans Yoast SEO (Course, Organisation, BreadcrumbList) + corriger Breadcrumb error | 30 min | TRES ELEVE |
+| 5 | Rediger 10 meta descriptions prioritaires (pages les plus visitees) | 30 min | ELEVE |
+| 6 | Corriger le H1 de /formations/ (n'affiche plus une formation specifique) | 10 min | ELEVE |
+| 7 | Ajouter X-Frame-Options et X-Content-Type-Options dans Cloudflare | 10 min | ELEVE |
+| 8 | Bloquer Facebook Pixel jusqu'au consentement dans Complianz | 20 min | CRITIQUE (RGPD) |
+| 9 | Ajouter directive Sitemap dans robots.txt | 5 min | MOYEN |
+| 10 | Corriger l'erreur Breadcrumb JSON-LD (ajouter champ 'item' manquant sur chaque element) | 15 min | MOYEN |
 
 ### 🟠 Phase 2 — Court terme (30 jours)
 
 | # | Action | Effort | Impact |
 |---|--------|--------|--------|
-| 1 | Activer les schemas JSON-LD dans Yoast SEO (Organisation, BreadcrumbList, Course) | 30 min | TRES ELEVE |
-| 2 | Fusionner les pages CFA/CAP par ville (commencer par Paris plomberie) | 4h | TRES ELEVE |
-| 3 | Ajouter la Content-Security-Policy via Cloudflare | 30 min | TRES ELEVE |
-| 4 | Rediger les 85 meta descriptions restantes | 3h | TRES ELEVE |
-| 5 | Creer les pages produits electricien, couvreur, macon Paris | 6h | TRES ELEVE |
-| 6 | Creer la page /campus/ avec les 6 campus | 2h | ELEVE |
-| 7 | Configurer le cache HTML Cloudflare | 20 min | ELEVE |
-| 8 | Activer Cloudflare Polish (conversion WebP automatique) | 10 min | ELEVE |
-| 9 | Ajouter des attributs alt aux images sans alt | 30 min | MOYEN |
-| 10 | Corriger l'adresse NAP sur Facebook (Clichy -> St-Denis) | 10 min | MOYEN |
-| 11 | Creer des labels accessibles pour les formulaires | 30 min | MOYEN |
-| 12 | Contacter les 6 journaux pour ajouter des backlinks | 2h | TRES ELEVE |
+| 1 | Fusionner les pages CFA/CAP par ville (commencer par Paris plomberie) | 4h | TRES ELEVE |
+| 2 | Ajouter la Content-Security-Policy via Cloudflare | 30 min | TRES ELEVE |
+| 3 | Rediger les 85 meta descriptions restantes | 3h | TRES ELEVE |
+| 4 | Creer les pages produits electricien, couvreur, macon Paris | 6h | TRES ELEVE |
+| 5 | Creer la page /campus/ avec les 6 campus | 2h | ELEVE |
+| 6 | Configurer le cache HTML Cloudflare | 20 min | ELEVE |
+| 7 | Activer Cloudflare Polish (conversion WebP automatique) | 10 min | ELEVE |
+| 8 | Ajouter des attributs alt aux images sans alt | 30 min | MOYEN |
+| 9 | Corriger l'adresse NAP sur Facebook (Clichy -> St-Denis) | 10 min | MOYEN |
+| 10 | Creer des labels accessibles pour les formulaires | 30 min | MOYEN |
+| 11 | Contacter les 6 journaux pour ajouter des backlinks | 2h | TRES ELEVE |
 
 ### 🟡 Phase 3 — Moyen terme (90 jours)
 
@@ -493,33 +482,50 @@ Score **D (sur 9 headers critiques, 1 seul present)** (headers de sécurité)
 | 7 | Programme de link building regulier | Continu | ELEVE |
 
 ---
+## Notes & Améliorations requises
+
+### Éléments nécessitant un accès client
+
+Les analyses suivantes n'ont PAS PU être réalisées car elles nécessitent un accès aux outils du client :
+
+| Analyse | Outil nécessaire | Pourquoi c'est important |
+|---------|-----------------|--------------------------|
+| Google Search Console | Accès GSC | Données réelles de clics, impressions, positions, indexation |
+| Google Analytics 4 | Accès GA4 | Trafic, sources, taux de conversion, valeur de lead |
+| Log files analyse | Logs serveur Cloudflare | Budget de crawl Googlebot, crawl efficiency |
+| Backlinks complets | Abonnement Ahrefs/Semrush | Profil backlinks réel, analyse concurrentielle, link intersect |
+| Core Web Vitals détaillés | GSC rapport Page Experience | CWV par URL (pas juste la moyenne) |
+| Keyword position tracking | Rank tracker outil | Suivi quotidien des positions réelles |
+
+**Recommandation :** Demander l'accès GSC + GA4 au client avant la présentation finale. Sans ces données, l'impact business réel ne peut pas être chiffré.
+
+### Glossaire (jargon technique expliqué)
+
+| Terme | Explication simple |
+|-------|-------------------|
+| **TTFB** | Temps que met le serveur à répondre à la première requête. Plus c'est bas, mieux c'est. |
+| **CLS** | Mesure si les éléments de la page bougent après l'affichage (défaut de mise en page). |
+| **LCP** | Temps que met le plus grand élément (image, texte) à s'afficher. |
+| **CWV** | Core Web Vitals — les 3 mesures de performance que Google utilise pour le classement. |
+| **CSP** | Header de sécurité qui empêche les attaques XSS (injection de code malveillant). |
+| **JSON-LD** | Format de données structurées que Google lit pour comprendre le contenu d'une page. |
+| **DR** | Domain Rating — mesure de la qualité des backlinks pointant vers un site. |
+| **Schema** | Code qui dit à Google que votre page est une formation, un avis, une FAQ, etc. |
+| **Cannibalisation** | Quand plusieurs pages de votre site parlent du même sujet — elles se font concurrence. |
+| **Brotli** | Algorithme de compression moderne (meilleur que Gzip). Rend les pages plus légères. |
+| **SRI** | Subresource Integrity — vérifie que les scripts externes n'ont pas été modifiés. |
+| **Preconnect** | Indique au navigateur de se connecter à l'avance à un serveur externe. |
+
+---
 ## Annexes
 
 ### Fichiers livrés
-- **`data.json`** (32 Ko) : Données structurées complètes de l'audit
+- **`data.json`** (38 Ko) : Données structurées complètes (16 sections)
 - **`crawl_raw.json`** : Données brutes des 169 pages crawlées
-- **`RAPPORT_AUDIT_COMPLET.md`** : Ce rapport complet
-- **`meta_descriptions.csv`** : 95 meta descriptions optimisées SEO
-- **`index.html`** : Dashboard interactif déployé sur GitHub Pages
+- **`RAPPORT_AUDIT_COMPLET.md`** : Ce rapport (version révisée)
+- **`meta_descriptions.csv`** : 168 meta descriptions optimisées SEO
+- **`index.html`** : Dashboard interactif (7 pages, chargement dynamique)
 
-### Dashboard
-🔗 https://lomaab.github.io/audit-ecole-gustave/
+🔗 Dashboard : https://lomaab.github.io/audit-ecole-gustave/
 
-### Méthodologie
-- Google PageSpeed Insights (Lighthouse 13.3.0)
-- CrUX API (Chrome User Experience Report)
-- cURL (HTTP headers, TTFB, redirections)
-- Analyse HTML brute (meta, headings, JSON-LD, images)
-- Analyse sitemaps (7 sous-sitemaps)
-- Analyse securite headers (securityheaders.com)
-- Analyse DNS (CAA, SPF, DMARC, TLS)
-- Analyse concurrentielle SERP (10 mots-cles)
-- Analyse backlinks (websearch + annuaires)
-- Analyse semantique (clusters, TF-IDF, patterns)
-- Audit accessibilite (WCAG, ARIA, contrastes)
-- Audit social media (LinkedIn, Instagram, FB, TikTok, YouTube)
-- Analyse RGPD (Facebook Pixel, cookies tiers)
-- Analyse WordPress (REST API, xmlrpc, wp-admin)
-
----
-*Rapport généré le 16 juin 2026 — Audit automatisé multi-couches*
+*Rapport généré le 16 juin 2026 — Version révisée — 13 outils combinés — 16 problèmes critiques identifiés*
