@@ -2,210 +2,138 @@
   "meta": {
     "site": "ecole-gustave.com",
     "date": "2026-06-16",
-    "tools": [
+    "session_type": "audit_complet",
+    "pages_analysees": 169,
+    "pages_sitemap": 187,
+    "outils": [
       "Google PageSpeed Insights (Lighthouse 13.3.0)",
-      "curl (HTTP headers, TTFB, redirections)",
-      "Analyse HTML (meta, headings, JSON-LD, images)",
-      "Analyse robots.txt et sitemaps",
-      "Verification securite (HSTS, CSP, XFO, COOP)",
-      "Analyse mobile/responsive",
-      "Verification www redirection"
+      "CrUX API (Chrome User Experience Report)",
+      "cURL (HTTP headers, TTFB, redirections)",
+      "Analyse HTML brute (meta, headings, JSON-LD, images)",
+      "Analyse sitemaps (7 sous-sitemaps)",
+      "Analyse securite headers (securityheaders.com)",
+      "Analyse DNS (CAA, SPF, DMARC, TLS)",
+      "Analyse concurrentielle SERP (10 mots-cles)",
+      "Analyse backlinks (websearch + annuaires)",
+      "Analyse semantique (clusters, TF-IDF, patterns)",
+      "Audit accessibilite (WCAG, ARIA, contrastes)",
+      "Audit social media (LinkedIn, Instagram, FB, TikTok, YouTube)",
+      "Analyse RGPD (Facebook Pixel, cookies tiers)",
+      "Analyse WordPress (REST API, xmlrpc, wp-admin)"
     ],
-    "score_global": 36,
-    "score_mobile": 56,
-    "score_desktop": 85
+    "score_global_precedent": 36,
+    "score_global_nouveau": 28,
+    "note": "Le score a baisse car l'audit est plus approfondi et a revele plus de problemes"
   },
+
   "performances": {
-    "score_mobile": 56,
-    "score_desktop": 85,
-    "accessibilite_mobile": 88,
-    "accessibilite_desktop": 93,
-    "bonnes_pratiques": 77,
-    "seo_score": 100,
-    "ttfb": {
-      "valeur": "673-739ms",
-      "seuil": "< 300ms",
-      "conclusion": "Trop lent",
-      "impact": "Google penalise les sites lents. Le TTFB est le temps avant que le premier octet arrive. A 673ms+, c'est plus du double du seuil recommande. Cause probable : hebergement mutualise Infomaniak, pas de cache HTML."
+    "score_mobile_moyen": 79.6,
+    "score_desktop_moyen": 74,
+    "pages": {
+      "accueil": { "mobile": 91, "desktop": 56 },
+      "formation_electricien": { "mobile": 81, "desktop": 72 },
+      "campus_paris": { "mobile": 83, "desktop": 61 },
+      "ecole_gustave": { "mobile": 78, "desktop": 83 },
+      "actualites": { "mobile": 65, "desktop": 98 }
     },
-    "core_web_vitals_mobile": {
-      "lcp": {
-        "valeur": "2.2s",
-        "seuil": "< 2.5s",
-        "statut": "ok"
-      },
-      "inp": {
-        "valeur": "144ms",
-        "seuil": "< 200ms",
-        "statut": "ok"
-      },
-      "cls": {
-        "valeur": "0.01",
-        "seuil": "< 0.1",
-        "statut": "ok"
-      },
-      "fcp": {
-        "valeur": "1.8s",
-        "seuil": "< 1.8s",
-        "statut": "ok"
-      },
-      "ttfb_reel": {
-        "valeur": "1.5s",
-        "seuil": "< 800ms",
-        "statut": "echec",
-        "note": "Donnees terrain CrUX - les vrais utilisateurs mesurent 1.5s de TTFB"
-      }
+    "core_web_vitals_reels": {
+      "source": "CrUX (28 derniers jours - Juin 2026)",
+      "ttfb_p75": "1300ms",
+      "ttfb_evaluation": "echec",
+      "ttfb_seuil": "800ms",
+      "lcp_p75": "1800ms",
+      "lcp_evaluation": "ok",
+      "lcp_seuil": "2500ms",
+      "cls_p75": "0.01",
+      "cls_evaluation": "ok",
+      "cls_seuil": "0.1",
+      "inp_p75": "176ms mobile / 60ms desktop",
+      "inp_evaluation": "ok",
+      "inp_seuil": "200ms",
+      "fcp_p75": "1500ms",
+      "fcp_evaluation": "ok",
+      "fcp_seuil": "1800ms",
+      "conclusion_globale": "PASS - Core Web Vitals OK malgre TTFB eleve"
     },
-    "core_web_vitals_desktop": {
-      "lcp": {
-        "valeur": "2.6s",
-        "seuil": "< 2.5s",
-        "statut": "echec",
-        "note": "Legerement au-dessus du seuil"
-      },
-      "inp": {
-        "valeur": "50ms",
-        "seuil": "< 200ms",
-        "statut": "ok"
-      },
-      "cls": {
-        "valeur": "0.01",
-        "seuil": "< 0.1",
-        "statut": "ok"
-      },
-      "fcp": {
-        "valeur": "1.7s",
-        "seuil": "< 1.8s",
-        "statut": "ok"
-      },
-      "ttfb_reel": {
-        "valeur": "1.5s",
-        "seuil": "< 800ms",
-        "statut": "echec"
-      }
-    },
-    "problemes_performance": [
+    "problemes_prioritaires": [
       {
-        "id": "perf-01",
-        "titre": "Cache inefficace",
-        "description": "Les ressources statiques (images, CSS, JS) ne sont pas mises en cache assez longtemps.",
-        "economie": "731 KiB (mobile) / 964 KiB (desktop)",
-        "priorite": "haute",
-        "source": "PageSpeed Insights"
+        "id": "PERF01",
+        "titre": "TTFB reel a 1300ms (CrUX)",
+        "impact": "Depasse le seuil de 800ms, penalise le SEO",
+        "cause": "Pas de cache HTML Cloudflare, hebergement mutualise Infomaniak",
+        "solution": "Configurer le cache HTML Cloudflare, utiliser un plugin de cache WP (WP Rocket ou Flying Press)",
+        "priorite": "CRITIQUE"
       },
       {
-        "id": "perf-02",
-        "titre": "Ressources qui bloquent le rendu",
-        "description": "CSS et JS qui bloquent l'affichage initial de la page.",
-        "economie": "610ms (mobile) / 260ms (desktop)",
-        "priorite": "haute",
-        "source": "PageSpeed Insights"
+        "id": "PERF02",
+        "titre": "273 Kio de JavaScript inutilise",
+        "impact": "Ralentit le thread principal, TBT eleve",
+        "cause": "Le theme charge des scripts non utilises sur toutes les pages",
+        "solution": "Auditer les scripts avec coverage DevTools, ne charger que ce qui est necessaire",
+        "priorite": "HAUTE"
       },
       {
-        "id": "perf-03",
-        "titre": "Affichage des polices",
-        "description": "Les polices web ne sont pas optimisees, causant un flash de texte invisible.",
-        "economie": "170ms (mobile) / 40ms (desktop)",
-        "priorite": "moyenne",
-        "source": "PageSpeed Insights"
+        "id": "PERF03",
+        "titre": "Requetes bloquant le rendu (910-1330ms)",
+        "impact": "Retarde l'affichage de la page, LPC augmente",
+        "cause": "CSS/JS non optimises pour le chargement critique",
+        "solution": "CSS critique inline, JS ajoute avec defer/async",
+        "priorite": "CRITIQUE"
       },
       {
-        "id": "perf-04",
-        "titre": "Images non optimisees",
-        "description": "Les images peuvent etre mieux compressees ou converties en WebP/AVIF.",
-        "economie": "113 KiB (mobile) / 351 KiB (desktop)",
-        "priorite": "haute",
-        "source": "PageSpeed Insights"
+        "id": "PERF04",
+        "titre": "Cache inefficace (516-1700 Kio)",
+        "impact": "Les visiteurs recurrents telechargent les memes ressources",
+        "cause": "Headers de cache trop courts ou absents",
+        "solution": "Configurer des durees de cache longues (1 an) pour les ressources statiques via Cloudflare Page Rules",
+        "priorite": "HAUTE"
       },
       {
-        "id": "perf-05",
-        "titre": "JavaScript obsolete",
-        "description": "Ancien JavaScript qui pourrait ne pas etre delivre aux navigateurs modernes.",
-        "economie": "35 KiB",
-        "priorite": "moyenne",
-        "source": "PageSpeed Insights"
+        "id": "PERF05",
+        "titre": "Images non optimisees - Campus Paris (924 Kio economie possible)",
+        "impact": "Poids de page excessif, LPC mobile degrade",
+        "cause": "Images en JPEG/PNG haute resolution sans compression",
+        "solution": "Convertir en WebP avec Cloudflare Polish ou ShortPixel/EWWW Image Optimizer",
+        "priorite": "HAUTE"
       },
       {
-        "id": "perf-06",
-        "titre": "Decalages de mise en page (CLS)",
-        "description": "Des elements se deplacent apres l'affichage, causant une mauvaise experience.",
-        "priorite": "haute",
-        "source": "PageSpeed Insights"
+        "id": "PERF06",
+        "titre": "CLS excessif (0.12-0.17) sur /ecole-gustave/ et /campus/paris/ desktop",
+        "impact": "Experience utilisateur degradee, Core Web Vitals echoue sur desktop",
+        "cause": "Images sans dimensions explicites, animations non composees",
+        "solution": "Ajouter width/height aux images, utiliser transform/opacity pour les animations",
+        "priorite": "HAUTE"
       },
       {
-        "id": "perf-07",
-        "titre": "Ajustement force de la mise en page",
-        "description": "JavaScript force le navigateur a recalculer la mise en page trop souvent.",
-        "priorite": "moyenne",
-        "source": "PageSpeed Insights"
-      },
-      {
-        "id": "perf-08",
-        "titre": "DOM trop volumineux",
-        "description": "Le DOM fait plus de 800 elements, ce qui ralentit le rendu.",
-        "priorite": "moyenne",
-        "source": "PageSpeed Insights"
-      },
-      {
-        "id": "perf-09",
-        "titre": "JavaScript inutilise",
-        "description": "275 KiB de JavaScript charge mais jamais execute.",
-        "economie": "275 KiB",
-        "priorite": "moyenne",
-        "source": "PageSpeed Insights"
-      },
-      {
-        "id": "perf-10",
-        "titre": "Images sans dimensions explicites",
-        "description": "Les images n'ont pas d'attributs width/height, causant des decalages.",
-        "priorite": "basse",
-        "source": "PageSpeed Insights"
-      },
-      {
-        "id": "perf-11",
-        "titre": "CSS inutilise",
-        "description": "4-11 KiB de CSS charge mais jamais utilise.",
-        "economie": "4-11 KiB",
-        "priorite": "basse",
-        "source": "PageSpeed Insights"
-      },
-      {
-        "id": "perf-12",
-        "titre": "Taches longues sur le thread principal",
-        "description": "6 taches longues (mobile) / 8 (desktop) bloquent l'interactivite.",
-        "priorite": "haute",
-        "source": "PageSpeed Insights"
-      },
-      {
-        "id": "perf-13",
-        "titre": "Animations non composees",
-        "description": "2 animations ne passent pas par le GPU, ralentissant le rendu.",
-        "priorite": "basse",
-        "source": "PageSpeed Insights"
-      },
-      {
-        "id": "perf-14",
-        "titre": "Pas de cache HTML Cloudflare",
-        "description": "Le cache CF est en DYNAMIC, pas de mise en cache HTML cote CDN.",
-        "priorite": "haute",
-        "source": "Analyse headers"
-      },
-      {
-        "id": "perf-15",
-        "titre": "Images en JPG/PNG natifs",
-        "description": "Aucune image en WebP ou AVIF detectee. Le site utilise encore des formats anciens.",
-        "priorite": "haute",
-        "source": "Analyse HTML"
+        "id": "PERF07",
+        "titre": "Seulement 18% des images en WebP (6/34 sur l'accueil)",
+        "impact": "Poids de page 2-3x superieur au necessaire",
+        "cause": "Telechargement en JPEG/PNG natif, pas de conversion automatique",
+        "solution": "Activer Cloudflare Polish (lossless) ou installer ShortPixel Performance Image",
+        "priorite": "HAUTE"
       }
     ]
   },
+
   "seo_technique": {
+    "crawl": {
+      "total_pages": 169,
+      "erreurs_http": 0,
+      "status_200": 169,
+      "pages_orphelines": [
+        "formations/formation-macon-vrd/",
+        "equivalences-de-nos-titres/",
+        "mentions-legales/",
+        "donnees-personnelles/",
+        "footer"
+      ]
+    },
     "robots_txt": {
       "present": true,
       "contenu": "User-agent: *\nCrawl-delay: 10",
       "problemes": [
         "Aucune directive Sitemap",
-        "Pas de blocage des doublons (pages footer, formulaire)",
+        "Pas de blocage des doublons",
         "Pas d'optimisation du budget de crawl"
       ],
       "recommandation": "Ajouter Sitemap: https://ecole-gustave.com/sitemap_index.xml"
@@ -214,25 +142,35 @@
       "present": true,
       "url": "https://ecole-gustave.com/sitemap_index.xml",
       "sous_sitemaps": 7,
+      "repartition": {
+        "post-sitemap.xml": 124,
+        "page-sitemap.xml": 16,
+        "temoignages-sitemap.xml": 15,
+        "formations-sitemap.xml": 8,
+        "campus-sitemap.xml": 6,
+        "formulaire-sitemap.xml": 15,
+        "intervenants-sitemap.xml": 3
+      },
       "total_urls": 187,
       "problemes": [
-        "La page /footer/ est listee dans le sitemap (artefact technique a exclure)",
-        "Des pages sans meta description sont dans le sitemap",
-        "Le sitemap n'est pas reference dans robots.txt"
+        "La page /footer/ est listee dans le sitemap (artefact technique)",
+        "Pas reference dans robots.txt",
+        "Des pages sans meta description sont indexees"
       ]
     },
     "redirection_www": {
       "statut": "CRITIQUE",
-      "description": "www.ecole-gustave.com/* redirige vers ecole-gustave.com/ (perte du chemin)",
+      "description": "www.ecole-gustave.com/formations/ redirige vers ecole-gustave.com/ (perte du chemin)",
       "test": "curl www.ecole-gustave.com/formations/ -> 301 vers ecole-gustave.com/",
-      "impact": "Toutes les sous-pages en www perdent leur referencement. Les backlinks pointant vers www sont perdus.",
-      "priorite": "critique"
+      "impact": "Toutes les sous-pages en www perdent leur referencement. Backlinks et recrutements perdus.",
+      "solution": "Modifier la regle Cloudflare/Nginx ou le .htaccess pour preserver le chemin",
+      "priorite": "CRITIQUE"
     },
     "urls_staging": {
       "statut": "CRITIQUE",
       "nombre": 12,
       "domaine": "1a13o2bxfri.preview.infomaniak.website",
-      "urls": [
+      "elements_concernes": [
         "Logo SNCF",
         "Logo Vinci",
         "Logo Eiffage",
@@ -246,408 +184,1023 @@
         "Icone Instagram",
         "Icone Facebook"
       ],
-      "impact": "Quand le site staging sera supprime, toutes ces images deviendront des 404.",
-      "priorite": "critique"
+      "impact": "Quand le site staging sera supprime, ces 12 images deviendront des 404",
+      "solution": "UPDATE SQL dans wp_posts.post_content : remplacer 1a13o2bxfri.preview.infomaniak.website par ecole-gustave.com",
+      "priorite": "CRITIQUE"
     },
     "page_campus_404": {
       "statut": "CRITIQUE",
-      "description": "https://ecole-gustave.com/campus/ retourne 404",
-      "impact": "Page listee dans le footer mais inaccessible.",
-      "priorite": "critique"
+      "url": "https://ecole-gustave.com/campus/",
+      "description": "Page listee dans le footer mais retourne 404",
+      "impact": "Mauvaise UX, mauvaise image de marque, Google voit une erreur",
+      "solution": "Creer la page /campus/ avec la liste des 6 campus ou rediriger vers /campus/paris/",
+      "priorite": "CRITIQUE"
     },
-    "meta_descriptions_manquantes": {
-      "nombre": 8,
-      "pages": [
+    "canoniques": {
+      "auto_referencantes": true,
+      "problemes": [],
+      "note": "Toutes les pages ont des canoniques auto-referencantes correctes"
+    },
+    "noindex": {
+      "pages_dans_sitemap": [],
+      "pages_hors_sitemap": [
+        "categorie/formations/electricien-formations/ (Archives des)",
+        "categorie/formations/plombier-formations/ (Archives des)",
+        "categorie/formations/couvreur-formations/ (Archives des)",
+        "categorie/formations/maintenance-cvc-formations/ (Archives des)",
+        "categorie/formations/menuisier-formations/ (Archives des)",
+        "categorie/formations/macon-vrd-formations/ (Archives des)"
+      ],
+      "note": "Les 6 pages categorie en noindex ne sont pas dans le sitemap - correct"
+    },
+    "pagination": {
+      "pages_avec_pagination": ["les-actualites/", "les-temoignages/"],
+      "rel_next_prev": false,
+      "probleme": "Aucune balise rel=next/prev sur les pages paginees",
+      "impact": "Google peut mal comprendre la structure des paginations",
+      "solution": "Ajouter les balises rel=next et rel=prev dans le template d'archive WordPress",
+      "priorite": "MOYENNE"
+    },
+    "breadcrumbs": {
+      "html": true,
+      "jsonld_breadcrumblist": false,
+      "pages_avec_breadcrumb_jsonld": [
+        "formations/formation-electricien/",
+        "temoignages/noemie/"
+      ],
+      "pages_sans_breadcrumb_jsonld": [
+        "accueil",
+        "campus/paris/",
+        "ecole-gustave/",
+        "les-actualites/",
+        "informations-pratiques/"
+      ],
+      "impact": "Les breadcrumbs JSON-LD aident Google a comprendre la hierarchie du site",
+      "solution": "Activer le schema BreadcrumbList dans Yoast SEO (deja integre)",
+      "priorite": "MOYENNE"
+    }
+  },
+
+  "contenu": {
+    "statistiques": {
+      "pages_analysees": 169,
+      "moyenne_mots": 1537,
+      "min_mots": 414,
+      "max_mots": 4051,
+      "median_mots": 1558,
+      "distribution": {
+        "400_700": 8,
+        "700_1000": 25,
+        "1000_1500": 47,
+        "1500_2500": 85,
+        "2500_5000": 4
+      },
+      "pages_sans_thin_content": true
+    },
+    "meta_descriptions": {
+      "pages_sans_meta": 95,
+      "pourcentage": "56%",
+      "impact": "Google genere automatiquement des descriptions, souvent mauvaises, ce qui reduit le CTR",
+      "exemples_pages_sans_meta": [
+        "formations/",
+        "plan-du-site/",
+        "donnees-personnelles/",
+        "footer/",
+        "temoignages/",
+        "la-presse-parle-de-nous/",
+        "equivalences-de-nos-titres/",
+        "mentions-legales/",
+        "politique-de-confidentialite/",
+        "politique-handicap/",
+        "conditions-generales-d-utilisation/",
+        "les-actualites/",
+        "informations-pratiques/",
+        "devenir-electricien-du-batiment-*",
+        "lhistoire-du-metier-*",
+        "comment-trouver-un-bon-*",
+        "quelles-sont-les-habilitations-*",
+        "20+ autres pages blog et articles"
+      ],
+      "priorite": "URGENTE",
+      "solution": "Ajouter des meta descriptions personnalisees dans Yoast SEO pour chaque page. Commencer par les pages les plus visitees."
+    },
+    "titres": {
+      "pages_sans_titre": ["footer/"],
+      "titres_auto_genere": [
         {
-          "url": "/formations/",
+          "page": "formations/",
           "titre": "formations Archive - Ecole Gustave",
-          "probleme": "Titre auto-genere avec Archive"
+          "probleme": "Contient Archive"
         },
         {
-          "url": "/campus/paris/",
-          "titre": "Paris - Ecole Gustave"
-        },
-        {
-          "url": "/plan-du-site/",
-          "titre": "Plan du site - Ecole Gustave"
-        },
-        {
-          "url": "/mentions-legales/",
-          "titre": "Mentions legales - Ecole Gustave"
-        },
-        {
-          "url": "/politique-de-confidentialite/",
-          "titre": "Politique de confidentialite - Ecole Gustave"
-        },
-        {
-          "url": "/politique-handicap/",
-          "titre": "Politique handicap - Ecole Gustave"
-        },
-        {
-          "url": "/conditions-generales-d-utilisation/",
-          "titre": "Conditions Generales d Utilisation - Ecole Gustave"
-        },
-        {
-          "url": "/formations/formation-macon-vrd/",
-          "titre": "formation-macon-vrd Archive - Ecole Gustave"
+          "page": "temoignages/",
+          "titre": "temoignages Archive - Ecole Gustave",
+          "probleme": "Contient Archive"
         }
       ],
-      "priorite": "haute"
-    }
-  },
-  "securite": {
-    "score_bonnes_pratiques": 77,
-    "https": true,
-    "tls": "TLSv1.3",
-    "hsts": {
-      "present": true,
-      "valeur": "max-age=16000000",
-      "note": "Manque includeSubDomains et preload",
-      "priorite": "moyenne"
-    },
-    "csp": {
-      "present": false,
-      "description": "Aucune CSP configuree",
-      "impact": "Risque XSS eleve",
-      "priorite": "critique"
-    },
-    "x_frame_options": {
-      "present": false,
-      "description": "Aucune protection clickjacking",
-      "impact": "Le site peut etre integre dans une iframe",
-      "priorite": "haute"
-    },
-    "x_content_type_options": {
-      "present": false,
-      "description": "Aucune protection MIME-sniffing",
-      "priorite": "moyenne"
-    },
-    "referrer_policy": {
-      "present": false,
-      "priorite": "basse"
-    },
-    "permissions_policy": {
-      "present": false,
-      "priorite": "basse"
-    },
-    "coop": {
-      "present": false,
-      "description": "Cross-Origin Opener Policy manquante",
-      "priorite": "moyenne"
-    },
-    "trusted_types": {
-      "present": false,
-      "description": "Trusted Types manquants pour XSS DOM",
-      "priorite": "moyenne"
-    },
-    "clickjacking": {
-      "present": false,
-      "description": "Ni XFO ni CSP pour clickjacking",
-      "priorite": "haute"
-    },
-    "cookies_tiers": {
-      "present": true,
-      "description": "1 cookie tiers (Facebook Pixel)",
-      "priorite": "moyenne",
-      "note": "Facebook Pixel charge avant consentement RGPD"
-    }
-  },
-  "contenu_et_structure": {
-    "json_ld": {
-      "present": false,
-      "description": "Aucun JSON-LD sur la page d'accueil",
-      "impact": "Pas de rich snippets",
-      "priorite": "haute"
-    },
-    "headings": {
-      "h1": {
-        "present": true,
-        "contenu": "L'ecole des metiers du batiment",
-        "evaluation": "Correct mais pourrait inclure BTP ou formation"
-      },
-      "h2": {
-        "nombre": 35,
-        "problemes": [
-          "Trop de H2 (35)",
-          "9 H2 dupliques (menu nav repete 3x)",
-          "Les H2 de navigation n'ont pas de valeur SEO"
-        ],
-        "priorite": "moyenne"
+      "patterns": {
+        "ecole": 98,
+        "formation": 34,
+        "cap": 23,
+        "cfa": 9,
+        "autres": 4
       }
     },
-    "images": {
-      "totales": 34,
-      "sans_alt": 1,
-      "problemes": [
-        "1 image sans alt",
-        "Images sans width/height",
-        "Formats JPG/PNG",
-        "Pas de WebP/AVIF"
+    "h1": {
+      "pages_sans_h1": 5,
+      "liste": [
+        {
+          "page": "formations/",
+          "h1": "Formation Macon VRD (H1 de la page produit, pas de l'archive)"
+        },
+        { "page": "plan-du-site/", "h1": "absent" },
+        { "page": "donnees-personnelles/", "h1": "absent" },
+        { "page": "footer/", "h1": "absent, titre aussi absent" },
+        { "page": "temoignages/", "h1": "absent" }
+      ],
+      "h1_dupliques": [
+        {
+          "h1": "Formation Macon Voirie Reseaux Divers (VRD)",
+          "pages": ["formations/", "formations/formation-macon-vrd/"],
+          "probleme": "L'archive utilise le H1 d'une formation specifique"
+        }
       ]
     },
-    "favicon": {
-      "present": true,
-      "apple_touch_icon": "Non detecte"
+    "h2": {
+      "probleme": "Navigation repete 3 fois en H2",
+      "solution": "Changer les H2 de navigation en <nav> avec aria-label"
     },
-    "balise_lang": {
+    "jsonld": {
       "present": true,
-      "valeur": "fr-FR",
-      "correct": true
-    },
-    "canonical": {
-      "present": true,
-      "href": "https://ecole-gustave.com/",
-      "correct": true
-    },
-    "viewport": {
-      "present": true,
-      "valeur": "width=device-width, initial-scale=1",
-      "correct": true
+      "source": "Yoast SEO (integration par defaut)",
+      "schemas_presents": {
+        "WebPage": "Sur toutes les pages - OK",
+        "WebSite": "Sur toutes les pages avec SearchAction - OK",
+        "Organization": "Sur toutes les pages avec logo + 3 reseaux sociaux - OK",
+        "BreadcrumbList": "Sur accueil, formations, temoignages - INCOMPLET (manque sur campus, ecole-gustave, actualites, entreprise)",
+        "Article": "Sur les articles de blog - OK",
+        "ImageObject": "Sur les pages avec image mise en avant - OK",
+        "CollectionPage": "Sur certaines archives - OK",
+        "Person": "Sur les articles de blog (auteur) - OK",
+        "Event": "Detecte sur la page actualites - OK"
+      },
+      "schemas_manquants_critiques": [
+        {
+          "schema": "Course",
+          "pages_impactees": "8 formations (electricien, plombier, couvreur, CVC, menuisier, macon VRD, technicien equipement)",
+          "impact_google": "Les formations n'apparaissent pas dans les snippets enrichis 'Course' de Google. Pas de badge 'Formation' dans les resultats. Perte de CTR estimee a 20-30% pour les pages produits."
+        },
+        {
+          "schema": "Review",
+          "pages_impactees": "17 pages de temoignages",
+          "impact_google": "Impossible d'avoir des etoiles dans les SERP pour les temoignages. Les etoiles augmentent le CTR de 35% en moyenne."
+        },
+        {
+          "schema": "FAQ",
+          "pages_impactees": "Toutes les pages avec questions (CAP, CFA, formations par ville)",
+          "impact_google": "Pas de FAQ rich snippets. Google afficherait les questions directement dans les SERP, augmentant la visibilite et le CTR."
+        },
+        {
+          "schema": "VideoObject",
+          "pages_impactees": "YouTube (chaine vide) mais aussi les videos integrees",
+          "impact_google": "Les videos ne peuvent pas apparaitre dans les resultats Video Google. Perte de trafic video dans les SERP."
+        }
+      ],
+      "organization_details": {
+        "name": "Ecole Gustave",
+        "logo_url": "https://ecole-gustave.com/wp-content/uploads/2025/10/Gustave-logo.svg",
+        "sameAs": ["Facebook", "LinkedIn", "Instagram"],
+        "missing_sameAs": ["TikTok (@ecole.gustave)"],
+        "impact": "Le schema Organization est correct mais ne lie pas TikTok, ce qui affaiblit le signal de marque aupres de Google."
+      },
+      "impact_global": "Les schemas de base (Organization, WebSite, WebPage) sont OK mais les schemas metier (Course, Review, FAQ) sont absents. C'est le probleme principal : Google ne peut pas comprendre que ce site est une ecole de formation avec des avis et des cursus.",
+      "solution": "Dans Yoast SEO > Schemas : activer les schemas supplementaires. Ajouter manuellement le schema Course pour chaque formation. Ajouter le schema Review dans le template des temoignages. Ajouter FAQ schema sur les pages de questions.",
+      "priorite": "HAUTE (mais partiellement present)"
     }
   },
-  "accessibilite": {
-    "score_mobile": 88,
-    "score_desktop": 93,
-    "problemes": [
-      {
-        "id": "a11y-01",
-        "titre": "Boutons sans nom accessible",
-        "description": "Boutons sans nom pour lecteurs d'ecran",
-        "priorite": "haute",
-        "source": "Lighthouse"
+
+  "cannibalisation": {
+    "analyse": "MASSIVE - des centaines de pages en competition sur les memes mots-cles",
+    "clusters": {
+      "formation": 39,
+      "plombier_plomberie": 39,
+      "btp_batiment_construction": 37,
+      "electricien_electricite": 16,
+      "cap": 23,
+      "cfa": 9,
+      "alternance": 9,
+      "paris": 8,
+      "couvreur": 7,
+      "lyon": 7,
+      "bordeaux": 7,
+      "marseille": 5
+    },
+    "cfa_vs_cap": {
+      "description": "Pages CFA et CAP en competition directe sur les memes villes et metiers",
+      "exemple": "cfa-plomberie-paris/ vs cap-plomberie-paris/ - titres et H1 quasi-identiques",
+      "pattern": "Se repete pour Paris, Lyon, Bordeaux, Marseille (4 villes x 2 metiers = 16 pages en conflit)",
+      "pages_cfa": 9,
+      "pages_cap": 23
+    },
+    "pages_par_ville": {
+      "paris": 8,
+      "lyon": 7,
+      "bordeaux": 7,
+      "marseille": 5
+    },
+    "recommandations": [
+      "Fusionner les pages CFA/CAP par ville en une seule page avec ancres internes",
+      "Ajouter des balises canonical sur les pages qui doivent etre considerees comme secondaires",
+      "Differencier les titres et H1 : cibler des intentions de recherche differentes",
+      "Pour les pages CAP par ville : utiliser des mots-cles differents (CAP vs formation vs CFA)",
+      "Creer une page mere par metier avec des sections par ville au lieu de pages separees"
+    ],
+    "priorite": "HAUTE"
+  },
+
+  "performance_approfondie": {
+    "images": {
+      "total_sur_accueil": 34,
+      "webp": 6,
+      "webp_pourcentage": "18%",
+      "avif": 0,
+      "jpeg_png": "80%+",
+      "images_sans_alt": 12,
+      "pourcentage_sans_alt": "27%",
+      "images_staging": 3,
+      "plus_grosses_images": [
+        {
+          "url": "hero accueil",
+          "format": "JPEG",
+          "poids": "360KB",
+          "economie_webp": "~280KB"
+        },
+        {
+          "url": "template mise en page",
+          "format": "PNG",
+          "poids": "416KB",
+          "economie_webp": "~350KB"
+        },
+        {
+          "url": "logo hero",
+          "format": "JPEG",
+          "poids": "176KB",
+          "economie_webp": "~130KB"
+        }
+      ]
+    },
+    "scripts": {
+      "externes": 3,
+      "liste": [
+        "Google Tag Manager (gtag/js?id=GT-PHXZQLKQ)",
+        "HubSpot (js-eu1.hs-scripts.com/25086902.js - v11.3.45)",
+        "Facebook Pixel (connect.facebook.net)"
+      ],
+      "frameworks": {
+        "jquery": false,
+        "bootstrap": false,
+        "react": false,
+        "vue": false
       },
-      {
-        "id": "a11y-02",
-        "titre": "Liens sans nom visible",
-        "description": "Liens non identifiables visuellement",
-        "priorite": "haute",
-        "source": "Lighthouse"
+      "note": "Excellent - pas de framework lourd, footprint minimal",
+      "javascript_inutilise": "~273 Kio"
+    },
+    "caching": {
+      "cache_html_cloudflare": false,
+      "cache_inefficace": "516-1700 Kio",
+      "polices_google": false,
+      "compression_gzip": true
+    },
+    "resource_hints": {
+      "preload": 0,
+      "preconnect": 0,
+      "prefetch_dns": 0,
+      "impact": "Opportunite manquee d'optimiser le chargement des ressources tierces",
+      "solution": "Ajouter preconnect pour GTM et HubSpot"
+    }
+  },
+
+  "securite": {
+    "score_securityheaders": "D (sur 9 headers critiques, 1 seul present)",
+    "headers": {
+      "strict_transport_security": {
+        "present": true,
+        "valeur": "max-age=16000000",
+        "probleme": "Manque includeSubDomains et preload (185j, requis 365j)"
       },
-      {
-        "id": "a11y-03",
-        "titre": "Contraste insuffisant",
-        "description": "Couleurs sans assez de contraste",
-        "priorite": "haute",
-        "source": "Lighthouse"
+      "content_security_policy": {
+        "present": false,
+        "risque": "CRITIQUE - XSS possible"
       },
-      {
-        "id": "a11y-04",
-        "titre": "Roles ARIA incompatibles",
-        "description": "Roles ARIA sur elements non supportes",
-        "priorite": "moyenne",
-        "source": "Lighthouse"
+      "x_frame_options": {
+        "present": false,
+        "risque": "HIGH - Clickjacking possible"
       },
-      {
-        "id": "a11y-05",
-        "titre": "Liens identiques fonctions differentes",
-        "description": "Meme texte, URLs differentes",
-        "priorite": "moyenne",
-        "source": "Lighthouse"
+      "x_content_type_options": {
+        "present": false,
+        "risque": "HIGH - MIME sniffing possible"
+      },
+      "referrer_policy": {
+        "present": false,
+        "risque": "MEDIUM - Fuite de Referrer"
+      },
+      "permissions_policy": {
+        "present": false,
+        "risque": "MEDIUM - API navigateur sans restriction"
+      },
+      "cross_origin_embedder_policy": { "present": false, "risque": "LOW" },
+      "cross_origin_opener_policy": { "present": false, "risque": "LOW" },
+      "cross_origin_resource_policy": { "present": false, "risque": "LOW" }
+    },
+    "wordpress": {
+      "version_exposee": false,
+      "rest_api": {
+        "accessible": true,
+        "risque": "HIGH - Contenu et IDs utilisateurs exposes",
+        "solution": "Restreindre aux utilisateurs authentifies"
+      },
+      "xmlrpc": {
+        "accessible": false,
+        "code": 403,
+        "note": "Protege par Cloudflare"
+      },
+      "wp_admin": {
+        "accessible": false,
+        "code": 404,
+        "note": "Masque correctement"
+      },
+      "users_api": {
+        "accessible": false,
+        "code": 401,
+        "note": "Bloque correctement"
+      },
+      "commentaires": {
+        "ouverts": false,
+        "note": "Desactives sur tous les articles"
+      },
+      "version_plugins": {
+        "yoast_seo": "27.6",
+        "hubspot": "11.3.45",
+        "site_kit": "1.179.0",
+        "complianz": "timestamp detecte"
+      },
+      "fichiers_sensibles": {
+        "readme_html": false,
+        "license_txt": true,
+        "wp_config_bak": false,
+        "env": false,
+        "git_head": false
       }
+    },
+    "tls": {
+      "version": "TLSv1.3",
+      "certificat": "Google Trust Services",
+      "expiration": "30 aout 2026",
+      "ciphers": "TLS_AES_256_GCM_SHA384",
+      "san": ["ecole-gustave.com", "*.ecole-gustave.com"],
+      "hsts_preload": false
+    },
+    "dns": {
+      "caa": false,
+      "spf": "v=spf1 include:_spf.google.com include:spf.sendinblue.com ~all",
+      "dmarc": "p=none (avec rua/ruf Sendinblue)",
+      "dmarc_risque": "p=none est une politique de test, pas de protection anti-phishing"
+    },
+    "rgpd": {
+      "consent_plugin": "Complianz GDPR",
+      "facebook_pixel_avant_consentement": true,
+      "pixel_id": "484946844150303",
+      "risque": "NC - charge avant le consentement sur toutes les pages",
+      "solution": "Configurer Complianz pour bloquer Facebook Pixel et tous les scripts tiers avant consentement"
+    },
+    "formulaires": {
+      "captcha": false,
+      "csrf": "via Fillout.com (iframe)",
+      "formulaires_sans_label": "4/4 inputs sans label accessible"
+    },
+    "priorites_correction": [
+      { "niveau": "CRITIQUE", "probleme": "Content-Security-Policy absente" },
+      {
+        "niveau": "CRITIQUE",
+        "probleme": "Facebook Pixel charge avant consentement (RGPD)"
+      },
+      {
+        "niveau": "HIGH",
+        "probleme": "REST API WordPress exposee publiquement"
+      },
+      { "niveau": "HIGH", "probleme": "X-Frame-Options absent" },
+      { "niveau": "HIGH", "probleme": "X-Content-Type-Options absent" },
+      { "niveau": "MEDIUM", "probleme": "Referrer-Policy absente" },
+      { "niveau": "MEDIUM", "probleme": "Permissions-Policy absente" },
+      { "niveau": "MEDIUM", "probleme": "DMARC en p=none" },
+      { "niveau": "MEDIUM", "probleme": "HSTS non preload-ready" },
+      { "niveau": "MEDIUM", "probleme": "Pas de CAPTCHA sur les formulaires" },
+      { "niveau": "MEDIUM", "probleme": "Versions plugins exposees" },
+      { "niveau": "LOW", "probleme": "CAA record DNS absent" }
     ]
   },
+
+  "backlinks_et_offpage": {
+    "domain_rating_estime": "10-25",
+    "domaines_referents_estimes": "< 50",
+    "backlinks_identifies": [
+      "MaFormation.fr (fiche centre + 3 formations)",
+      "Les Acteurs de la Competence (annuaire adherents)",
+      "PagesJaunes (fiche pro)",
+      "Pappers (fiche societe complete)",
+      "Societe.com (fiche juridique)",
+      "Welcome to the Jungle (profil + offres emploi)",
+      "Hellowork (offre alternance)",
+      "Refugies.info (dispositif formation)",
+      "Autour-de-moi.pro (annuaire local)",
+      "Centre.contact (annuaire avis)",
+      "EcolesParis.com (fiche avis)",
+      "InterCarifOref / QuiForme (fiche etablissement)",
+      "Mappy (via PagesJaunes)"
+    ],
+    "opportunites_perdues": [
+      {
+        "source": "Le Figaro - portrait fondatrice (mars 2026)",
+        "type": "Article presse national",
+        "backlink": false
+      },
+      {
+        "source": "Le Figaro Immobilier - article formation (mars 2026)",
+        "type": "Article presse",
+        "backlink": false
+      },
+      {
+        "source": "Madame Figaro - portrait (mars 2023)",
+        "type": "Article presse",
+        "backlink": false
+      },
+      {
+        "source": "Le Monde - article metier plombier (avril 2022)",
+        "type": "Article presse national",
+        "backlink": false
+      },
+      {
+        "source": "BFM TV - article lancement (aout 2021)",
+        "type": "Article media national",
+        "backlink": false
+      },
+      {
+        "source": "BCG - Prix PEES 2025",
+        "type": "Communique prix",
+        "backlink": false
+      },
+      {
+        "source": "Marcelle - article pedagogie (janv 2025)",
+        "type": "Article long-format",
+        "backlink": false
+      },
+      {
+        "source": "L'Etudiant - breve formation",
+        "type": "Breve",
+        "backlink": false
+      }
+    ],
+    "backlinks_presse_sans_lien": 6,
+    "plateformes_manquantes": [
+      "Diplomeo - plateforme #1 de referencement formation en France",
+      "Orientation.com",
+      "L'Etudiant (fiche etablissement)",
+      "Kompass",
+      "PagesJaunes (fiche par campus)",
+      "Trustpilot",
+      "Avis Verifies"
+    ],
+    "manque_contenu_linkable": true,
+    "pas_de_guest_blogging": true,
+    "pas_de_liens_ecoles_groupe": "Aucun lien croise entre Ecole Gustave, Rocket School et Ecole du Soin",
+    "opportunites": [
+      "Negocier des backlinks depuis les 6 articles presse existants",
+      "Creer une fiche Diplomeo (cout mais ROI eleve)",
+      "Creer du contenu linkable : etude sur l'insertion professionnelle dans le BTP, rapport salaires, datas",
+      "Guest blogging sur Batiweb, BatiActu, Le Moniteur",
+      "Liens croises avec les ecoles du groupe (Rocket School, Ecole du Soin)",
+      "Ajout dans les fiches Wikipedia des metiers du batiment"
+    ]
+  },
+
+  "concurrence": {
+    "top_5_concurrents": [
+      {
+        "nom": "Compagnons du Tour de France",
+        "domaine": "compagnonsdutourdefrance.org",
+        "apparitions_top10": "9/10 KW"
+      },
+      {
+        "nom": "CMA Ile-de-France",
+        "domaine": "cma-idf.fr",
+        "apparitions_top10": "7/10 KW"
+      },
+      {
+        "nom": "MaFormation.fr",
+        "domaine": "maformation.fr",
+        "apparitions_top10": "6/10 KW",
+        "type": "Annuaire agrégateur"
+      },
+      {
+        "nom": "Eco-Campus du Batiment",
+        "domaine": "eco-campus-batiment.fr",
+        "apparitions_top10": "6/10 KW"
+      },
+      {
+        "nom": "AFPA",
+        "domaine": "afpa.fr",
+        "apparitions_top10": "5/10 KW",
+        "type": "Organisme public"
+      }
+    ],
+    "mots_cles_absents_top10": [
+      "formation electricien Paris",
+      "formation couvreur Paris",
+      "formation macon Paris"
+    ],
+    "mots_cles_forts": [
+      {
+        "mot_cle": "formation plomberie Paris",
+        "position": 3,
+        "type": "Page produit"
+      },
+      { "mot_cle": "CAP plomberie Paris", "position": 3, "type": "Blog" },
+      {
+        "mot_cle": "formation en alternance Paris",
+        "position": 3,
+        "type": "Page campus"
+      },
+      {
+        "mot_cle": "ecole plomberie Paris",
+        "positions": "3, 9, 10 (3 resultats dans top 10)"
+      },
+      {
+        "mot_cle": "devenir plombier Paris",
+        "positions": "2, 6 (2 resultats dans top 10)"
+      },
+      {
+        "mot_cle": "CFA plomberie",
+        "position": 5,
+        "note": "Mot-cle national fragmenté geographiquement - opportunite Paris"
+      }
+    ],
+    "ecarts_concurrentiels": [
+      "Compagnons du Tour de France dominent la plupart des mots-cles metier (couvreur, macon, plombier) grace a leur autorite de domaine",
+      "CMA IDF a des pages institutionnelles bien optimisees pour CAP",
+      "MaFormation.fr domine grace a son maillage interne massif par metier x ville",
+      "AFPA beneficie de backlinks .gouv.fr qui lui donnent une autorite inegalee",
+      "Eco-Campus est le concurrent prive le plus proche avec une structure de site similaire"
+    ],
+    "opportunites_mots_cles": [
+      "formation BTP Paris (peu concurrentiel)",
+      "formation alternance batiment Paris (position 3, peut monter)",
+      "financement formation plomberie CPF (informationnel fort potentiel)",
+      "reconversion plomberie Paris (peu de concurrence dediee)",
+      "formation plombier sans diplome (avantage differenciant unique)"
+    ]
+  },
+
+  "social_media_et_marque": {
+    "score_maturite_numerique": "6/10",
+    "linkedin": {
+      "statut": "EXCELLENT",
+      "followers": 4333,
+      "publications": "Regulieres, contenu marque employeur",
+      "recommandation": "Maintenir le rythme"
+    },
+    "instagram": {
+      "statut": "MOYEN",
+      "followers": 802,
+      "posts": 131,
+      "probleme": "Faible pour 2000+ apprenants, opportunite de contenu UGC",
+      "recommandation": "Augmenter la cadence, republier les apprenants"
+    },
+    "facebook": {
+      "statut": "MOYEN - INACTIF",
+      "followers": 336,
+      "derniere_publication": "Octobre 2025",
+      "nap_incoherent": "Adresse: 17-19 Allees de l'Europe, Clichy (different de St-Denis)",
+      "avis": 0,
+      "recommandation": "Corriger l'adresse NAP, republier 2x/semaine"
+    },
+    "tiktok": {
+      "statut": "MOYEN",
+      "followers": 944,
+      "likes_cumules": "~20000",
+      "contenu": "JPO, femmes dans le BTP, humour",
+      "recommandation": "Augmenter la cadence, formats viraux"
+    },
+    "youtube": {
+      "statut": "INEXISTANT - CRITIQUE",
+      "description": "Chaine @EcoleGustave vide, 0 videos",
+      "impact": "Une ecole de formation sans contenu video est un handicap majeur en 2026",
+      "recommandation": "Produire au minimum: visites de campus, temoignages apprenants, JPO en video"
+    },
+    "google_business": {
+      "note": "4.6-4.8/5",
+      "avis": "102-146",
+      "suspicion_faux_avis": "Signale par ecolesparis.com - investigation requise",
+      "recommandation": "Creer une fiche par campus, repondre aux avis negatifs, politique transparente de collecte"
+    },
+    "presse": {
+      "statut": "BONNE",
+      "articles": "Figaro (2x), Le Monde, BFMTV, BCG, Marcelle, France Travail, Batirama",
+      "probleme": "Aucun backlink depuis ces articles - 6 opportunites perdues"
+    },
+    "annuaires": {
+      "presents": [
+        "MaFormation",
+        "Pappers",
+        "Societe.com",
+        "WTTJ",
+        "Hellowork"
+      ],
+      "manquants": [
+        "Diplomeo",
+        "PagesJaunes",
+        "Kompass",
+        "Studyrama fiche etablissement"
+      ]
+    }
+  },
+
+  "accessibilite": {
+    "score_lighthouse": "88-91/100 (mobile), 93-96/100 (desktop)",
+    "problemes": [
+      {
+        "id": "A11Y01",
+        "titre": "0/4 formulaires ont des labels accessibles",
+        "priorite": "CRITIQUE",
+        "wcag": "4.1.2"
+      },
+      {
+        "id": "A11Y02",
+        "titre": "12/45 images sans attribut alt (27%)",
+        "priorite": "HAUTE",
+        "wcag": "1.1.1"
+      },
+      {
+        "id": "A11Y03",
+        "titre": "Liens sans nom visible pour lecteurs d'ecran",
+        "priorite": "HAUTE",
+        "wcag": "2.4.4"
+      },
+      {
+        "id": "A11Y04",
+        "titre": "Contraste insuffisant (3 occurrences potentiellement)",
+        "priorite": "HAUTE",
+        "wcag": "1.4.3"
+      },
+      {
+        "id": "A11Y05",
+        "titre": "Roles ARIA incompatibles",
+        "priorite": "MOYENNE",
+        "wcag": "4.1.2"
+      },
+      {
+        "id": "A11Y06",
+        "titre": "Liens identiques pointant vers des destinations differentes",
+        "priorite": "MOYENNE",
+        "wcag": "2.4.4"
+      }
+    ],
+    "points_positifs": [
+      "Skip navigation link present",
+      "Elements HTML5 semantiques (header, nav, main, section, footer)",
+      "Role=navigation, role=img, role=dialog et role=button utilises",
+      "Langue fr-FR correctement definie",
+      "Viewport correct avec user-scalable=no absent"
+    ]
+  },
+
   "problemes_critiques": [
     {
       "id": "C01",
-      "titre": "Redirection www qui perd le chemin",
-      "description": "www -> non-www sans preserver le chemin",
-      "impact": "Perte de tous les backlinks www",
-      "solution": "Corriger la regle de redirection"
+      "titre": "95 pages sans meta description (56%)",
+      "impact": "CTR SERP reduit, Google genere des descriptions automatiques",
+      "priorite": "URGENTE",
+      "solution": "Rediger 95 meta descriptions dans Yoast SEO"
     },
     {
       "id": "C02",
-      "titre": "12 URLs staging Infomaniak en production",
-      "description": "Logos et icones charges depuis le staging",
-      "impact": "Risque de 404 massif si staging supprime",
-      "solution": "UPDATE SQL dans wp_posts.post_content"
+      "titre": "Cannibalisation massive",
+      "impact": "Les pages se font concurrence entre elles, aucune ne ranke bien",
+      "priorite": "URGENTE",
+      "solution": "Fusionner les pages CFA/CAP, differencier les titres"
     },
     {
       "id": "C03",
-      "titre": "Page /campus/ en 404",
-      "description": "Page footer inaccessible",
-      "impact": "Mauvaise UX, erreur Google",
-      "solution": "Creer la page ou rediriger"
+      "titre": "Schemas metier manquants (Course, Review, FAQ)",
+      "impact": "Yoast genere bien les schemas de base (Organization, WebSite) MAIS les schemas metier sont absents : Course sur les 8 formations, Review sur les 17 temoignages, FAQ, VideoObject. Perte de rich snippets critiques pour une ecole.",
+      "priorite": "URGENTE",
+      "solution": "Activer les schemas dans Yoast SEO"
     },
     {
       "id": "C04",
-      "titre": "Aucune CSP",
-      "description": "Pas de Content-Security-Policy",
-      "impact": "Risque XSS eleve",
-      "solution": "Configurer CSP via Cloudflare"
+      "titre": "Redirection www qui perd le chemin",
+      "impact": "Perte de backlinks et de trafic www",
+      "priorite": "URGENTE",
+      "solution": "Corriger la regle de redirection Cloudflare/Nginx"
     },
     {
       "id": "C05",
-      "titre": "Facebook Pixel charge avant consentement",
-      "description": "Pixel FB dans head avant cookies",
-      "impact": "Non-conforme RGPD",
-      "solution": "Bloquer pixel jusqu'au consentement"
+      "titre": "12 URLs staging en production",
+      "impact": "Risque de 404 massif si staging supprime",
+      "priorite": "URGENTE",
+      "solution": "UPDATE SQL dans la base WordPress"
     },
     {
       "id": "C06",
-      "titre": "TTFB trop eleve (673-1500ms)",
-      "description": "673ms en lab, 1.5s reel",
-      "impact": "Penalite Google",
-      "solution": "Cache HTML Cloudflare + optimisation"
+      "titre": "Page /campus/ en 404",
+      "impact": "Mauvaise UX, erreur indexation Google",
+      "priorite": "URGENTE",
+      "solution": "Creer la page ou rediriger"
+    },
+    {
+      "id": "C07",
+      "titre": "Facebook Pixel charge avant consentement RGPD",
+      "impact": "Non-conforme RGPD, risque de sanction CNIL",
+      "priorite": "URGENTE",
+      "solution": "Configurer Complianz pour bloquer les scripts tiers avant consentement"
+    },
+    {
+      "id": "C08",
+      "titre": "Content-Security-Policy absente",
+      "impact": "Risque XSS eleve",
+      "priorite": "URGENTE",
+      "solution": "Ajouter CSP via Cloudflare ou .htaccess"
+    },
+    {
+      "id": "C09",
+      "titre": "TTFB reel a 1300ms (CrUX)",
+      "impact": "Depasse le seuil de 800ms",
+      "priorite": "HAUTE",
+      "solution": "Cache HTML Cloudflare + plugin cache WordPress"
+    },
+    {
+      "id": "C10",
+      "titre": "Absence du top 10 sur 3 mots-cles cles",
+      "impact": "Perte de trafic sur electricien, couvreur, macon",
+      "priorite": "HAUTE",
+      "solution": "Creer des pages produits dediees avec optimisation locale"
+    },
+    {
+      "id": "C11",
+      "titre": "YouTube vide",
+      "impact": "Handicap de marque majeur pour une ecole de formation",
+      "priorite": "URGENTE",
+      "solution": "Produire du contenu video (visites, temoignages, JPO)"
+    },
+    {
+      "id": "C12",
+      "titre": "6 articles presse sans backlink",
+      "impact": "Liens de haute qualite non exploites",
+      "priorite": "HAUTE",
+      "solution": "Contacter les journalistes pour ajouter des liens"
+    },
+    {
+      "id": "C13",
+      "titre": "H1 duplique formations/ vs formation-macon-vrd/",
+      "impact": "Confusion Google sur la page principale de l'archive formations",
+      "priorite": "HAUTE",
+      "solution": "Corriger le H1 de l'archive formations"
     }
   ],
-  "problemes_haute_priorite": [
-    {
-      "id": "H01",
-      "titre": "Meta descriptions manquantes (8 pages)",
-      "description": "Pages sans meta description",
-      "solution": "Ajouter dans Yoast SEO"
-    },
-    {
-      "id": "H02",
-      "titre": "Titres auto-generes laids",
-      "description": "Archive dans les titres",
-      "solution": "Modifier template d'archive Yoast"
-    },
-    {
-      "id": "H03",
-      "titre": "Absence de JSON-LD",
-      "description": "Pas de donnees structurees",
-      "solution": "Activer schema dans Yoast + Course"
-    },
-    {
-      "id": "H04",
-      "titre": "Cache inefficace",
-      "description": "964 KiB non optimises",
-      "solution": "Cloudflare Page Rules pour cache long"
-    },
-    {
-      "id": "H05",
-      "titre": "X-Frame-Options manquant",
-      "description": "Pas de protection clickjacking",
-      "solution": "Ajouter X-Frame-Options: SAMEORIGIN"
-    },
-    {
-      "id": "H06",
-      "titre": "Images pas en WebP",
-      "solution": "Cloudflare Polish ou plugin conversion"
-    },
-    {
-      "id": "H07",
-      "titre": "Ressources bloquant le rendu",
-      "description": "610ms perdus",
-      "solution": "CSS critique inline, JS differe"
-    },
-    {
-      "id": "H08",
-      "titre": "Boutons sans nom accessible",
-      "solution": "Ajouter aria-label"
-    },
-    {
-      "id": "H09",
-      "titre": "Contraste insuffisant",
-      "solution": "Modifier couleurs theme WCAG AA"
-    }
-  ],
-  "problemes_moyenne_priorite": [
-    {
-      "id": "M01",
-      "titre": "35 H2 dont 9 dupliques",
-      "solution": "Changer H2 navigation en nav"
-    },
-    {
-      "id": "M02",
-      "titre": "HSTS sans includeSubDomains",
-      "solution": "Ajouter includeSubDomains; preload"
-    },
-    {
-      "id": "M03",
-      "titre": "Sitemap non reference dans robots.txt",
-      "solution": "Ajouter Sitemap directive"
-    },
-    {
-      "id": "M04",
-      "titre": "COOP manquante",
-      "solution": "Ajouter Cross-Origin-Opener-Policy"
-    },
-    {
-      "id": "M05",
-      "titre": "Trusted Types manquants",
-      "solution": "Ajouter require-trusted-types-for"
-    },
-    {
-      "id": "M06",
-      "titre": "JavaScript inutilise 275 KiB",
-      "solution": "Auditer et reduire JS"
-    },
-    {
-      "id": "M07",
-      "titre": "DOM trop volumineux",
-      "solution": "Simplifier templates"
-    },
-    {
-      "id": "M08",
-      "titre": "Lien newsletter vide",
-      "solution": "Supprimer ou rendre fonctionnel"
-    }
-  ],
-  "problemes_basse_priorite": [
-    {
-      "id": "B01",
-      "titre": "Images sans width/height",
-      "solution": "Ajouter attributs dans WP"
-    },
-    {
-      "id": "B02",
-      "titre": "CSS inutilise 4-11 KiB",
-      "solution": "Purger CSS"
-    },
-    {
-      "id": "B03",
-      "titre": "Animations non composees",
-      "solution": "Utiliser transform/opacity"
-    },
-    {
-      "id": "B04",
-      "titre": "Referrer-Policy manquante",
-      "solution": "Ajouter strict-origin-when-cross-origin"
-    },
-    {
-      "id": "B05",
-      "titre": "Permissions-Policy manquante",
-      "solution": "Ajouter Permissions-Policy"
-    },
-    {
-      "id": "B06",
-      "titre": "Score EcoIndex non configure",
-      "solution": "Configurer widget footer"
-    },
-    {
-      "id": "B07",
-      "titre": "1 image sans alt",
-      "solution": "Ajouter alt dans WP"
-    }
-  ],
+
   "points_positifs": [
-    "HTTPS avec TLSv1.3",
-    "HSTS configure",
-    "SEO score 100/100 Lighthouse",
-    "Core Web Vitals Mobile OK",
-    "Sitemap present (7 sous-sitemaps, 187 URLs)",
+    "Core Web Vitals OK (PASS) - LCP 1800ms, CLS 0.01, INP 176ms",
+    "0 erreur HTTP sur 169 pages crawlées",
+    "Moyenne de 1537 mots/page - pas de thin content",
+    "URL structure propre sans majuscules ni underscores",
+    "OG tags et Twitter cards presents sur toutes les pages",
+    "SEO score 100/100 sur PageSpeed pour toutes les pages sauf 1",
+    "Pas de jQuery, React, Vue, Bootstrap - code leger",
+    "Seulement 3 scripts tiers externes (GTM, HubSpot, Facebook)",
+    "Compression gzip activee",
+    "91% des images en lazy loading",
+    "Google Fonts non charge (pas de CLS polices)",
+    "Page 404 personnalisee avec titre 'Page non trouvee'",
+    "xmlrpc bloque (403), wp-admin masque (404), users API bloque (401)",
+    "TLS 1.3 avec certificat valide Cloudflare/Google Trust",
+    "Sitemap bien structure (7 sous-sitemaps, 187 URLs)",
+    "Balise langue fr-FR correcte",
     "Viewport correct",
-    "Lang fr-FR correct",
-    "Canonical correct",
-    "Favicon present",
-    "1 H1 unique",
-    "97% des images ont un alt",
-    "Bandeau cookies present",
-    "Serveur Cloudflare"
+    "Skip navigation link present",
+    "Elements HTML5 semantiques (header, nav, main, section, footer)",
+    "LinkedIn excellent (4333 abonnes, publications regulieres)",
+    "Couverture presse nationale (Figaro, Le Monde, BFMTV, BCG)",
+    "Presence sur les annuaires cles (MaFormation, Pappers, WTTJ)",
+    "Site Kit Google installe (bonne integration analytics)",
+    "Complianz GDPR installe (mal configure mais present)",
+    "Cloudflare WAF actif (protection DDoS de base)",
+    "Sendinblue (Brevo) configure pour les emails - SPF OK"
   ],
-  "methodologie": {
-    "outils": [
-      "PageSpeed Insights (Lighthouse 13.3.0) Mobile + Desktop",
-      "curl - Headers, redirections, TTFB",
-      "Analyse HTML - meta, headings, JSON-LD, images",
-      "Analyse robots.txt et sitemaps",
-      "Core Web Vitals (CrUX terrain)",
-      "Analyse securite headers",
-      "Analyse responsive mobile"
+
+  "plan_action_priorise": {
+    "phase_1_urgence_7_jours": [
+      {
+        "action": "Corriger la redirection www (perte de chemin)",
+        "effort": "15 min",
+        "impact": "TRES ELEVE"
+      },
+      {
+        "action": "Remplacer 12 URLs staging par les URLs production dans la BDD WordPress",
+        "effort": "30 min",
+        "impact": "TRES ELEVE"
+      },
+      {
+        "action": "Rediger 10 meta descriptions prioritaires (pages les plus visitees)",
+        "effort": "30 min",
+        "impact": "ELEVE"
+      },
+      {
+        "action": "Corriger le H1 de /formations/ (n'affiche plus une formation specifique)",
+        "effort": "10 min",
+        "impact": "ELEVE"
+      },
+      {
+        "action": "Ajouter X-Frame-Options et X-Content-Type-Options dans Cloudflare",
+        "effort": "10 min",
+        "impact": "ELEVE"
+      },
+      {
+        "action": "Bloquer Facebook Pixel jusqu'au consentement dans Complianz",
+        "effort": "20 min",
+        "impact": "CRITIQUE (RGPD)"
+      },
+      {
+        "action": "Ajouter directive Sitemap dans robots.txt",
+        "effort": "5 min",
+        "impact": "MOYEN"
+      }
     ],
-    "date": "16 juin 2026",
-    "pages_analysees": "187 URLs (sitemap) + pages cles"
+    "phase_2_court_terme_30_jours": [
+      {
+        "action": "Activer les schemas JSON-LD dans Yoast SEO (Organisation, BreadcrumbList, Course)",
+        "effort": "30 min",
+        "impact": "TRES ELEVE"
+      },
+      {
+        "action": "Fusionner les pages CFA/CAP par ville (commencer par Paris plomberie)",
+        "effort": "4h",
+        "impact": "TRES ELEVE"
+      },
+      {
+        "action": "Ajouter la Content-Security-Policy via Cloudflare",
+        "effort": "30 min",
+        "impact": "TRES ELEVE"
+      },
+      {
+        "action": "Rediger les 85 meta descriptions restantes",
+        "effort": "3h",
+        "impact": "TRES ELEVE"
+      },
+      {
+        "action": "Creer les pages produits electricien, couvreur, macon Paris",
+        "effort": "6h",
+        "impact": "TRES ELEVE"
+      },
+      {
+        "action": "Creer la page /campus/ avec les 6 campus",
+        "effort": "2h",
+        "impact": "ELEVE"
+      },
+      {
+        "action": "Configurer le cache HTML Cloudflare",
+        "effort": "20 min",
+        "impact": "ELEVE"
+      },
+      {
+        "action": "Activer Cloudflare Polish (conversion WebP automatique)",
+        "effort": "10 min",
+        "impact": "ELEVE"
+      },
+      {
+        "action": "Ajouter des attributs alt aux images sans alt",
+        "effort": "30 min",
+        "impact": "MOYEN"
+      },
+      {
+        "action": "Corriger l'adresse NAP sur Facebook (Clichy -> St-Denis)",
+        "effort": "10 min",
+        "impact": "MOYEN"
+      },
+      {
+        "action": "Creer des labels accessibles pour les formulaires",
+        "effort": "30 min",
+        "impact": "MOYEN"
+      },
+      {
+        "action": "Contacter les 6 journaux pour ajouter des backlinks",
+        "effort": "2h",
+        "impact": "TRES ELEVE"
+      }
+    ],
+    "phase_3_moyen_terme_90_jours": [
+      {
+        "action": "Creer fiche Diplomeo + autres annuaires manquants",
+        "effort": "3h",
+        "impact": "ELEVE"
+      },
+      {
+        "action": "Produire 15+ videos YouTube (visites campus, interviews, JPO)",
+        "effort": "20h",
+        "impact": "ELEVE"
+      },
+      {
+        "action": "Contenu linkable : etude insertion BTP, rapport salaires, datas marché",
+        "effort": "10h",
+        "impact": "ELEVE"
+      },
+      {
+        "action": "Configurer HSTS preload (max-age=31536000; includeSubDomains; preload)",
+        "effort": "15 min",
+        "impact": "MOYEN"
+      },
+      {
+        "action": "Restreindre l'API REST WordPress aux utilisateurs authentifies",
+        "effort": "20 min",
+        "impact": "MOYEN"
+      },
+      {
+        "action": "Ajouter breadcrumbs JSON-LD sur toutes les pages",
+        "effort": "20 min",
+        "impact": "MOYEN"
+      },
+      {
+        "action": "Ajouter DMARC p=quarantine",
+        "effort": "30 min",
+        "impact": "MOYEN"
+      },
+      {
+        "action": "Ajouter CAA record DNS",
+        "effort": "10 min",
+        "impact": "FAIBLE"
+      },
+      {
+        "action": "Installer un CAPTCHA (Cloudflare Turnstile) sur les formulaires",
+        "effort": "30 min",
+        "impact": "MOYEN"
+      },
+      {
+        "action": "Ajouter resource hints preconnect pour GTM et HubSpot",
+        "effort": "10 min",
+        "impact": "FAIBLE"
+      },
+      {
+        "action": "Revitaliser Facebook (publication 2x/semaine) et Instagram (+ stories)",
+        "effort": "5h/semaine",
+        "impact": "MOYEN"
+      },
+      {
+        "action": "Guest blogging sur Batiweb, BatiActu, Le Moniteur",
+        "effort": "10h",
+        "impact": "MOYEN"
+      }
+    ],
+    "phase_4_long_terme_6_mois": [
+      {
+        "action": "Migrer vers un hebergement plus rapide ou optimiser Infomaniak",
+        "effort": "Variable",
+        "impact": "ELEVE"
+      },
+      {
+        "action": "Refonte du maillage interne (repartition equilibree des liens)",
+        "effort": "10h",
+        "impact": "MOYEN"
+      },
+      {
+        "action": "Schema Review pour les 17 pages de temoignages (etoiles SERP)",
+        "effort": "2h",
+        "impact": "FAIBLE"
+      },
+      {
+        "action": "Ajouter les pages financement, FAQ, recrutement, tarifs",
+        "effort": "8h",
+        "impact": "MOYEN"
+      },
+      {
+        "action": "Optimiser les images restantes (dimensions, WebP, alt)",
+        "effort": "4h",
+        "impact": "MOYEN"
+      },
+      {
+        "action": "Corriger le CLS sur /ecole-gustave/ et /campus/paris/",
+        "effort": "2h",
+        "impact": "MOYEN"
+      },
+      {
+        "action": "Programme de link building regulier",
+        "effort": "Continu",
+        "impact": "ELEVE"
+      }
+    ]
+  },
+
+  "dashboard": {
+    "url": "https://lomaab.github.io/audit-ecole-gustave/",
+    "github": "Lomaab/audit-ecole-gustave",
+    "pages": 7,
+    "data_source": "data.json (ce fichier)"
   }
 }

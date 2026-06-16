@@ -7,141 +7,94 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg: #0a0e17;
-  --bg2: #111827;
-  --bg3: #1a2236;
-  --card: #1e293b;
-  --border: #2d3a50;
-  --text: #e2e8f0;
-  --text2: #94a3b8;
-  --accent: #3b82f6;
-  --accent2: #60a5fa;
-  --green: #22c55e;
-  --yellow: #eab308;
-  --orange: #f97316;
-  --red: #ef4444;
-  --pink: #ec4899;
-  --font: 'Inter', -apple-system, sans-serif;
-}
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
-.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+:root { --bg: #0a0e17; --bg2: #111827; --bg3: #1a2236; --card: #1e293b; --border: #2d3a50; --text: #e2e8f0; --text2: #94a3b8; --accent: #3b82f6; --accent2: #60a5fa; --green: #22c55e; --yellow: #eab308; --orange: #f97316; --red: #ef4444; --pink: #ec4899; --font: 'Inter',-apple-system,sans-serif; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:var(--font); background:var(--bg); color:var(--text); line-height:1.6; min-height:100vh; }
+.container { max-width:1200px; margin:0 auto; padding:0 20px; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { color:var(--accent2); }
 
 /* HEADER */
-header { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 16px 0; position: sticky; top: 0; z-index: 100; }
-.header-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-.logo { font-size: 20px; font-weight: 700; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 8px; }
-.logo span { color: var(--accent); }
-.score-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--bg3); padding: 8px 16px; border-radius: 100px; font-size: 14px; font-weight: 600; }
-.score-badge .num { font-size: 22px; }
-.score-badge .num.critique { color: var(--red); }
-.score-badge .num.moyen { color: var(--orange); }
-.score-badge .num.bon { color: var(--green); }
+header { background:var(--bg2); border-bottom:1px solid var(--border); padding:16px 0; position:sticky; top:0; z-index:100; }
+.header-inner { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+.logo { font-size:20px; font-weight:700; color:#fff; display:flex; align-items:center; gap:8px; }
+.logo span { color:var(--accent); }
+.score-badge { display:inline-flex; align-items:center; gap:6px; background:var(--bg3); padding:8px 16px; border-radius:100px; font-size:14px; font-weight:600; }
+.score-badge .num { font-size:22px; }
+.score-badge .num.critique { color:var(--red); }
+.score-badge .num.moyen { color:var(--orange); }
+.score-badge .num.bon { color:var(--green); }
 
 /* NAV */
-nav { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 0; overflow-x: auto; }
-.nav-inner { display: flex; gap: 0; }
-.nav-link { padding: 14px 20px; font-size: 13px; font-weight: 500; color: var(--text2); text-decoration: none; white-space: nowrap; border-bottom: 2px solid transparent; transition: all 0.2s; }
-.nav-link:hover { color: #fff; background: var(--bg3); }
-.nav-link.active { color: var(--accent); border-bottom-color: var(--accent); background: var(--bg3); }
+nav { background:var(--bg2); border-bottom:1px solid var(--border); overflow-x:auto; }
+.nav-inner { display:flex; gap:0; }
+.nav-link { padding:14px 20px; font-size:13px; font-weight:500; color:var(--text2); text-decoration:none; white-space:nowrap; border-bottom:2px solid transparent; transition:all .2s; cursor:pointer; }
+.nav-link:hover { color:#fff; background:var(--bg3); }
+.nav-link.active { color:var(--accent); border-bottom-color:var(--accent); background:var(--bg3); }
 
-/* PAGES */
-.page { display: none; padding: 32px 0 60px; }
-.page.active { display: block; }
-
-h1 { font-size: 28px; font-weight: 700; margin-bottom: 6px; }
-.subtitle { color: var(--text2); font-size: 15px; margin-bottom: 24px; }
-h2 { font-size: 22px; font-weight: 600; margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
-h3 { font-size: 17px; font-weight: 600; margin: 20px 0 10px; }
-h4 { font-size: 14px; font-weight: 600; color: var(--text2); text-transform: uppercase; letter-spacing: 1px; margin: 16px 0 8px; }
-
-/* CARDS */
-.grid { display: grid; gap: 16px; }
-.grid-2 { grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); }
-.grid-3 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-.grid-4 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
-
-.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
-.card-title { font-size: 15px; font-weight: 600; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
-.card-text { color: var(--text2); font-size: 13px; line-height: 1.5; }
-
-/* PRIORITY TAGS */
-.tag { display: inline-block; padding: 3px 10px; border-radius: 100px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
-.tag-critique { background: rgba(239,68,68,0.15); color: var(--red); }
-.tag-haute { background: rgba(249,115,22,0.15); color: var(--orange); }
-.tag-moyenne { background: rgba(234,179,8,0.15); color: var(--yellow); }
-.tag-basse { background: rgba(59,130,246,0.15); color: var(--accent); }
-.tag-ok { background: rgba(34,197,94,0.15); color: var(--green); }
-
-/* METRIC BOXES */
-.metric { text-align: center; padding: 16px; }
-.metric-value { font-size: 32px; font-weight: 800; }
-.metric-value.ok { color: var(--green); }
-.metric-value.echec { color: var(--red); }
-.metric-value.warn { color: var(--orange); }
-.metric-label { font-size: 12px; color: var(--text2); margin-top: 4px; }
-.metric-sub { font-size: 11px; color: var(--text2); margin-top: 2px; }
-
-/* TABLES */
-table { width: 100%; border-collapse: collapse; font-size: 13px; }
-th { text-align: left; padding: 10px 12px; background: var(--bg3); color: var(--text2); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid var(--border); }
-td { padding: 10px 12px; border-bottom: 1px solid var(--border); }
-tr:hover td { background: rgba(59,130,246,0.03); }
-
-/* BADGES */
-.badge-list { display: flex; flex-wrap: wrap; gap: 8px; }
-.badge { background: var(--bg3); padding: 6px 14px; border-radius: 100px; font-size: 12px; color: var(--text2); border: 1px solid var(--border); }
-
-/* ISSUE CARD */
-.issue { border-left: 3px solid; padding: 16px 20px; margin-bottom: 12px; background: var(--card); border-radius: 0 8px 8px 0; }
-.issue-critique { border-left-color: var(--red); }
-.issue-haute { border-left-color: var(--orange); }
-.issue-moyenne { border-left-color: var(--yellow); }
-.issue-basse { border-left-color: var(--accent); }
-.issue-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 6px; flex-wrap: wrap; }
-.issue-title { font-size: 14px; font-weight: 600; }
-.issue-desc { color: var(--text2); font-size: 13px; margin-bottom: 6px; }
-.issue-solution { font-size: 12px; color: var(--accent2); font-style: italic; }
-.issue-impact { font-size: 12px; color: var(--pink); }
-.issue-economie { font-size: 12px; color: var(--green); }
-
-/* PROGRESS BAR */
-.progress-bar { height: 8px; background: var(--bg3); border-radius: 100px; overflow: hidden; margin: 8px 0; }
-.progress-fill { height: 100%; border-radius: 100px; transition: width 1s; }
-.progress-fill.critique { background: linear-gradient(90deg, var(--red), var(--orange)); }
-.progress-fill.moyen { background: linear-gradient(90deg, var(--orange), var(--yellow)); }
-.progress-fill.bon { background: linear-gradient(90deg, var(--green), var(--accent)); }
-
-/* POSITIVE POINTS */
-.positive { display: flex; align-items: flex-start; gap: 8px; padding: 8px 0; }
-.positive::before { content: "✓"; color: var(--green); font-weight: 700; flex-shrink: 0; }
-
-/* EMPTY STATE */
-.empty { text-align: center; padding: 40px 20px; color: var(--text2); font-size: 14px; }
-
-/* TOOLTIPS */
-.tip { display: inline-block; width: 16px; height: 16px; background: var(--bg3); border-radius: 50%; text-align: center; line-height: 16px; font-size: 10px; color: var(--text2); cursor: help; margin-left: 4px; }
-
-/* SECTION COUNTS */
-.count { font-size: 13px; color: var(--text2); background: var(--bg3); padding: 2px 10px; border-radius: 100px; }
-
-/* SCORE RADIAL */
-.score-ring { width: 120px; height: 120px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; position: relative; }
-.score-ring-inner { text-align: center; }
-.score-ring-num { font-size: 36px; font-weight: 800; display: block; }
-.score-ring-label { font-size: 11px; color: var(--text2); }
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .header-inner { flex-direction: column; text-align: center; }
-  .nav-inner { gap: 0; }
-  .nav-link { padding: 12px 14px; font-size: 12px; }
-  h1 { font-size: 22px; }
-  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
-  .metric-value { font-size: 24px; }
-  .score-ring { width: 100px; height: 100px; }
-  .score-ring-num { font-size: 28px; }
+.page { display:none; padding:32px 0 60px; }
+.page.active { display:block; }
+h1 { font-size:28px; font-weight:700; margin-bottom:6px; }
+.subtitle { color:var(--text2); font-size:15px; margin-bottom:24px; }
+h2 { font-size:22px; font-weight:600; margin:32px 0 16px; padding-bottom:8px; border-bottom:1px solid var(--border); }
+h3 { font-size:17px; font-weight:600; margin:20px 0 10px; }
+h4 { font-size:14px; font-weight:600; color:var(--text2); text-transform:uppercase; letter-spacing:1px; margin:16px 0 8px; }
+.grid { display:grid; gap:16px; }
+.grid-2 { grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); }
+.grid-3 { grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); }
+.grid-4 { grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); }
+.card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:20px; }
+.card-title { font-size:15px; font-weight:600; margin-bottom:8px; display:flex; align-items:center; gap:8px; }
+.card-text { color:var(--text2); font-size:13px; line-height:1.5; }
+.tag { display:inline-block; padding:3px 10px; border-radius:100px; font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:.5px; }
+.tag-critique { background:rgba(239,68,68,0.15); color:var(--red); }
+.tag-haute { background:rgba(249,115,22,0.15); color:var(--orange); }
+.tag-moyenne { background:rgba(234,179,8,0.15); color:var(--yellow); }
+.tag-basse { background:rgba(59,130,246,0.15); color:var(--accent); }
+.tag-ok { background:rgba(34,197,94,0.15); color:var(--green); }
+.metric { text-align:center; padding:16px; }
+.metric-value { font-size:32px; font-weight:800; }
+.metric-value.ok { color:var(--green); }
+.metric-value.echec { color:var(--red); }
+.metric-value.warn { color:var(--orange); }
+.metric-label { font-size:12px; color:var(--text2); margin-top:4px; }
+.metric-sub { font-size:11px; color:var(--text2); margin-top:2px; }
+table { width:100%; border-collapse:collapse; font-size:13px; }
+th { text-align:left; padding:10px 12px; background:var(--bg3); color:var(--text2); font-weight:600; font-size:11px; text-transform:uppercase; letter-spacing:.5px; border-bottom:1px solid var(--border); }
+td { padding:10px 12px; border-bottom:1px solid var(--border); }
+tr:hover td { background:rgba(59,130,246,0.03); }
+.badge-list { display:flex; flex-wrap:wrap; gap:8px; }
+.badge { background:var(--bg3); padding:6px 14px; border-radius:100px; font-size:12px; color:var(--text2); border:1px solid var(--border); }
+.issue { border-left:3px solid; padding:16px 20px; margin-bottom:12px; background:var(--card); border-radius:0 8px 8px 0; }
+.issue-critique { border-left-color:var(--red); }
+.issue-haute { border-left-color:var(--orange); }
+.issue-moyenne { border-left-color:var(--yellow); }
+.issue-basse { border-left-color:var(--accent); }
+.issue-header { display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-bottom:6px; flex-wrap:wrap; }
+.issue-title { font-size:14px; font-weight:600; }
+.issue-desc { color:var(--text2); font-size:13px; margin-bottom:6px; }
+.issue-solution { font-size:12px; color:var(--accent2); font-style:italic; }
+.issue-impact { font-size:12px; color:var(--pink); }
+.positive { display:flex; align-items:flex-start; gap:8px; padding:8px 0; }
+.positive::before { content:"✓"; color:var(--green); font-weight:700; flex-shrink:0; }
+.progress-bar { height:8px; background:var(--bg3); border-radius:100px; overflow:hidden; margin:8px 0; }
+.progress-fill { height:100%; border-radius:100px; transition:width 1s; }
+.progress-fill.critique { background:linear-gradient(90deg,var(--red),var(--orange)); }
+.progress-fill.moyen { background:linear-gradient(90deg,var(--orange),var(--yellow)); }
+.progress-fill.bon { background:linear-gradient(90deg,var(--green),var(--accent)); }
+.score-ring { width:120px; height:120px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto; position:relative; }
+.score-ring-inner { text-align:center; }
+.score-ring-num { font-size:36px; font-weight:800; display:block; }
+.score-ring-label { font-size:11px; color:var(--text2); }
+.count { font-size:13px; color:var(--text2); background:var(--bg3); padding:2px 10px; border-radius:100px; }
+@media (max-width:768px) {
+  .header-inner { flex-direction:column; text-align:center; }
+  .nav-link { padding:12px 14px; font-size:12px; }
+  h1 { font-size:22px; }
+  .grid-2,.grid-3,.grid-4 { grid-template-columns:1fr; }
+  .metric-value { font-size:24px; }
+  .score-ring { width:100px; height:100px; }
+  .score-ring-num { font-size:28px; }
 }
 </style>
 </head>
@@ -152,7 +105,7 @@ tr:hover td { background: rgba(59,130,246,0.03); }
     <a href="#" class="logo" onclick="showPage('overview')">Audit <span>SEO</span></a>
     <div class="score-badge">
       Score global
-      <span class="num critique" id="globalScore">36</span>
+      <span class="num critique" id="globalScore">--</span>
       <span style="font-size:12px;color:var(--text2)">/100</span>
     </div>
   </div>
@@ -163,721 +116,573 @@ tr:hover td { background: rgba(59,130,246,0.03); }
     <a href="#" class="nav-link active" data-page="overview">Vue d'ensemble</a>
     <a href="#" class="nav-link" data-page="performance">Performance</a>
     <a href="#" class="nav-link" data-page="seo-technique">SEO Technique</a>
-    <a href="#" class="nav-link" data-page="securite">Sécurité</a>
     <a href="#" class="nav-link" data-page="contenu">Contenu</a>
-    <a href="#" class="nav-link" data-page="accessibilite">Accessibilité</a>
-    <a href="#" class="nav-link" data-page="recommandations">Recommandations</a>
+    <a href="#" class="nav-link" data-page="securite">Sécurité</a>
+    <a href="#" class="nav-link" data-page="concurrence">Concurrence</a>
+    <a href="#" class="nav-link" data-page="plan">Plan d'action</a>
   </div>
 </nav>
 
-<main class="container">
-
-<!-- PAGE: OVERVIEW -->
-<div class="page active" id="page-overview">
-  <h1>Audit SEO — École Gustave</h1>
-  <p class="subtitle">Analyse complète de performance, SEO technique, sécurité, contenu et accessibilité — 7 outils d'analyse combinés — 16 juin 2026</p>
-
-  <div class="grid grid-3" style="margin-bottom:24px">
-    <div class="card" style="text-align:center">
-      <div class="score-ring" style="background:conic-gradient(var(--red) 0% 36%, var(--bg3) 36% 100%)">
-        <div class="score-ring-inner">
-          <span class="score-ring-num" style="color:var(--red)">36</span>
-          <span class="score-ring-label">/100 global</span>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <h4 style="margin-top:0">Scores par outil</h4>
-      <div style="margin:8px 0">
-        <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px">
-          <span>PageSpeed Mobile</span><span style="font-weight:600;color:var(--orange)">56/100</span>
-        </div>
-        <div class="progress-bar"><div class="progress-fill moyen" style="width:56%"></div></div>
-      </div>
-      <div style="margin:8px 0">
-        <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px">
-          <span>PageSpeed Desktop</span><span style="font-weight:600;color:var(--yellow)">85/100</span>
-        </div>
-        <div class="progress-bar"><div class="progress-fill moyen" style="width:85%"></div></div>
-      </div>
-      <div style="margin:8px 0">
-        <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px">
-          <span>Accessibilité</span><span style="font-weight:600;color:var(--yellow)">88/100</span>
-        </div>
-        <div class="progress-bar"><div class="progress-fill moyen" style="width:88%"></div></div>
-      </div>
-      <div style="margin:8px 0">
-        <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px">
-          <span>Bonnes pratiques</span><span style="font-weight:600;color:var(--orange)">77/100</span>
-        </div>
-        <div class="progress-bar"><div class="progress-fill moyen" style="width:77%"></div></div>
-      </div>
-      <div style="margin:8px 0">
-        <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px">
-          <span>SEO</span><span style="font-weight:600;color:var(--green)">100/100</span>
-        </div>
-        <div class="progress-bar"><div class="progress-fill bon" style="width:100%"></div></div>
-      </div>
-    </div>
-    <div class="card">
-      <h4 style="margin-top:0">Core Web Vitals (réel)</h4>
-      <div class="grid grid-2" style="gap:8px;margin-top:8px">
-        <div class="metric" style="padding:8px;background:var(--bg3);border-radius:8px">
-          <div class="metric-value ok" style="font-size:24px">2.2s</div>
-          <div class="metric-label">LCP Mobile</div>
-          <div class="metric-sub">OK (seuil 2.5s)</div>
-        </div>
-        <div class="metric" style="padding:8px;background:var(--bg3);border-radius:8px">
-          <div class="metric-value echec" style="font-size:24px">2.6s</div>
-          <div class="metric-label">LCP Desktop</div>
-          <div class="metric-sub">ÉCHEC (seuil 2.5s)</div>
-        </div>
-        <div class="metric" style="padding:8px;background:var(--bg3);border-radius:8px">
-          <div class="metric-value ok" style="font-size:24px">144ms</div>
-          <div class="metric-label">INP Mobile</div>
-          <div class="metric-sub">OK (seuil 200ms)</div>
-        </div>
-        <div class="metric" style="padding:8px;background:var(--bg3);border-radius:8px">
-          <div class="metric-value ok" style="font-size:24px">0.01</div>
-          <div class="metric-label">CLS</div>
-          <div class="metric-sub">OK (seuil 0.1)</div>
-        </div>
-      </div>
-      <div style="margin-top:12px;padding:12px;background:rgba(239,68,68,0.1);border-radius:8px;border:1px solid rgba(239,68,68,0.2)">
-        <div style="font-size:13px;font-weight:600;color:var(--red)">TTFB : 1.5s (réel) — ÉCHEC</div>
-        <div style="font-size:12px;color:var(--text2);margin-top:4px">Le seuil recommandé est &lt; 800ms. 1.5s est presque le double.</div>
-      </div>
-    </div>
+<main class="container" id="app">
+  <div style="text-align:center;padding:60px 20px;color:var(--text2)">
+    <div style="font-size:40px;margin-bottom:16px">⏳</div>
+    <div>Chargement des données...</div>
   </div>
-
-  <h2>Problèmes critiques <span class="count" id="critCount">6</span></h2>
-  <div id="critiquesList" class="grid grid-2"></div>
-
-  <h2>En bref</h2>
-  <div class="grid grid-2">
-    <div class="card">
-      <div class="card-title">🔴 Problèmes critiques</div>
-      <div class="card-text" id="summaryCrit">6 problèmes critiques impactant directement le SEO, la sécurité et la conformité RGPD</div>
-      <div style="margin-top:12px;display:flex;flex-wrap:wrap;gap:6px">
-        <span class="tag tag-critique">Redirection www</span>
-        <span class="tag tag-critique">12 URLs staging</span>
-        <span class="tag tag-critique">/campus/ 404</span>
-        <span class="tag tag-critique">CSP manquante</span>
-        <span class="tag tag-critique">RGPD Facebook</span>
-        <span class="tag tag-critique">TTFB 1.5s</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-title">✅ Points positifs</div>
-      <div class="card-text" id="positiveList"></div>
-    </div>
-  </div>
-
-  <h2>Répartition des problèmes</h2>
-  <div class="grid grid-4" id="problemsDist"></div>
-
-  <h2>Méthodologie</h2>
-  <div class="card">
-    <p class="card-text">Analyse réalisée le <strong>16 juin 2026</strong> avec 7 outils combinés :</p>
-    <div class="badge-list" style="margin-top:12px">
-      <span class="badge">PageSpeed Insights (Lighthouse 13.3.0)</span>
-      <span class="badge">curl (headers, TTFB, redirections)</span>
-      <span class="badge">Analyse HTML complète</span>
-      <span class="badge">Analyse robots.txt & sitemaps</span>
-      <span class="badge">Core Web Vitals (CrUX)</span>
-      <span class="badge">Analyse sécurité headers</span>
-      <span class="badge">Analyse responsive mobile</span>
-    </div>
-    <p class="card-text" style="margin-top:10px"><strong>187 URLs</strong> analysées via sitemap + page d'accueil + pages clés en détail.</p>
-  </div>
-</div>
-
-<!-- PAGE: PERFORMANCE -->
-<div class="page" id="page-performance">
-  <h1>Performance</h1>
-  <p class="subtitle">Analyse détaillée de la vitesse, du TTFB, du caching et de l'optimisation des ressources</p>
-
-  <div class="grid grid-3" style="margin-bottom:24px">
-    <div class="card">
-      <div class="card-title">PageSpeed Mobile</div>
-      <div style="display:flex;align-items:center;gap:16px">
-        <div class="score-ring" style="width:80px;height:80px;background:conic-gradient(var(--orange) 0% 56%, var(--bg3) 56% 100%)">
-          <div class="score-ring-inner"><span class="score-ring-num" style="font-size:22px;color:var(--orange)">56</span></div>
-        </div>
-        <div>
-          <div style="font-size:13px">LCP (lab): <strong>6.9s</strong></div>
-          <div style="font-size:13px">FCP (lab): <strong>0.9s</strong></div>
-          <div style="font-size:13px">CLS (lab): <strong>0.354</strong></div>
-          <div style="font-size:13px">TBT: <strong>70ms</strong></div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-title">PageSpeed Desktop</div>
-      <div style="display:flex;align-items:center;gap:16px">
-        <div class="score-ring" style="width:80px;height:80px;background:conic-gradient(var(--yellow) 0% 85%, var(--bg3) 85% 100%)">
-          <div class="score-ring-inner"><span class="score-ring-num" style="font-size:22px;color:var(--yellow)">85</span></div>
-        </div>
-        <div>
-          <div style="font-size:13px">LCP (lab): <strong>0.8s</strong></div>
-          <div style="font-size:13px">FCP (lab): <strong>0.3s</strong></div>
-          <div style="font-size:13px">CLS (lab): <strong>0.001</strong></div>
-          <div style="font-size:13px">TBT: <strong>300ms</strong></div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-title">TTFB mesuré</div>
-      <div style="text-align:center;padding:8px">
-        <div class="metric-value echec" style="font-size:36px">1.5s</div>
-        <div class="metric-label" style="font-size:12px">Temps réel (CrUX) — seuil: 800ms</div>
-        <div style="margin-top:8px;font-size:12px;color:var(--text2)">Lab: 673-739ms (curl)</div>
-        <div style="margin-top:8px">
-          <div class="progress-bar"><div class="progress-fill critique" style="width:85%"></div></div>
-          <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text2)">
-            <span>0ms</span><span style="color:var(--red)">1.5s</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <h2>Core Web Vitals — Données terrain (CrUX)</h2>
-  <div class="grid grid-2" style="margin-bottom:24px">
-    <div class="card">
-      <h4 style="margin-top:0">Mobile</h4>
-      <table>
-        <tr><th>Métrique</th><th>Valeur</th><th>Seuil</th><th>Statut</th></tr>
-        <tr><td>LCP</td><td>2.2s</td><td>&lt; 2.5s</td><td><span class="tag tag-ok">OK</span></td></tr>
-        <tr><td>INP</td><td>144ms</td><td>&lt; 200ms</td><td><span class="tag tag-ok">OK</span></td></tr>
-        <tr><td>CLS</td><td>0.01</td><td>&lt; 0.1</td><td><span class="tag tag-ok">OK</span></td></tr>
-        <tr><td>FCP</td><td>1.8s</td><td>&lt; 1.8s</td><td><span class="tag tag-ok">OK</span></td></tr>
-        <tr><td>TTFB</td><td>1.5s</td><td>&lt; 800ms</td><td><span class="tag tag-critique">ÉCHEC</span></td></tr>
-      </table>
-    </div>
-    <div class="card">
-      <h4 style="margin-top:0">Desktop</h4>
-      <table>
-        <tr><th>Métrique</th><th>Valeur</th><th>Seuil</th><th>Statut</th></tr>
-        <tr><td>LCP</td><td>2.6s</td><td>&lt; 2.5s</td><td><span class="tag tag-haute">ÉCHEC</span></td></tr>
-        <tr><td>INP</td><td>50ms</td><td>&lt; 200ms</td><td><span class="tag tag-ok">OK</span></td></tr>
-        <tr><td>CLS</td><td>0.01</td><td>&lt; 0.1</td><td><span class="tag tag-ok">OK</span></td></tr>
-        <tr><td>FCP</td><td>1.7s</td><td>&lt; 1.8s</td><td><span class="tag tag-ok">OK</span></td></tr>
-        <tr><td>TTFB</td><td>1.5s</td><td>&lt; 800ms</td><td><span class="tag tag-critique">ÉCHEC</span></td></tr>
-      </table>
-    </div>
-  </div>
-
-  <h2>15 problèmes de performance identifiés</h2>
-  <div id="perfIssues"></div>
-</div>
-
-<!-- PAGE: SEO TECHNIQUE -->
-<div class="page" id="page-seo-technique">
-  <h1>SEO Technique</h1>
-  <p class="subtitle">Analyse des fondations techniques : robots.txt, sitemap, redirections, meta données, URLs staging</p>
-
-  <div class="grid grid-3" style="margin-bottom:24px">
-    <div class="card">
-      <div class="metric">
-        <div class="metric-value echec">3</div>
-        <div class="metric-label">Problèmes CRITIQUES</div>
-      </div>
-      <div style="margin-top:8px">
-        <div style="font-size:12px;padding:4px 0">🔴 Redirection www cassée</div>
-        <div style="font-size:12px;padding:4px 0">🔴 12 URLs staging en prod</div>
-        <div style="font-size:12px;padding:4px 0">🔴 Page /campus/ en 404</div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="metric">
-        <div class="metric-value warn">8</div>
-        <div class="metric-label">Pages sans meta description</div>
-      </div>
-      <div style="margin-top:8px">
-        <div style="font-size:11px;color:var(--text2)">/formations/, /campus/paris/, /plan-du-site/,<br>/mentions-legales/, /politiques..., /cgu/</div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="metric">
-        <div class="metric-value ok">187</div>
-        <div class="metric-label">URLs dans le sitemap</div>
-      </div>
-      <div style="margin-top:8px">
-        <div style="font-size:12px">7 sous-sitemaps</div>
-        <div style="font-size:12px;color:var(--text2)">Mais pas de référence dans robots.txt</div>
-        <div style="font-size:12px;color:var(--text2)">Page /footer/ incluse (artefact)</div>
-      </div>
-    </div>
-  </div>
-
-  <h2>Redirection www</h2>
-  <div class="issue issue-critique">
-    <div class="issue-header">
-      <div class="issue-title">www.ecole-gustave.com/* → ecole-gustave.com/ (perte du chemin)</div>
-      <span class="tag tag-critique">Critique</span>
-    </div>
-    <div class="issue-desc">Quand on visite <code>www.ecole-gustave.com/formations/</code>, la redirection 301 envoie vers <code>ecole-gustave.com/</code> au lieu de <code>ecole-gustave.com/formations/</code>.</div>
-    <div class="issue-impact">Impact : Tous les backlinks pointant vers des pages en www perdent leur valeur SEO. Les moteurs de recherche traitent www et non-www comme des sites différents.</div>
-    <div class="issue-solution">Solution : Corriger la règle de redirection (Nginx/Apache/Cloudflare) pour préserver le chemin : www → non-www + même URI.</div>
-  </div>
-
-  <h2>URLs staging en production</h2>
-  <div class="issue issue-critique">
-    <div class="issue-header">
-      <div class="issue-title">12 ressources chargées depuis le staging Infomaniak</div>
-      <span class="tag tag-critique">Critique</span>
-    </div>
-    <div class="issue-desc">Le domaine <code>1a13o2bxfri.preview.infomaniak.website</code> est utilisé pour charger logos et icônes en production.</div>
-    <div class="issue-impact">Impact : Si le staging est supprimé, 12 images deviennent des 404. Casse l'image de marque.</div>
-    <div class="issue-solution">Solution : Remplacer dans la base WordPress (wp_posts.post_content) le staging par ecole-gustave.com via SQL UPDATE.</div>
-  </div>
-
-  <h3>Ressources staging par page</h3>
-  <div class="card">
-    <h4 style="margin-top:0">Page d'accueil (12 URLs)</h4>
-    <table>
-      <tr><th>Ressource</th><th>Fichier</th></tr>
-      <tr><td>Logo SNCF</td><td>Logo_SNCF-300x157.png</td></tr>
-      <tr><td>Logo Vinci</td><td>Logo_Vinci-300x83.png</td></tr>
-      <tr><td>Logo Eiffage</td><td>Logo_Eiffage_Construction.svg-300x100.png</td></tr>
-      <tr><td>Logo Qualiopi</td><td>logo-certif-qualiopi.png</td></tr>
-      <tr><td>Logo France Compétences</td><td>logo-france-competences.png</td></tr>
-      <tr><td>Logo Ministère Travail</td><td>logo-ministere-du-travail-300x196.png</td></tr>
-      <tr><td>Logo Logista</td><td>LOGISTA_200.png</td></tr>
-      <tr><td>Logo Proxiserve</td><td>logo-pxs.c0b4d880.svg</td></tr>
-      <tr><td>Icône TikTok</td><td>lineicons_tiktok-alt.svg</td></tr>
-      <tr><td>Icône LinkedIn</td><td>mdi_linkedin.svg</td></tr>
-      <tr><td>Icône Instagram</td><td>ri_instagram-fill.svg</td></tr>
-      <tr><td>Icône Facebook</td><td>uiw_facebook.svg</td></tr>
-    </table>
-  </div>
-
-  <h2>Page /campus/ en 404</h2>
-  <div class="issue issue-critique">
-    <div class="issue-header">
-      <div class="issue-title">/campus/ retourne 404</div>
-      <span class="tag tag-critique">Critique</span>
-    </div>
-    <div class="issue-desc">La page listée dans le footer comme "<strong>Campus</strong>" (lien principal) retourne une erreur 404.</div>
-    <div class="issue-impact">Mauvaise expérience utilisateur. Google la marque comme erreur.</div>
-    <div class="issue-solution">Créer la page /campus/ avec la liste des 6 campus ou rediriger vers /campus/paris/.</div>
-  </div>
-
-  <h2>robots.txt</h2>
-  <div class="card">
-    <p class="card-text">Contenu actuel :</p>
-    <pre style="background:var(--bg3);padding:12px;border-radius:8px;font-size:13px;margin:8px 0">User-agent: *
-Crawl-delay: 10</pre>
-    <div class="issue-desc" style="margin-top:8px">Problèmes :</div>
-    <ul style="font-size:13px;color:var(--text2);padding-left:20px">
-      <li>Aucune directive Sitemap</li>
-      <li>Pas de blocage des doublons (pages footer, formulaire)</li>
-      <li>Pas d'optimisation du budget de crawl</li>
-    </ul>
-    <div class="issue-solution" style="margin-top:8px">Ajouter : Sitemap: https://ecole-gustave.com/sitemap_index.xml</div>
-  </div>
-
-  <h2>8 pages sans meta description</h2>
-  <div id="metaMissingList"></div>
-
-  <h2>Pages bien optimisées</h2>
-  <div class="badge-list">
-    <span class="badge">/ecole-gustave/ ✓</span>
-    <span class="badge">/les-temoignages/ ✓</span>
-    <span class="badge">/les-actualites/ ✓</span>
-    <span class="badge">/entreprise/ ✓</span>
-    <span class="badge">/informations-pratiques/ ✓</span>
-  </div>
-</div>
-
-<!-- PAGE: SECURITE -->
-<div class="page" id="page-securite">
-  <h1>Sécurité</h1>
-  <p class="subtitle">Analyse des en-têtes HTTP, protection contre les attaques et conformité</p>
-
-  <div class="grid grid-3" style="margin-bottom:24px">
-    <div class="card">
-      <div class="metric">
-        <div class="metric-value warn">77</div>
-        <div class="metric-label">Bonnes pratiques /100</div>
-      </div>
-      <div style="margin-top:8px;font-size:12px;color:var(--text2)">Score Lighthouse</div>
-    </div>
-    <div class="card">
-      <div class="metric">
-        <div class="metric-value ok">TLSv1.3</div>
-        <div class="metric-label">Protocole TLS</div>
-      </div>
-      <div style="margin-top:8px;font-size:12px;color:var(--text2)">Chiffrement AEAD-CHACHA20-POLY1305</div>
-    </div>
-    <div class="card">
-      <div class="metric">
-        <div class="metric-value echec">8</div>
-        <div class="metric-label">Headers sécurisés manquants</div>
-      </div>
-      <div style="margin-top:8px;font-size:12px;color:var(--text2)">CSP, XFO, X-Content-Type, Referrer, Permissions, COOP, Trusted Types, Clickjacking</div>
-    </div>
-  </div>
-
-  <h2>Headers de sécurité</h2>
-  <table style="margin-bottom:24px">
-    <tr><th>Header</th><th>Statut</th><th>Valeur actuelle</th><th>Priorité</th></tr>
-    <tr>
-      <td><strong>Content-Security-Policy</strong></td>
-      <td><span class="tag tag-critique">MANQUANT</span></td>
-      <td style="color:var(--text2)">—</td>
-      <td><span class="tag tag-critique">Critique</span></td>
-    </tr>
-    <tr>
-      <td><strong>X-Frame-Options</strong></td>
-      <td><span class="tag tag-haute">MANQUANT</span></td>
-      <td style="color:var(--text2)">—</td>
-      <td><span class="tag tag-haute">Haute</span></td>
-    </tr>
-    <tr>
-      <td><strong>X-Content-Type-Options</strong></td>
-      <td><span class="tag tag-moyenne">MANQUANT</span></td>
-      <td style="color:var(--text2)">—</td>
-      <td><span class="tag tag-moyenne">Moyenne</span></td>
-    </tr>
-    <tr>
-      <td><strong>Referrer-Policy</strong></td>
-      <td><span class="tag tag-basse">MANQUANT</span></td>
-      <td style="color:var(--text2)">—</td>
-      <td><span class="tag tag-basse">Basse</span></td>
-    </tr>
-    <tr>
-      <td><strong>Permissions-Policy</strong></td>
-      <td><span class="tag tag-basse">MANQUANT</span></td>
-      <td style="color:var(--text2)">—</td>
-      <td><span class="tag tag-basse">Basse</span></td>
-    </tr>
-    <tr>
-      <td><strong>Cross-Origin-Opener-Policy</strong></td>
-      <td><span class="tag tag-moyenne">MANQUANT</span></td>
-      <td style="color:var(--text2)">—</td>
-      <td><span class="tag tag-moyenne">Moyenne</span></td>
-    </tr>
-    <tr>
-      <td><strong>Trusted Types</strong></td>
-      <td><span class="tag tag-moyenne">MANQUANT</span></td>
-      <td style="color:var(--text2)">—</td>
-      <td><span class="tag tag-moyenne">Moyenne</span></td>
-    </tr>
-    <tr>
-      <td><strong>Strict-Transport-Security</strong></td>
-      <td><span class="tag tag-ok">PRÉSENT</span></td>
-      <td style="color:var(--text2)">max-age=16000000</td>
-      <td><span class="tag tag-moyenne">Moyenne</span></td>
-    </tr>
-  </table>
-
-  <h2>Détail des problèmes de sécurité</h2>
-  <div id="secIssues"></div>
-
-  <h2>Conformité RGPD</h2>
-  <div class="issue issue-critique">
-    <div class="issue-header">
-      <div class="issue-title">Facebook Pixel chargé avant consentement</div>
-      <span class="tag tag-critique">Critique RGPD</span>
-    </div>
-    <div class="issue-desc">Le pixel Facebook (<code>facebook.com/tr?id=484946844150303</code>) est chargé directement dans le &lt;head&gt;, avant que le bandeau cookies Complianz n'ait recueilli le consentement.</div>
-    <div class="issue-impact">Non-conforme au RGPD et à la directive ePrivacy. Risque d'amende CNIL (amendes récentes : 40M€ pour Google, 60M€ pour Amazon).</div>
-    <div class="issue-solution">Configurer Complianz pour bloquer le pixel Facebook jusqu'au consentement explicite de l'utilisateur.</div>
-  </div>
-</div>
-
-<!-- PAGE: CONTENU -->
-<div class="page" id="page-contenu">
-  <h1>Contenu & Structure</h1>
-  <p class="subtitle">Analyse des données structurées, hiérarchie des titres, images et balises HTML</p>
-
-  <h2>JSON-LD (données structurées)</h2>
-  <div class="issue issue-haute">
-    <div class="issue-header">
-      <div class="issue-title">Aucun JSON-LD sur la page d'accueil</div>
-      <span class="tag tag-haute">Haute priorité</span>
-    </div>
-    <div class="issue-desc">Google utilise les données structurées pour générer des <strong>rich snippets</strong> (étoiles, breadcrumbs, infos entreprise). Actuellement : aucun JSON-LD présent.</div>
-    <div class="issue-desc">Types recommandés : <strong>Organization</strong>, <strong>LocalBusiness</strong>, <strong>BreadcrumbList</strong>, <strong>Course</strong> (pour les formations).</div>
-    <div class="issue-solution">Activer le schema JSON-LD dans Yoast SEO (Organization + Breadcrumb). Ajouter manuellement les schémas Course pour les formations.</div>
-  </div>
-
-  <h2>Structure des titres (headings)</h2>
-  <div class="grid grid-2">
-    <div class="card">
-      <h4 style="margin-top:0">H1</h4>
-      <div style="font-size:18px;font-weight:700;color:#fff">L'école des métiers du bâtiment</div>
-      <div style="margin-top:8px;font-size:13px;color:var(--text2)">1 seul H1 ✓ — Correct mais pourrait inclure "BTP" ou "formation" pour le référencement.</div>
-    </div>
-    <div class="card">
-      <div style="display:flex;justify-content:space-between;align-items:center">
-        <h4 style="margin:0">H2 — 35 présents</h4>
-        <span class="tag tag-moyenne">9 doublons</span>
-      </div>
-      <div style="margin-top:8px;font-size:13px;color:var(--text2)">
-        <p>La navigation principale est répétée <strong>3 fois</strong> en H2 (desktop, mobile et megamenu), créant des doublons inutiles :</p>
-        <ul style="padding-left:16px;margin-top:6px">
-          <li>"Les campus" → 3×</li>
-          <li>"Électricité" → 2×</li>
-          <li>"Plomberie-Chauffage" → 2×</li>
-          <li>"Maintenance CVC" → 2×</li>
-          <li>"Couverture-Zinguerie" → 2×</li>
-          <li>"Menuisierie" → 2×</li>
-          <li>"Maçonnerie VRD" → 2×</li>
-        </ul>
-      </div>
-      <div class="issue-solution" style="margin-top:8px">Changer les H2 de navigation en &lt;nav&gt; ou &lt;div&gt; avec aria-label. Garder les H2 uniquement pour le contenu.</div>
-    </div>
-  </div>
-
-  <h2>Images</h2>
-  <div class="card">
-    <div class="grid grid-4" style="margin-bottom:16px">
-      <div class="metric" style="padding:8px">
-        <div class="metric-value ok" style="font-size:28px">34</div>
-        <div class="metric-label">Images totales</div>
-      </div>
-      <div class="metric" style="padding:8px">
-        <div class="metric-value ok" style="font-size:28px">33</div>
-        <div class="metric-label">Avec attribut alt</div>
-      </div>
-      <div class="metric" style="padding:8px">
-        <div class="metric-value echec" style="font-size:28px">1</div>
-        <div class="metric-label">Sans alt</div>
-      </div>
-      <div class="metric" style="padding:8px">
-        <div class="metric-value echec" style="font-size:28px">0</div>
-        <div class="metric-label">En WebP/AVIF</div>
-      </div>
-    </div>
-    <div class="issue-desc">
-      <strong>Problèmes :</strong> Images sans width/height explicites → décalages de mise en page (CLS). Formats JPG/PNG non optimisés. Aucune image en WebP ou AVIF, pourtant supportés par tous les navigateurs modernes.
-    </div>
-    <div class="issue-solution">Ajouter les attributs width/height dans WordPress. Utiliser Cloudflare Polish ou un plugin de conversion WebP.</div>
-  </div>
-
-  <h2>Balises HTML</h2>
-  <table>
-    <tr><th>Balise</th><th>Statut</th><th>Valeur</th></tr>
-    <tr><td>Lang</td><td><span class="tag tag-ok">OK</span></td><td>fr-FR</td></tr>
-    <tr><td>Canonical</td><td><span class="tag tag-ok">OK</span></td><td>https://ecole-gustave.com/</td></tr>
-    <tr><td>Viewport</td><td><span class="tag tag-ok">OK</span></td><td>width=device-width, initial-scale=1</td></tr>
-    <tr><td>Favicon</td><td><span class="tag tag-ok">OK</span></td><td>Présent (32×32)</td></tr>
-    <tr><td>Apple Touch Icon</td><td><span class="tag tag-haute">MANQUANT</span></td><td>—</td></tr>
-  </table>
-</div>
-
-<!-- PAGE: ACCESSIBILITE -->
-<div class="page" id="page-accessibilite">
-  <h1>Accessibilité</h1>
-  <p class="subtitle">Analyse Lighthouse des critères d'accessibilité WCAG</p>
-
-  <div class="grid grid-3" style="margin-bottom:24px">
-    <div class="card">
-      <div class="metric">
-        <div class="metric-value warn">88</div>
-        <div class="metric-label">Accessibilité Mobile</div>
-        <div class="metric-sub">/100</div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="metric">
-        <div class="metric-value ok">93</div>
-        <div class="metric-label">Accessibilité Desktop</div>
-        <div class="metric-sub">/100</div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="metric">
-        <div class="metric-value echec">5</div>
-        <div class="metric-label">Problèmes détectés</div>
-        <div class="metric-sub">dont 3 haute priorité</div>
-      </div>
-    </div>
-  </div>
-
-  <h2>Problèmes d'accessibilité</h2>
-  <div id="a11yIssues"></div>
-</div>
-
-<!-- PAGE: RECOMMANDATIONS -->
-<div class="page" id="page-recommandations">
-  <h1>Recommandations</h1>
-  <p class="subtitle">Liste complète et priorisée de toutes les actions correctives</p>
-
-  <h2>🔴 Problèmes critiques <span class="count" id="recCritCount">6</span></h2>
-  <div id="recCritiques"></div>
-
-  <h2>🟠 Haute priorité <span class="count" id="recHauteCount">9</span></h2>
-  <div id="recHaute"></div>
-
-  <h2>🟡 Moyenne priorité <span class="count" id="recMoyenneCount">8</span></h2>
-  <div id="recMoyenne"></div>
-
-  <h2>🟢 Basse priorité <span class="count" id="recBasseCount">7</span></h2>
-  <div id="recBasse"></div>
-</div>
-
 </main>
 
 <script>
-const DATA = null; // Will be loaded
 let data = null;
 
 function showPage(pageId) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-  
-  const page = document.getElementById('page-' + pageId);
+  const el = document.getElementById('page-' + pageId);
+  if (el) el.classList.add('active');
   const link = document.querySelector(`.nav-link[data-page="${pageId}"]`);
-  if (page) page.classList.add('active');
   if (link) link.classList.add('active');
+  window.location.hash = pageId;
 }
 
-function createIssueHTML(issue, cls) {
-  let extra = '';
-  if (issue.impact) extra += `<div class="issue-impact">Impact : ${issue.impact}</div>`;
-  if (issue.economie) extra += `<div class="issue-economie">Économie : ${issue.economie}</div>`;
-  if (issue.solution) extra += `<div class="issue-solution">Solution : ${issue.solution}</div>`;
-  return `<div class="issue ${cls}">
-    <div class="issue-header">
-      <div class="issue-title">${issue.titre}</div>
-      <span class="tag tag-${cls.replace('issue-', '')}">${cls.replace('issue-', '')}</span>
-    </div>
-    <div class="issue-desc">${issue.description}</div>
-    ${extra}
+function initNavigation() {
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      showPage(link.dataset.page);
+    });
+  });
+  if (window.location.hash) {
+    const page = window.location.hash.slice(1) || 'overview';
+    showPage(page);
+  }
+}
+
+// Progress bar color
+function pbar(val) {
+  if (val >= 80) return 'bon';
+  if (val >= 50) return 'moyen';
+  return 'critique';
+}
+
+// Score ring
+function scoreRing(val, label, size) {
+  const s = size || 120;
+  const pct = Math.min(val, 100);
+  const color = pct >= 80 ? 'var(--green)' : pct >= 50 ? 'var(--orange)' : 'var(--red)';
+  const bg = pct >= 80 ? 'var(--green)' : pct >= 50 ? 'var(--orange)' : 'var(--red)';
+  return `<div class="score-ring" style="width:${s}px;height:${s}px;background:conic-gradient(${bg} 0% ${pct}%, var(--bg3) ${pct}% 100%)">
+    <div class="score-ring-inner"><span class="score-ring-num" style="color:${color};font-size:${s*0.3}px">${val}</span><span class="score-ring-label">${label}</span></div>
   </div>`;
 }
 
-// Load data
-fetch('data.json')
-  .then(r => r.json())
-  .then(d => {
-    data = d;
-    renderAll();
-  })
-  .catch(err => {
-    document.querySelectorAll('.page').forEach(p => {
-      p.innerHTML += `<div class="card"><p style="color:var(--red)">Erreur chargement data.json : ${err.message}</p></div>`;
-    });
-  });
-
-function renderAll() {
-  if (!data) return;
+function render() {
+  if (!data) {
+    document.getElementById('app').innerHTML = '<div style="text-align:center;padding:60px 20px;color:var(--red)">❌ Erreur de chargement des données</div>';
+    return;
+  }
   
-  // Overview
-  document.getElementById('globalScore').textContent = data.meta.score_global;
-  document.getElementById('critCount').textContent = data.problemes_critiques.length;
+  const d = data;
+  const score = d.meta?.score_global_nouveau || '--';
+  document.getElementById('globalScore').textContent = score;
   
-  // Critiques list on overview
-  const critList = document.getElementById('critiquesList');
-  data.problemes_critiques.forEach(p => {
-    critList.innerHTML += createIssueHTML(p, 'issue-critique');
-  });
-  
-  // Problems distribution
-  document.getElementById('problemsDist').innerHTML = `
-    <div class="card" style="text-align:center;border-left:3px solid var(--red)">
-      <div class="metric-value echec" style="font-size:32px">${data.problemes_critiques.length}</div>
-      <div class="metric-label">Critiques</div>
-    </div>
-    <div class="card" style="text-align:center;border-left:3px solid var(--orange)">
-      <div class="metric-value warn" style="font-size:32px">${data.problemes_haute_priorite.length}</div>
-      <div class="metric-label">Haute priorité</div>
-    </div>
-    <div class="card" style="text-align:center;border-left:3px solid var(--yellow)">
-      <div class="metric-value warn" style="font-size:32px">${data.problemes_moyenne_priorite.length}</div>
-      <div class="metric-label">Moyenne priorité</div>
-    </div>
-    <div class="card" style="text-align:center;border-left:3px solid var(--accent)">
-      <div class="metric-value" style="font-size:32px;color:var(--accent)">${data.problemes_basse_priorite.length}</div>
-      <div class="metric-label">Basse priorité</div>
-    </div>
+  // Build all pages
+  const pages = `
+    ${renderOverview(d)}
+    ${renderPerformance(d)}
+    ${renderSEOTechnique(d)}
+    ${renderContenu(d)}
+    ${renderSecurite(d)}
+    ${renderConcurrence(d)}
+    ${renderPlan(d)}
   `;
   
-  // Positive points
-  document.getElementById('positiveList').innerHTML = data.points_positifs.map(p => 
-    `<div class="positive" style="font-size:13px">${p}</div>`
-  ).join('');
-  
-  // Summary
-  document.getElementById('summaryCrit').textContent = 
-    `${data.problemes_critiques.length} problèmes critiques, ${data.problemes_haute_priorite.length} haute priorité, ${data.problemes_moyenne_priorite.length} moyenne, ${data.problemes_basse_priorite.length} basse — ${data.points_positifs.length} points positifs`;
-  
-  // Performance issues
-  const perfIssues = document.getElementById('perfIssues');
-  const prioMap = {'critique':'issue-critique','haute':'issue-haute','moyenne':'issue-moyenne','basse':'issue-basse'};
-  data.performances.problemes_performance.forEach(p => {
-    perfIssues.innerHTML += createIssueHTML(p, prioMap[p.priorite] || 'issue-moyenne');
-  });
-  
-  // Meta missing
-  const metaList = document.getElementById('metaMissingList');
-  data.seo_technique.meta_descriptions_manquantes.pages.forEach(p => {
-    metaList.innerHTML += `<div class="issue issue-haute">
-      <div class="issue-header"><div class="issue-title">${p.url}</div><span class="tag tag-haute">haute</span></div>
-      <div class="issue-desc">Titre actuel : ${p.titre}</div>
-      ${p.probleme ? `<div class="issue-desc">Problème : ${p.probleme}</div>` : ''}
-      <div class="issue-solution">Solution : Ajouter une meta description unique dans Yoast SEO</div>
-    </div>`;
-  });
-  
-  // Security issues
-  const secIssues = document.getElementById('secIssues');
-  secIssues.innerHTML = createIssueHTML({titre:'CSP manquante',description:'Aucune Content-Security-Policy configurée. Impossible de contrôler quelles ressources sont chargées.',impact:'Risque XSS élevé',solution:'Configurer CSP via Cloudflare : default-src \'self\'; script-src \'self\'...'}, 'issue-critique');
-  secIssues.innerHTML += createIssueHTML({titre:'X-Frame-Options manquant',description:'Pas de protection contre le clickjacking.',impact:'Le site peut être intégré en iframe sur n\'importe quel domaine.',solution:'Ajouter X-Frame-Options: SAMEORIGIN'}, 'issue-haute');
-  secIssues.innerHTML += createIssueHTML({titre:'X-Content-Type-Options manquant',description:'Pas de protection contre le MIME-sniffing.',solution:'Ajouter X-Content-Type-Options: nosniff'}, 'issue-moyenne');
-  secIssues.innerHTML += createIssueHTML({titre:'Cross-Origin-Opener-Policy manquante',description:'COOP manquante',solution:'Ajouter Cross-Origin-Opener-Policy: same-origin'}, 'issue-moyenne');
-  secIssues.innerHTML += createIssueHTML({titre:'Trusted Types manquants',description:'Prévention XSS DOM',solution:'Ajouter require-trusted-types-for \'script\''}, 'issue-moyenne');
-  secIssues.innerHTML += createIssueHTML({titre:'HSTS sans includeSubDomains',description:'HSTS présent mais sans includeSubDomains ni preload.',solution:'Ajouter includeSubDomains; preload'}, 'issue-moyenne');
-  
-  // Accessibility
-  const a11yIssues = document.getElementById('a11yIssues');
-  data.accessibilite.problemes.forEach(p => {
-    a11yIssues.innerHTML += createIssueHTML(p, prioMap[p.priorite] || 'issue-moyenne');
-  });
-  
-  // Recommendations page
-  document.getElementById('recCritCount').textContent = data.problemes_critiques.length;
-  document.getElementById('recHauteCount').textContent = data.problemes_haute_priorite.length;
-  document.getElementById('recMoyenneCount').textContent = data.problemes_moyenne_priorite.length;
-  document.getElementById('recBasseCount').textContent = data.problemes_basse_priorite.length;
-  
-  const recCrit = document.getElementById('recCritiques');
-  data.problemes_critiques.forEach(p => recCrit.innerHTML += createIssueHTML(p, 'issue-critique'));
-  
-  const recHaute = document.getElementById('recHaute');
-  data.problemes_haute_priorite.forEach(p => recHaute.innerHTML += createIssueHTML(p, 'issue-haute'));
-  
-  const recMoyenne = document.getElementById('recMoyenne');
-  data.problemes_moyenne_priorite.forEach(p => recMoyenne.innerHTML += createIssueHTML(p, 'issue-moyenne'));
-  
-  const recBasse = document.getElementById('recBasse');
-  data.problemes_basse_priorite.forEach(p => recBasse.innerHTML += createIssueHTML(p, 'issue-basse'));
+  document.getElementById('app').innerHTML = pages;
+  initNavigation();
 }
 
-// Navigation
-document.querySelectorAll('.nav-link').forEach(link => {
-  link.addEventListener('click', function(e) {
-    e.preventDefault();
-    const page = this.dataset.page;
-    showPage(page);
-    window.location.hash = page;
+// ======================== OVERVIEW ========================
+function renderOverview(d) {
+  const score = d.meta?.score_global_nouveau || 0;
+  const perf = d.performances || {};
+  const cwv = perf.core_web_vitals_reels || {};
+  const crit = d.problemes_critiques || [];
+  const positifs = d.points_positifs || [];
+  const sec = d.securite || {};
+  const cont = d.contenu || {};
+  
+  return `<div class="page active" id="page-overview">
+    <h1>Audit SEO — École Gustave</h1>
+    <p class="subtitle">Analyse complète multidimensionnelle — Performances, SEO technique, Contenu, Sécurité, Concurrence, Backlinks, Social Media — ${d.meta?.date || '16 juin 2026'}</p>
+    
+    <div class="grid grid-3" style="margin-bottom:24px">
+      <div class="card" style="text-align:center">
+        ${scoreRing(score, '/100 global')}
+      </div>
+      <div class="card">
+        <h4 style="margin-top:0">Scores PageSpeed (moyenne)</h4>
+        <div style="margin:8px 0">
+          <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px">
+            <span>Mobile moyen</span><span style="font-weight:600;color:var(--orange)">${perf.score_mobile_moyen||'?'}/100</span>
+          </div>
+          <div class="progress-bar"><div class="progress-fill ${pbar(perf.score_mobile_moyen)}" style="width:${perf.score_mobile_moyen||0}%"></div></div>
+        </div>
+        <div style="margin:8px 0">
+          <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px">
+            <span>Desktop moyen</span><span style="font-weight:600;color:var(--yellow)">${perf.score_desktop_moyen||'?'}/100</span>
+          </div>
+          <div class="progress-bar"><div class="progress-fill ${pbar(perf.score_desktop_moyen)}" style="width:${perf.score_desktop_moyen||0}%"></div></div>
+        </div>
+      </div>
+      <div class="card">
+        <h4 style="margin-top:0">Core Web Vitals (réel)</h4>
+        <div class="grid grid-2" style="gap:8px;margin-top:8px">
+          ${[
+            ['LCP', cwv.lcp_p75||'?', cwv.lcp_seuil||'2.5s', cwv.lcp_p75 && cwv.lcp_p75.replace('ms','') <= (cwv.lcp_seuil||'2500').replace('ms','') ? 'ok' : (cwv.lcp_p75 ? 'echec' : 'warn')],
+            ['TTFB', cwv.ttfb_p75||'?', cwv.ttfb_seuil||'800ms', cwv.ttfb_p75 && cwv.ttfb_p75.replace('ms','') <= (cwv.ttfb_seuil||'800').replace('ms','') ? 'ok' : 'echec'],
+            ['CLS', cwv.cls_p75||'?', cwv.cls_seuil||'0.1', 'ok'],
+            ['INP', cwv.inp_p75||'?', cwv.inp_seuil||'200ms', 'ok'],
+          ].map(m => `<div class="metric" style="padding:8px;background:var(--bg3);border-radius:8px">
+            <div class="metric-value ${m[3]}" style="font-size:24px">${m[1]}</div>
+            <div class="metric-label">${m[0]}</div>
+            <div class="metric-sub">Seuil: ${m[2]}</div>
+          </div>`).join('')}
+        </div>
+        ${cwv.ttfb_p75 && parseInt(cwv.ttfb_p75)>800 ? `<div style="margin-top:12px;padding:12px;background:rgba(239,68,68,0.1);border-radius:8px;border:1px solid rgba(239,68,68,0.2)">
+          <div style="font-size:13px;font-weight:600;color:var(--red)">TTFB : ${cwv.ttfb_p75} (réel) — ÉCHEC</div>
+          <div style="font-size:12px;color:var(--text2);margin-top:4px">Le seuil recommandé est &lt; ${cwv.ttfb_seuil}.</div>
+        </div>` : ''}
+      </div>
+    </div>
+
+    <h2>Problèmes critiques <span class="count">${crit.length}</span></h2>
+    ${crit.map(c => `<div class="issue issue-critique">
+      <div class="issue-header">
+        <div class="issue-title">${c.titre||'?'}</div>
+      </div>
+      <div class="issue-desc">${c.impact||''}</div>
+      <div class="issue-solution">${c.solution_rapide||c.solution||''}</div>
+    </div>`).join('')}
+    
+    <h2>Points positifs</h2>
+    <div class="grid grid-2">
+      <div class="card">
+        <div class="card-title">✅ Forces identifiées</div>
+        ${(positifs||[]).slice(0,8).map(p => `<div class="positive">${p}</div>`).join('')}
+      </div>
+      <div class="card">
+        <div class="card-title">📊 Chiffres clés</div>
+        <table style="margin-top:8px">
+          ${[
+            ['Pages crawlées', '169 (0 erreur HTTP)'],
+            ['Sans meta description', `${cont.meta_descriptions?.pages_sans_meta||95} (${cont.meta_descriptions?.pourcentage||'56%'})`],
+            ['Moyenne mots/page', `${cont.statistiques?.moyenne_mots||'?'} mots`],
+            ['Score sécurité', sec.score_securityheaders||'D'],
+            ['LinkedIn', '4 333 abonnés'],
+            ['Articles presse', '6 (Figaro, Le Monde, BFMTV...)'],
+            ['DR estimé', d.backlinks_et_offpage?.domain_rating_estime||'10-25'],
+            ['Plan d\'action', `${(d.plan_action_priorise?.phase_1_urgence_7_jours?.length||0)+(d.plan_action_priorise?.phase_2_court_terme_30_jours?.length||0)+(d.plan_action_priorise?.phase_3_moyen_terme_90_jours?.length||0)+(d.plan_action_priorise?.phase_4_long_terme_6_mois?.length||0)} actions`],
+          ].map(r => `<tr><td style="padding:6px 8px;color:var(--text2)">${r[0]}</td><td style="padding:6px 8px;font-weight:600">${r[1]}</td></tr>`).join('')}
+        </table>
+      </div>
+    </div>
+    
+    <h2>Méthodologie</h2>
+    <div class="card">
+      <div class="badge-list">
+        ${(d.meta?.outils||['PageSpeed (Lighthouse 13.3)','CrUX API','Analyse HTML brute','Analyse sitemaps','Analyse sécurité headers','Analyse DNS','Analyse concurrentielle SERP','Analyse backlinks','Analyse sémantique','Audit accessibilité','Audit social media','Analyse RGPD','Analyse WordPress']).map(t => `<span class="badge">${t}</span>`).join('')}
+      </div>
+    </div>
+  </div>`;
+}
+
+// ======================== PERFORMANCE ========================
+function renderPerformance(d) {
+  const perf = d.performances || {};
+  const pages = perf.pages || {};
+  const cwv = perf.core_web_vitals_reels || {};
+  
+  return `<div class="page" id="page-performance">
+    <h1>Performance</h1>
+    <p class="subtitle">Analyse détaillée des temps de chargement, Core Web Vitals, images et optimisation</p>
+    
+    <h2>Scores PageSpeed par page</h2>
+    <table>
+      <tr><th>Page</th><th>Mobile</th><th>Desktop</th><th>Écart</th></tr>
+      ${Object.entries(pages).map(([name, s]) => {
+        const gap = Math.abs((s.mobile||0) - (s.desktop||0));
+        return `<tr><td>${name}</td><td style="color:${(s.mobile||0)>=80?'var(--green)':(s.mobile||0)>=50?'var(--orange)':'var(--red)'};font-weight:600">${s.mobile}</td>
+        <td style="color:${(s.desktop||0)>=80?'var(--green)':(s.desktop||0)>=50?'var(--orange)':'var(--red)'};font-weight:600">${s.desktop}</td>
+        <td>${gap > 20 ? '⚠️ ' : '✅ '}${gap} pts</td></tr>`;
+      }).join('')}
+      <tr style="font-weight:700;background:var(--bg3)"><td>Moyenne</td>
+        <td style="color:var(--orange)">${perf.score_mobile_moyen||'?'}</td>
+        <td style="color:var(--yellow)">${perf.score_desktop_moyen||'?'}</td>
+        <td>${Math.abs((perf.score_mobile_moyen||0)-(perf.score_desktop_moyen||0))} pts</td></tr>
+    </table>
+    
+    <h2>Core Web Vitals — Données réelles (CrUX)</h2>
+    <table>
+      <tr><th>Métrique</th><th>P75 Réel</th><th>Seuil Google</th><th>Statut</th></tr>
+      ${[['TTFB', cwv.ttfb_p75, cwv.ttfb_seuil], ['LCP', cwv.lcp_p75, cwv.lcp_seuil], ['CLS', cwv.cls_p75, cwv.cls_seuil], ['INP', cwv.inp_p75, cwv.inp_seuil], ['FCP', cwv.fcp_p75, cwv.fcp_seuil]].map(([name, val, seuil]) => {
+        const ok = name === 'TTFB' ? false : true; // Simplified
+        return `<tr><td>${name}</td><td style="font-weight:600">${val||'N/A'}</td><td>${seuil||'N/A'}</td><td><span class="tag ${val && parseInt(val) > 800 ? 'tag-critique' : 'tag-ok'}">${val && parseInt(val) > 800 ? 'ÉCHEC' : 'OK'}</span></td></tr>`;
+      }).join('')}
+    </table>
+    
+    <h2>Problèmes de performance</h2>
+    ${(perf.problemes_prioritaires||[]).map(p => {
+      const prio = p.priorite||'MOYENNE';
+      const cls = prio === 'CRITIQUE' ? 'critique' : prio === 'HAUTE' ? 'haute' : 'moyenne';
+      return `<div class="issue issue-${cls}">
+        <div class="issue-header"><div class="issue-title">${p.titre||'?'}</div><span class="tag tag-${cls}">${prio}</span></div>
+        <div class="issue-desc">Impact: ${p.impact||''}</div>
+        <div class="issue-solution">Cause: ${p.cause||p.description||''}</div>
+        <div style="font-size:12px;color:var(--green);margin-top:4px">Solution: ${p.solution||''}</div>
+      </div>`;
+    }).join('')}
+  </div>`;
+}
+
+// ======================== SEO TECHNIQUE ========================
+function renderSEOTechnique(d) {
+  const seo = d.seo_technique || {};
+  const crawlD = seo.crawl || {};
+  
+  return `<div class="page" id="page-seo-technique">
+    <h1>SEO Technique</h1>
+    <p class="subtitle">Crawl, indexation, redirections, sitemap, pagination</p>
+    
+    <div class="grid grid-2">
+      <div class="card">
+        <div class="card-title">📊 Crawl & Indexation</div>
+        <table>
+          ${[
+            ['Pages crawlées', crawlD.total_pages||169],
+            ['Erreurs HTTP', `${crawlD.erreurs_http||0} ✅`],
+            ['Pages orphelines', `${(crawlD.pages_orphelines||[]).length}`],
+          ].map(r => `<tr><td style="padding:6px 8px;color:var(--text2)">${r[0]}</td><td style="padding:6px 8px;font-weight:600">${r[1]}</td></tr>`).join('')}
+        </table>
+        ${(crawlD.pages_orphelines||[]).length ? `<div style="margin-top:12px;font-size:12px;color:var(--orange)">Pages orphelines: ${crawlD.pages_orphelines.map(o=>'<code>'+o+'</code>').join(', ')}</div>` : ''}
+      </div>
+      
+      <div class="card">
+        <div class="card-title">🔴 Redirection www — CRITIQUE</div>
+        <div class="card-text">${seo.redirection_www?.description||'www.ecole-gustave.com/* → ecole-gustave.com/ (perte du chemin)'}</div>
+        <div class="card-text" style="margin-top:8px">Impact: ${seo.redirection_www?.impact||'Perte de tous les backlinks www'}</div>
+        <div class="issue-solution" style="margin-top:8px">Solution: ${seo.redirection_www?.solution||'Modifier la règle Cloudflare'}</div>
+      </div>
+      
+      <div class="card">
+        <div class="card-title">🔴 URLs Staging en Production</div>
+        <div class="card-text">${seo.urls_staging?.description||'12 URLs staging en production'}</div>
+        <div style="margin-top:8px;font-size:12px">Éléments concernés:</div>
+        <div class="badge-list" style="margin-top:4px">
+          ${(seo.urls_staging?.elements_concernes||['Logos SNCF, Vinci, Eiffage, Qualiopi, France Competences','Icônes sociales Facebook, Instagram, LinkedIn, TikTok, YouTube','Logo Ecole Gustave (fondateur)','Favicon']).slice(0,8).map(e => `<span class="badge">${e}</span>`).join('')}
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-title">📄 Sitemap & Robots</div>
+        <table>
+          ${[
+            ['Total URLs', seo.sitemap?.total_urls||187],
+            ['Sous-sitemaps', Object.keys(seo.sitemap?.repartition||{}).length],
+            ['Sitemap dans robots.txt', '❌ Absent'],
+            ['robots.txt', 'Présent (Crawl-delay: 10)'],
+          ].map(r => `<tr><td style="padding:6px 8px;color:var(--text2)">${r[0]}</td><td style="padding:6px 8px;font-weight:600">${r[1]}</td></tr>`).join('')}
+        </table>
+        <div style="margin-top:8px;font-size:12px">
+          ${Object.entries(seo.sitemap?.repartition||{}).map(([k,v]) => `<span class="badge">${k}: ${v} URLs</span>`).join('')}
+        </div>
+      </div>
+    </div>
+    
+    <h2>Autres problèmes techniques</h2>
+    ${(['Pagination (rel=next/prev absents)','Page /campus/ en 404','Breadcrumbs JSON-LD partiels','Canonical OK sur toutes les pages ✅']).map(p => `<div class="positive">${p}</div>`).join('')}
+  </div>`;
+}
+
+// ======================== CONTENU ========================
+function renderContenu(d) {
+  const cont = d.contenu || {};
+  const stats = cont.statistiques || {};
+  const md = cont.meta_descriptions || {};
+  const j = cont.jsonld || {};
+  const cann = d.cannibalisation || {};
+  const clusters = cann.clusters || {};
+  
+  return `<div class="page" id="page-contenu">
+    <h1>Contenu & Données Structurées</h1>
+    <p class="subtitle">Méta-données, H1, JSON-LD, cannibalisation, sémantique</p>
+    
+    <div class="grid grid-2">
+      <div class="card">
+        <div class="card-title">📊 Statistiques de contenu</div>
+        <table>
+          ${[
+            ['Pages analysées', stats.pages_analysees||169],
+            ['Moyenne mots/page', `${stats.moyenne_mots||'?'} mots`],
+            ['Médiane', `${stats.median_mots||'?'} mots`],
+            ['Min - Max', `${stats.min_mots||'?'} - ${stats.max_mots||'?'} mots`],
+            ['Thin content (< 300 mots)', 'Aucun ✅'],
+          ].map(r => `<tr><td style="padding:6px 8px;color:var(--text2)">${r[0]}</td><td style="padding:6px 8px;font-weight:600">${r[1]}</td></tr>`).join('')}
+        </table>
+      </div>
+      
+      <div class="card">
+        <div class="card-title">🔴 Meta Descriptions</div>
+        <div style="font-size:28px;font-weight:800;color:var(--red);text-align:center;padding:12px">${md.pages_sans_meta||95}</div>
+        <div style="text-align:center;font-size:13px;color:var(--text2)">pages sans meta description (${md.pourcentage||'56%'})</div>
+        <div class="card-text" style="margin-top:8px">${md.impact||'Google génère des descriptions automatiques → CTR réduit de 20-40%'}</div>
+      </div>
+    </div>
+    
+    <h2>Cannibalisation — 🔴 Problème majeur</h2>
+    <p class="card-text" style="margin-bottom:16px">${cann.analyse||'Cannibalisation massive détectée'}</p>
+    <table>
+      <tr><th>Mot-clé</th><th>Pages en compétition</th><th>Risque</th></tr>
+      ${Object.entries(clusters).sort((a,b)=>b[1]-a[1]).map(([kw, cnt]) => {
+        const risk = cnt > 20 ? 'CRITIQUE' : cnt > 10 ? 'HAUT' : cnt > 5 ? 'MOYEN' : 'FAIBLE';
+        return `<tr><td>${kw}</td><td style="font-weight:600">${cnt}</td><td><span class="tag ${risk==='CRITIQUE'?'tag-critique':risk==='HAUT'?'tag-haute':risk==='MOYEN'?'tag-moyenne':'tag-ok'}">${risk}</span></td></tr>`;
+      }).join('')}
+    </table>
+    
+    <div class="grid grid-2" style="margin-top:16px">
+      <div class="card">
+        <div class="card-title">Conflit CFA vs CAP</div>
+        <div class="card-text">${cann.cfa_vs_cap?.description||'17 pages CAP + 9 pages CFA en compétition directe'}</div>
+        <div class="card-text" style="margin-top:8px">Exemple: ${cann.cfa_vs_cap?.exemple||'CAP Plomberie Paris vs CFA Plomberie Paris'}</div>
+      </div>
+      
+      <div class="card">
+        <div class="card-title">📋 H1 & Titres</div>
+        ${(cont.titres?.pages_sans_titre||[]).map(t => `<div>❌ Sans titre: <code>${t}</code></div>`).join('')}
+        ${(cont.titres?.titres_auto_genere||[]).map(t => `<div>❌ Auto-généré: <code>${t.page||''}</code> → '${t.titre||''}'</div>`).join('')}
+        ${(cont.h1?.liste||[]).map(h => `<div>❌ Sans H1: <code>${h.page||''}</code></div>`).join('')}
+        ${!cont.titres?.pages_sans_titre?.length && !cont.titres?.titres_auto_genere?.length && !cont.h1?.liste?.length ? '<div class="card-text">✅ Titres et H1 tous OK</div>' : ''}
+      </div>
+    </div>
+    
+    <h2>Données Structurées JSON-LD</h2>
+    <div class="grid grid-2">
+      <div class="card">
+        <div class="card-title">✅ Schémas présents</div>
+        <div class="badge-list">
+          ${Object.keys(j.schemas_presents||{}).map(s => `<span class="badge" style="background:rgba(34,197,94,0.1);border-color:var(--green);color:var(--green)">${s}</span>`).join('')}
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">❌ Schémas manquants (critiques)</div>
+        ${(j.schemas_manquants_critiques||[]).map(s => `<div class="positive" style="color:var(--red);font-size:13px">${s.schema||'?'}: ${(s.impact_google||'').slice(0,80)}</div>`).join('')}
+      </div>
+    </div>
+  </div>`;
+}
+
+// ======================== SÉCURITÉ ========================
+function renderSecurite(d) {
+  const sec = d.securite || {};
+  const headers = sec.headers || {};
+  const wp = sec.wordpress || {};
+  const dns = sec.dns || {};
+  const rgpd = sec.rgpd || {};
+  
+  return `<div class="page" id="page-securite">
+    <h1>Sécurité & RGPD</h1>
+    <p class="subtitle">Headers de sécurité, exposition WordPress, DNS, conformité RGPD</p>
+    
+    <div class="grid grid-3" style="margin-bottom:16px">
+      <div class="card" style="text-align:center">
+        <div class="card-title">Score sécurité</div>
+        ${scoreRing(15, 'D/100', 100)}
+        <div style="margin-top:8px;font-size:12px;color:var(--text2)">8 headers de sécurité absents sur 9</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Headers manquants</div>
+        ${Object.entries(headers).filter(([,h]) => !h.present).slice(0,6).map(([name]) => `<div>❌ ${name}</div>`).join('')}
+        <div style="margin-top:8px;font-size:12px;color:var(--text2)">+ ${Object.entries(headers).filter(([,h]) => !h.present).length-6} autres</div>
+      </div>
+      <div class="card">
+        <div class="card-title">RGPD</div>
+        <div class="card-text">Facebook Pixel chargé avant consentement: <strong style="color:var(--red)">OUI ❌</strong></div>
+        <div class="card-text">Plugin: ${rgpd.consent_plugin||'Complianz'}</div>
+        <div class="issue-solution" style="margin-top:8px">${rgpd.solution||'Bloquer FB Pixel jusqu\'au consentement'}</div>
+      </div>
+    </div>
+    
+    <h2>Headers de sécurité</h2>
+    <table>
+      <tr><th>Header</th><th>Statut</th><th>Risque</th></tr>
+      ${Object.entries(headers).map(([name, h]) => `<tr>
+        <td>${name}</td>
+        <td>${h.present ? '<span class="tag tag-ok">Présent</span>' : '<span class="tag tag-critique">Absent</span>'}</td>
+        <td style="color:${!h.present ? 'var(--red)' : 'var(--green)'}">${h.risque||h.probleme||'OK'}</td>
+      </tr>`).join('')}
+    </table>
+    
+    <h2>WordPress</h2>
+    <div class="grid grid-2">
+      <div class="card">
+        <div class="card-title">Exposition</div>
+        <div>❌ REST API: ${wp.rest_api?.accessible ? 'ACCESSIBLE' : 'Protégée'}</div>
+        <div>✅ XML-RPC: bloqué</div>
+        <div>✅ wp-admin: masqué</div>
+        <div>✅ Users API: protégée</div>
+        ${wp.version_plugins ? `<div style="margin-top:8px;font-size:12px;color:var(--text2)">Versions exposées: ${Object.entries(wp.version_plugins).map(([k,v]) => `${k}=${v}`).join(', ')}</div>` : ''}
+      </div>
+      <div class="card">
+        <div class="card-title">DNS</div>
+        <table>
+          <tr><td>SPF</td><td>${dns.spf||'✅ Présent'}</td></tr>
+          <tr><td>DMARC</td><td style="color:var(--orange)">❌ ${dns.dmarc||'p=none'}</td></tr>
+          <tr><td>CAA</td><td>❌ Absent</td></tr>
+          <tr><td>TLS</td><td>✅ ${sec.tls||'1.3'}</td></tr>
+          <tr><td>HSTS preload</td><td style="color:var(--orange)">⚠️ Non configuré</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>`;
+}
+
+// ======================== CONCURRENCE ========================
+function renderConcurrence(d) {
+  const conc = d.concurrence || {};
+  const bl = d.backlinks_et_offpage || {};
+  const social = d.social_media_et_marque || {};
+  
+  return `<div class="page" id="page-concurrence">
+    <h1>Concurrence, Backlinks & Social</h1>
+    <p class="subtitle">Analyse concurrentielle SERP, backlinks, présence social media</p>
+    
+    <div class="grid grid-2">
+      <div class="card">
+        <div class="card-title">🏆 Top 5 Concurrents</div>
+        <table>
+          <tr><th>#</th><th>Concurrent</th><th>Top 10</th></tr>
+          ${(conc.top_5_concurrents||[]).map((c,i) => `<tr><td>${i+1}</td><td>${c.nom||'?'}</td><td>${c.apparitions_top10||'?'}/10 KW</td></tr>`).join('')}
+        </table>
+      </div>
+      <div class="card">
+        <div class="card-title">🔍 Mots-clés INVISIBLES</div>
+        ${(conc.mots_cles_absents_top10||[]).map(kw => `<div class="positive" style="color:var(--red);font-size:13px">❌ ${kw}</div>`).join('')}
+        <div style="margin-top:8px;font-size:12px;color:var(--text2)">Absent du top 10 Google pour ces mots-clés stratégiques</div>
+      </div>
+    </div>
+    
+    <h2>Backlinks</h2>
+    <div class="grid grid-3">
+      <div class="card" style="text-align:center">
+        <div class="metric-value warn" style="font-size:28px">${bl.domain_rating_estime||'10-25'}</div>
+        <div class="metric-label">Domain Rating estimé</div>
+      </div>
+      <div class="card" style="text-align:center">
+        <div class="metric-value warn" style="font-size:28px">${bl.domaine_referents_estimes||'< 50'}</div>
+        <div class="metric-label">Domaines référents</div>
+      </div>
+      <div class="card" style="text-align:center">
+        <div class="metric-value echec" style="font-size:28px">${bl.backlinks_presse_sans_lien||6}</div>
+        <div class="metric-label">Articles presse sans lien</div>
+      </div>
+    </div>
+    
+    <div class="grid grid-2" style="margin-top:16px">
+      <div class="card">
+        <div class="card-title">❌ Opportunités perdues</div>
+        ${(bl.opportunites_perdues||[]).map(o => `<div class="positive" style="color:var(--orange);font-size:13px">${o.source||'?'} (${o.type||'presse'})</div>`).join('')}
+      </div>
+      <div class="card">
+        <div class="card-title">💡 Opportunités</div>
+        ${(bl.opportunites||[]).map(o => `<div class="positive" style="font-size:13px">${o}</div>`).join('')}
+      </div>
+    </div>
+    
+    <h2>Social Media</h2>
+    <div class="grid grid-3">
+      ${[
+        ['LinkedIn', social.linkedin?.followers||'4 333', 'EXCELLENT', 'var(--green)'],
+        ['Instagram', social.instagram?.followers||'802', 'MOYEN', 'var(--orange)'],
+        ['Facebook', `${social.facebook?.followers||'336'} (inactif)`, 'INACTIF', 'var(--red)'],
+        ['TikTok', social.tiktok?.followers||'944', 'MOYEN', 'var(--orange)'],
+        ['YouTube', 'VIDE (0 vidéos)', 'CRITIQUE', 'var(--red)'],
+        ['Google', `${social.google_business?.note||'4.6-4.8'} ⭐`, 'OK', 'var(--green)'],
+      ].map(([name, val, status, color]) => `<div class="card" style="text-align:center;padding:16px">
+        <div class="card-title" style="justify-content:center">${name}</div>
+        <div style="font-size:22px;font-weight:700;margin:8px 0">${val}</div>
+        <div style="font-size:12px;color:${color};font-weight:600">${status}</div>
+      </div>`).join('')}
+    </div>
+  </div>`;
+}
+
+// ======================== PLAN ========================
+function renderPlan(d) {
+  const plan = d.plan_action_priorise || {};
+  
+  const phases = [
+    ['phase_1_urgence_7_jours', '🔴 Phase 1 — Urgences immédiates (7 jours)', 'tag-critique'],
+    ['phase_2_court_terme_30_jours', '🟠 Phase 2 — Court terme (30 jours)', 'tag-haute'],
+    ['phase_3_moyen_terme_90_jours', '🟡 Phase 3 — Moyen terme (90 jours)', 'tag-moyenne'],
+    ['phase_4_long_terme_6_mois', '🟢 Phase 4 — Long terme (6 mois)', 'tag-ok'],
+  ];
+  
+  return `<div class="page" id="page-plan">
+    <h1>Plan d'Action</h1>
+    <p class="subtitle">38 actions priorisées sur 4 phases pour corriger l'ensemble des problèmes identifiés</p>
+    
+    <div class="grid grid-4" style="margin-bottom:24px">
+      ${phases.map(([key, name]) => {
+        const items = plan[key] || [];
+        return `<div class="card" style="text-align:center">
+          <div class="card-title" style="justify-content:center">${items.length} actions</div>
+          <div class="card-text" style="font-size:12px">${name.replace(/🔴|🟠|🟡|🟢/,'').trim()}</div>
+        </div>`;
+      }).join('')}
+    </div>
+    
+    ${phases.map(([key, name, tagCls]) => {
+      const items = plan[key] || [];
+      return `<h2>${name}</h2>
+      <table>
+        <tr><th>#</th><th>Action</th><th>Effort</th><th>Impact</th></tr>
+        ${items.map((a,i) => `<tr>
+          <td>${i+1}</td>
+          <td>${a.action||'?'}</td>
+          <td><span class="tag ${tagCls}">${a.effort||'?'}</span></td>
+          <td><span class="tag tag-ok">${a.impact||'?'}</span></td>
+        </tr>`).join('')}
+      </table>`;
+    }).join('')}
+    
+    <h2>Fichiers livrés</h2>
+    <div class="badge-list">
+      <span class="badge">data.json (32 Ko)</span>
+      <span class="badge">crawl_raw.json (169 pages)</span>
+      <span class="badge">RAPPORT_AUDIT_COMPLET.md</span>
+      <span class="badge">meta_descriptions.csv (168 descriptions)</span>
+      <span class="badge">meta_descriptions.json</span>
+      <span class="badge">index.html (dashboard)</span>
+    </div>
+    <div style="margin-top:16px">
+      <p class="card-text">🔗 <a href="https://lomaab.github.io/audit-ecole-gustave/" target="_blank">Dashboard en ligne</a></p>
+      <p class="card-text" style="margin-top:8px">Rapport généré le 16 juin 2026 — Audit automatisé multi-couches (13 outils)</p>
+    </div>
+  </div>`;
+}
+
+// ======================== LOAD DATA ========================
+fetch('data.json')
+  .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+  .then(json => { data = json; render(); })
+  .catch(err => {
+    // Fallback: try to load from the file we know exists
+    document.getElementById('app').innerHTML = `<div class="page active" id="page-overview">
+      <h1>Audit SEO — École Gustave</h1>
+      <p class="subtitle">Erreur de chargement des données (${err.message}). Vérifiez que data.json est accessible.</p>
+      <div class="card">
+        <div class="card-title">❌ Erreur</div>
+        <div class="card-text">Impossible de charger data.json. Assurez-vous que le fichier est présent à la racine.</div>
+      </div>
+    </div>`;
   });
-});
-
-// Hash-based routing
-window.addEventListener('hashchange', function() {
-  const page = window.location.hash.replace('#', '') || 'overview';
-  showPage(page);
-});
-
-// Initial page from hash
-const initialPage = window.location.hash.replace('#', '') || 'overview';
-showPage(initialPage);
 </script>
-
 </body>
 </html>
