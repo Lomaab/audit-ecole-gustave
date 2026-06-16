@@ -1,0 +1,653 @@
+{
+  "meta": {
+    "site": "ecole-gustave.com",
+    "date": "2026-06-16",
+    "tools": [
+      "Google PageSpeed Insights (Lighthouse 13.3.0)",
+      "curl (HTTP headers, TTFB, redirections)",
+      "Analyse HTML (meta, headings, JSON-LD, images)",
+      "Analyse robots.txt et sitemaps",
+      "Verification securite (HSTS, CSP, XFO, COOP)",
+      "Analyse mobile/responsive",
+      "Verification www redirection"
+    ],
+    "score_global": 36,
+    "score_mobile": 56,
+    "score_desktop": 85
+  },
+  "performances": {
+    "score_mobile": 56,
+    "score_desktop": 85,
+    "accessibilite_mobile": 88,
+    "accessibilite_desktop": 93,
+    "bonnes_pratiques": 77,
+    "seo_score": 100,
+    "ttfb": {
+      "valeur": "673-739ms",
+      "seuil": "< 300ms",
+      "conclusion": "Trop lent",
+      "impact": "Google penalise les sites lents. Le TTFB est le temps avant que le premier octet arrive. A 673ms+, c'est plus du double du seuil recommande. Cause probable : hebergement mutualise Infomaniak, pas de cache HTML."
+    },
+    "core_web_vitals_mobile": {
+      "lcp": {
+        "valeur": "2.2s",
+        "seuil": "< 2.5s",
+        "statut": "ok"
+      },
+      "inp": {
+        "valeur": "144ms",
+        "seuil": "< 200ms",
+        "statut": "ok"
+      },
+      "cls": {
+        "valeur": "0.01",
+        "seuil": "< 0.1",
+        "statut": "ok"
+      },
+      "fcp": {
+        "valeur": "1.8s",
+        "seuil": "< 1.8s",
+        "statut": "ok"
+      },
+      "ttfb_reel": {
+        "valeur": "1.5s",
+        "seuil": "< 800ms",
+        "statut": "echec",
+        "note": "Donnees terrain CrUX - les vrais utilisateurs mesurent 1.5s de TTFB"
+      }
+    },
+    "core_web_vitals_desktop": {
+      "lcp": {
+        "valeur": "2.6s",
+        "seuil": "< 2.5s",
+        "statut": "echec",
+        "note": "Legerement au-dessus du seuil"
+      },
+      "inp": {
+        "valeur": "50ms",
+        "seuil": "< 200ms",
+        "statut": "ok"
+      },
+      "cls": {
+        "valeur": "0.01",
+        "seuil": "< 0.1",
+        "statut": "ok"
+      },
+      "fcp": {
+        "valeur": "1.7s",
+        "seuil": "< 1.8s",
+        "statut": "ok"
+      },
+      "ttfb_reel": {
+        "valeur": "1.5s",
+        "seuil": "< 800ms",
+        "statut": "echec"
+      }
+    },
+    "problemes_performance": [
+      {
+        "id": "perf-01",
+        "titre": "Cache inefficace",
+        "description": "Les ressources statiques (images, CSS, JS) ne sont pas mises en cache assez longtemps.",
+        "economie": "731 KiB (mobile) / 964 KiB (desktop)",
+        "priorite": "haute",
+        "source": "PageSpeed Insights"
+      },
+      {
+        "id": "perf-02",
+        "titre": "Ressources qui bloquent le rendu",
+        "description": "CSS et JS qui bloquent l'affichage initial de la page.",
+        "economie": "610ms (mobile) / 260ms (desktop)",
+        "priorite": "haute",
+        "source": "PageSpeed Insights"
+      },
+      {
+        "id": "perf-03",
+        "titre": "Affichage des polices",
+        "description": "Les polices web ne sont pas optimisees, causant un flash de texte invisible.",
+        "economie": "170ms (mobile) / 40ms (desktop)",
+        "priorite": "moyenne",
+        "source": "PageSpeed Insights"
+      },
+      {
+        "id": "perf-04",
+        "titre": "Images non optimisees",
+        "description": "Les images peuvent etre mieux compressees ou converties en WebP/AVIF.",
+        "economie": "113 KiB (mobile) / 351 KiB (desktop)",
+        "priorite": "haute",
+        "source": "PageSpeed Insights"
+      },
+      {
+        "id": "perf-05",
+        "titre": "JavaScript obsolete",
+        "description": "Ancien JavaScript qui pourrait ne pas etre delivre aux navigateurs modernes.",
+        "economie": "35 KiB",
+        "priorite": "moyenne",
+        "source": "PageSpeed Insights"
+      },
+      {
+        "id": "perf-06",
+        "titre": "Decalages de mise en page (CLS)",
+        "description": "Des elements se deplacent apres l'affichage, causant une mauvaise experience.",
+        "priorite": "haute",
+        "source": "PageSpeed Insights"
+      },
+      {
+        "id": "perf-07",
+        "titre": "Ajustement force de la mise en page",
+        "description": "JavaScript force le navigateur a recalculer la mise en page trop souvent.",
+        "priorite": "moyenne",
+        "source": "PageSpeed Insights"
+      },
+      {
+        "id": "perf-08",
+        "titre": "DOM trop volumineux",
+        "description": "Le DOM fait plus de 800 elements, ce qui ralentit le rendu.",
+        "priorite": "moyenne",
+        "source": "PageSpeed Insights"
+      },
+      {
+        "id": "perf-09",
+        "titre": "JavaScript inutilise",
+        "description": "275 KiB de JavaScript charge mais jamais execute.",
+        "economie": "275 KiB",
+        "priorite": "moyenne",
+        "source": "PageSpeed Insights"
+      },
+      {
+        "id": "perf-10",
+        "titre": "Images sans dimensions explicites",
+        "description": "Les images n'ont pas d'attributs width/height, causant des decalages.",
+        "priorite": "basse",
+        "source": "PageSpeed Insights"
+      },
+      {
+        "id": "perf-11",
+        "titre": "CSS inutilise",
+        "description": "4-11 KiB de CSS charge mais jamais utilise.",
+        "economie": "4-11 KiB",
+        "priorite": "basse",
+        "source": "PageSpeed Insights"
+      },
+      {
+        "id": "perf-12",
+        "titre": "Taches longues sur le thread principal",
+        "description": "6 taches longues (mobile) / 8 (desktop) bloquent l'interactivite.",
+        "priorite": "haute",
+        "source": "PageSpeed Insights"
+      },
+      {
+        "id": "perf-13",
+        "titre": "Animations non composees",
+        "description": "2 animations ne passent pas par le GPU, ralentissant le rendu.",
+        "priorite": "basse",
+        "source": "PageSpeed Insights"
+      },
+      {
+        "id": "perf-14",
+        "titre": "Pas de cache HTML Cloudflare",
+        "description": "Le cache CF est en DYNAMIC, pas de mise en cache HTML cote CDN.",
+        "priorite": "haute",
+        "source": "Analyse headers"
+      },
+      {
+        "id": "perf-15",
+        "titre": "Images en JPG/PNG natifs",
+        "description": "Aucune image en WebP ou AVIF detectee. Le site utilise encore des formats anciens.",
+        "priorite": "haute",
+        "source": "Analyse HTML"
+      }
+    ]
+  },
+  "seo_technique": {
+    "robots_txt": {
+      "present": true,
+      "contenu": "User-agent: *\nCrawl-delay: 10",
+      "problemes": [
+        "Aucune directive Sitemap",
+        "Pas de blocage des doublons (pages footer, formulaire)",
+        "Pas d'optimisation du budget de crawl"
+      ],
+      "recommandation": "Ajouter Sitemap: https://ecole-gustave.com/sitemap_index.xml"
+    },
+    "sitemap": {
+      "present": true,
+      "url": "https://ecole-gustave.com/sitemap_index.xml",
+      "sous_sitemaps": 7,
+      "total_urls": 187,
+      "problemes": [
+        "La page /footer/ est listee dans le sitemap (artefact technique a exclure)",
+        "Des pages sans meta description sont dans le sitemap",
+        "Le sitemap n'est pas reference dans robots.txt"
+      ]
+    },
+    "redirection_www": {
+      "statut": "CRITIQUE",
+      "description": "www.ecole-gustave.com/* redirige vers ecole-gustave.com/ (perte du chemin)",
+      "test": "curl www.ecole-gustave.com/formations/ -> 301 vers ecole-gustave.com/",
+      "impact": "Toutes les sous-pages en www perdent leur referencement. Les backlinks pointant vers www sont perdus.",
+      "priorite": "critique"
+    },
+    "urls_staging": {
+      "statut": "CRITIQUE",
+      "nombre": 12,
+      "domaine": "1a13o2bxfri.preview.infomaniak.website",
+      "urls": [
+        "Logo SNCF",
+        "Logo Vinci",
+        "Logo Eiffage",
+        "Logo Qualiopi",
+        "Logo France Competences",
+        "Logo ministere du Travail",
+        "Logo Logista",
+        "Logo Proxiserve",
+        "Icone TikTok",
+        "Icone LinkedIn",
+        "Icone Instagram",
+        "Icone Facebook"
+      ],
+      "impact": "Quand le site staging sera supprime, toutes ces images deviendront des 404.",
+      "priorite": "critique"
+    },
+    "page_campus_404": {
+      "statut": "CRITIQUE",
+      "description": "https://ecole-gustave.com/campus/ retourne 404",
+      "impact": "Page listee dans le footer mais inaccessible.",
+      "priorite": "critique"
+    },
+    "meta_descriptions_manquantes": {
+      "nombre": 8,
+      "pages": [
+        {
+          "url": "/formations/",
+          "titre": "formations Archive - Ecole Gustave",
+          "probleme": "Titre auto-genere avec Archive"
+        },
+        {
+          "url": "/campus/paris/",
+          "titre": "Paris - Ecole Gustave"
+        },
+        {
+          "url": "/plan-du-site/",
+          "titre": "Plan du site - Ecole Gustave"
+        },
+        {
+          "url": "/mentions-legales/",
+          "titre": "Mentions legales - Ecole Gustave"
+        },
+        {
+          "url": "/politique-de-confidentialite/",
+          "titre": "Politique de confidentialite - Ecole Gustave"
+        },
+        {
+          "url": "/politique-handicap/",
+          "titre": "Politique handicap - Ecole Gustave"
+        },
+        {
+          "url": "/conditions-generales-d-utilisation/",
+          "titre": "Conditions Generales d Utilisation - Ecole Gustave"
+        },
+        {
+          "url": "/formations/formation-macon-vrd/",
+          "titre": "formation-macon-vrd Archive - Ecole Gustave"
+        }
+      ],
+      "priorite": "haute"
+    }
+  },
+  "securite": {
+    "score_bonnes_pratiques": 77,
+    "https": true,
+    "tls": "TLSv1.3",
+    "hsts": {
+      "present": true,
+      "valeur": "max-age=16000000",
+      "note": "Manque includeSubDomains et preload",
+      "priorite": "moyenne"
+    },
+    "csp": {
+      "present": false,
+      "description": "Aucune CSP configuree",
+      "impact": "Risque XSS eleve",
+      "priorite": "critique"
+    },
+    "x_frame_options": {
+      "present": false,
+      "description": "Aucune protection clickjacking",
+      "impact": "Le site peut etre integre dans une iframe",
+      "priorite": "haute"
+    },
+    "x_content_type_options": {
+      "present": false,
+      "description": "Aucune protection MIME-sniffing",
+      "priorite": "moyenne"
+    },
+    "referrer_policy": {
+      "present": false,
+      "priorite": "basse"
+    },
+    "permissions_policy": {
+      "present": false,
+      "priorite": "basse"
+    },
+    "coop": {
+      "present": false,
+      "description": "Cross-Origin Opener Policy manquante",
+      "priorite": "moyenne"
+    },
+    "trusted_types": {
+      "present": false,
+      "description": "Trusted Types manquants pour XSS DOM",
+      "priorite": "moyenne"
+    },
+    "clickjacking": {
+      "present": false,
+      "description": "Ni XFO ni CSP pour clickjacking",
+      "priorite": "haute"
+    },
+    "cookies_tiers": {
+      "present": true,
+      "description": "1 cookie tiers (Facebook Pixel)",
+      "priorite": "moyenne",
+      "note": "Facebook Pixel charge avant consentement RGPD"
+    }
+  },
+  "contenu_et_structure": {
+    "json_ld": {
+      "present": false,
+      "description": "Aucun JSON-LD sur la page d'accueil",
+      "impact": "Pas de rich snippets",
+      "priorite": "haute"
+    },
+    "headings": {
+      "h1": {
+        "present": true,
+        "contenu": "L'ecole des metiers du batiment",
+        "evaluation": "Correct mais pourrait inclure BTP ou formation"
+      },
+      "h2": {
+        "nombre": 35,
+        "problemes": [
+          "Trop de H2 (35)",
+          "9 H2 dupliques (menu nav repete 3x)",
+          "Les H2 de navigation n'ont pas de valeur SEO"
+        ],
+        "priorite": "moyenne"
+      }
+    },
+    "images": {
+      "totales": 34,
+      "sans_alt": 1,
+      "problemes": [
+        "1 image sans alt",
+        "Images sans width/height",
+        "Formats JPG/PNG",
+        "Pas de WebP/AVIF"
+      ]
+    },
+    "favicon": {
+      "present": true,
+      "apple_touch_icon": "Non detecte"
+    },
+    "balise_lang": {
+      "present": true,
+      "valeur": "fr-FR",
+      "correct": true
+    },
+    "canonical": {
+      "present": true,
+      "href": "https://ecole-gustave.com/",
+      "correct": true
+    },
+    "viewport": {
+      "present": true,
+      "valeur": "width=device-width, initial-scale=1",
+      "correct": true
+    }
+  },
+  "accessibilite": {
+    "score_mobile": 88,
+    "score_desktop": 93,
+    "problemes": [
+      {
+        "id": "a11y-01",
+        "titre": "Boutons sans nom accessible",
+        "description": "Boutons sans nom pour lecteurs d'ecran",
+        "priorite": "haute",
+        "source": "Lighthouse"
+      },
+      {
+        "id": "a11y-02",
+        "titre": "Liens sans nom visible",
+        "description": "Liens non identifiables visuellement",
+        "priorite": "haute",
+        "source": "Lighthouse"
+      },
+      {
+        "id": "a11y-03",
+        "titre": "Contraste insuffisant",
+        "description": "Couleurs sans assez de contraste",
+        "priorite": "haute",
+        "source": "Lighthouse"
+      },
+      {
+        "id": "a11y-04",
+        "titre": "Roles ARIA incompatibles",
+        "description": "Roles ARIA sur elements non supportes",
+        "priorite": "moyenne",
+        "source": "Lighthouse"
+      },
+      {
+        "id": "a11y-05",
+        "titre": "Liens identiques fonctions differentes",
+        "description": "Meme texte, URLs differentes",
+        "priorite": "moyenne",
+        "source": "Lighthouse"
+      }
+    ]
+  },
+  "problemes_critiques": [
+    {
+      "id": "C01",
+      "titre": "Redirection www qui perd le chemin",
+      "description": "www -> non-www sans preserver le chemin",
+      "impact": "Perte de tous les backlinks www",
+      "solution": "Corriger la regle de redirection"
+    },
+    {
+      "id": "C02",
+      "titre": "12 URLs staging Infomaniak en production",
+      "description": "Logos et icones charges depuis le staging",
+      "impact": "Risque de 404 massif si staging supprime",
+      "solution": "UPDATE SQL dans wp_posts.post_content"
+    },
+    {
+      "id": "C03",
+      "titre": "Page /campus/ en 404",
+      "description": "Page footer inaccessible",
+      "impact": "Mauvaise UX, erreur Google",
+      "solution": "Creer la page ou rediriger"
+    },
+    {
+      "id": "C04",
+      "titre": "Aucune CSP",
+      "description": "Pas de Content-Security-Policy",
+      "impact": "Risque XSS eleve",
+      "solution": "Configurer CSP via Cloudflare"
+    },
+    {
+      "id": "C05",
+      "titre": "Facebook Pixel charge avant consentement",
+      "description": "Pixel FB dans head avant cookies",
+      "impact": "Non-conforme RGPD",
+      "solution": "Bloquer pixel jusqu'au consentement"
+    },
+    {
+      "id": "C06",
+      "titre": "TTFB trop eleve (673-1500ms)",
+      "description": "673ms en lab, 1.5s reel",
+      "impact": "Penalite Google",
+      "solution": "Cache HTML Cloudflare + optimisation"
+    }
+  ],
+  "problemes_haute_priorite": [
+    {
+      "id": "H01",
+      "titre": "Meta descriptions manquantes (8 pages)",
+      "description": "Pages sans meta description",
+      "solution": "Ajouter dans Yoast SEO"
+    },
+    {
+      "id": "H02",
+      "titre": "Titres auto-generes laids",
+      "description": "Archive dans les titres",
+      "solution": "Modifier template d'archive Yoast"
+    },
+    {
+      "id": "H03",
+      "titre": "Absence de JSON-LD",
+      "description": "Pas de donnees structurees",
+      "solution": "Activer schema dans Yoast + Course"
+    },
+    {
+      "id": "H04",
+      "titre": "Cache inefficace",
+      "description": "964 KiB non optimises",
+      "solution": "Cloudflare Page Rules pour cache long"
+    },
+    {
+      "id": "H05",
+      "titre": "X-Frame-Options manquant",
+      "description": "Pas de protection clickjacking",
+      "solution": "Ajouter X-Frame-Options: SAMEORIGIN"
+    },
+    {
+      "id": "H06",
+      "titre": "Images pas en WebP",
+      "solution": "Cloudflare Polish ou plugin conversion"
+    },
+    {
+      "id": "H07",
+      "titre": "Ressources bloquant le rendu",
+      "description": "610ms perdus",
+      "solution": "CSS critique inline, JS differe"
+    },
+    {
+      "id": "H08",
+      "titre": "Boutons sans nom accessible",
+      "solution": "Ajouter aria-label"
+    },
+    {
+      "id": "H09",
+      "titre": "Contraste insuffisant",
+      "solution": "Modifier couleurs theme WCAG AA"
+    }
+  ],
+  "problemes_moyenne_priorite": [
+    {
+      "id": "M01",
+      "titre": "35 H2 dont 9 dupliques",
+      "solution": "Changer H2 navigation en nav"
+    },
+    {
+      "id": "M02",
+      "titre": "HSTS sans includeSubDomains",
+      "solution": "Ajouter includeSubDomains; preload"
+    },
+    {
+      "id": "M03",
+      "titre": "Sitemap non reference dans robots.txt",
+      "solution": "Ajouter Sitemap directive"
+    },
+    {
+      "id": "M04",
+      "titre": "COOP manquante",
+      "solution": "Ajouter Cross-Origin-Opener-Policy"
+    },
+    {
+      "id": "M05",
+      "titre": "Trusted Types manquants",
+      "solution": "Ajouter require-trusted-types-for"
+    },
+    {
+      "id": "M06",
+      "titre": "JavaScript inutilise 275 KiB",
+      "solution": "Auditer et reduire JS"
+    },
+    {
+      "id": "M07",
+      "titre": "DOM trop volumineux",
+      "solution": "Simplifier templates"
+    },
+    {
+      "id": "M08",
+      "titre": "Lien newsletter vide",
+      "solution": "Supprimer ou rendre fonctionnel"
+    }
+  ],
+  "problemes_basse_priorite": [
+    {
+      "id": "B01",
+      "titre": "Images sans width/height",
+      "solution": "Ajouter attributs dans WP"
+    },
+    {
+      "id": "B02",
+      "titre": "CSS inutilise 4-11 KiB",
+      "solution": "Purger CSS"
+    },
+    {
+      "id": "B03",
+      "titre": "Animations non composees",
+      "solution": "Utiliser transform/opacity"
+    },
+    {
+      "id": "B04",
+      "titre": "Referrer-Policy manquante",
+      "solution": "Ajouter strict-origin-when-cross-origin"
+    },
+    {
+      "id": "B05",
+      "titre": "Permissions-Policy manquante",
+      "solution": "Ajouter Permissions-Policy"
+    },
+    {
+      "id": "B06",
+      "titre": "Score EcoIndex non configure",
+      "solution": "Configurer widget footer"
+    },
+    {
+      "id": "B07",
+      "titre": "1 image sans alt",
+      "solution": "Ajouter alt dans WP"
+    }
+  ],
+  "points_positifs": [
+    "HTTPS avec TLSv1.3",
+    "HSTS configure",
+    "SEO score 100/100 Lighthouse",
+    "Core Web Vitals Mobile OK",
+    "Sitemap present (7 sous-sitemaps, 187 URLs)",
+    "Viewport correct",
+    "Lang fr-FR correct",
+    "Canonical correct",
+    "Favicon present",
+    "1 H1 unique",
+    "97% des images ont un alt",
+    "Bandeau cookies present",
+    "Serveur Cloudflare"
+  ],
+  "methodologie": {
+    "outils": [
+      "PageSpeed Insights (Lighthouse 13.3.0) Mobile + Desktop",
+      "curl - Headers, redirections, TTFB",
+      "Analyse HTML - meta, headings, JSON-LD, images",
+      "Analyse robots.txt et sitemaps",
+      "Core Web Vitals (CrUX terrain)",
+      "Analyse securite headers",
+      "Analyse responsive mobile"
+    ],
+    "date": "16 juin 2026",
+    "pages_analysees": "187 URLs (sitemap) + pages cles"
+  }
+}
