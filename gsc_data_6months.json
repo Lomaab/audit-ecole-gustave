@@ -1,0 +1,472 @@
+{
+  "trend": [
+    {
+      "month": "D\u00e9c 25",
+      "impressions": 88146,
+      "clicks": 3378,
+      "ctr": 0.03832278265604792,
+      "position": 14.247294261792934
+    },
+    {
+      "month": "Jan 26",
+      "impressions": 126013,
+      "clicks": 5932,
+      "ctr": 0.04707450818566338,
+      "position": 16.156150555895024
+    },
+    {
+      "month": "F\u00e9v 26",
+      "impressions": 99130,
+      "clicks": 3970,
+      "ctr": 0.040048421265005546,
+      "position": 14.734479975789368
+    },
+    {
+      "month": "Mar 26",
+      "impressions": 74676,
+      "clicks": 4196,
+      "ctr": 0.05618940489581659,
+      "position": 10.571415180245326
+    },
+    {
+      "month": "Avr 26",
+      "impressions": 77295,
+      "clicks": 2912,
+      "ctr": 0.037673846949996766,
+      "position": 11.276421502037648
+    },
+    {
+      "month": "Mai 26",
+      "impressions": 97547,
+      "clicks": 3379,
+      "ctr": 0.03463971213876388,
+      "position": 7.672178539575794
+    }
+  ],
+  "total": {
+    "impressions": 562807,
+    "clicks": 23767,
+    "ctr": 0.04222939657822308,
+    "position": 12.725136680958126
+  },
+  "top_queries": [
+    {
+      "query": "ecole gustave",
+      "impressions": 14825,
+      "clicks": 4439,
+      "ctr": 0.2994266441821248,
+      "position": 1.3204721753794266
+    },
+    {
+      "query": "ecole gustave lyon",
+      "impressions": 3305,
+      "clicks": 1245,
+      "ctr": 0.3767019667170953,
+      "position": 1.3918305597579426
+    },
+    {
+      "query": "\u00e9cole gustave",
+      "impressions": 3529,
+      "clicks": 1119,
+      "ctr": 0.31708699348257297,
+      "position": 1.3462737319353923
+    },
+    {
+      "query": "ecole gustave saint denis",
+      "impressions": 3067,
+      "clicks": 710,
+      "ctr": 0.23149657645908053,
+      "position": 1.0215194000652104
+    },
+    {
+      "query": "ecole gustave bordeaux",
+      "impressions": 1430,
+      "clicks": 621,
+      "ctr": 0.4342657342657343,
+      "position": 2.2720279720279724
+    },
+    {
+      "query": "ecole gustave rennes",
+      "impressions": 1579,
+      "clicks": 621,
+      "ctr": 0.39328689043698545,
+      "position": 2.4889170360987967
+    },
+    {
+      "query": "ecole gustave marseille",
+      "impressions": 2465,
+      "clicks": 570,
+      "ctr": 0.23123732251521298,
+      "position": 1.901419878296146
+    },
+    {
+      "query": "ecole gustave lille",
+      "impressions": 2236,
+      "clicks": 513,
+      "ctr": 0.22942754919499106,
+      "position": 2.4230769230769234
+    },
+    {
+      "query": "ecole gustave paris",
+      "impressions": 1359,
+      "clicks": 295,
+      "ctr": 0.21707137601177337,
+      "position": 1.5938189845474615
+    },
+    {
+      "query": "\u00e9cole gustave lyon",
+      "impressions": 595,
+      "clicks": 201,
+      "ctr": 0.3378151260504202,
+      "position": 1
+    },
+    {
+      "query": "\u00e9cole gustave rennes",
+      "impressions": 408,
+      "clicks": 157,
+      "ctr": 0.38480392156862747,
+      "position": 1.3725490196078431
+    },
+    {
+      "query": "l'\u00e9cole gustave",
+      "impressions": 668,
+      "clicks": 154,
+      "ctr": 0.23053892215568864,
+      "position": 1.2335329341317365
+    },
+    {
+      "query": "ecole gustave begles",
+      "impressions": 328,
+      "clicks": 131,
+      "ctr": 0.39939024390243905,
+      "position": 2.051829268292683
+    },
+    {
+      "query": "\u00e9cole gustave paris",
+      "impressions": 593,
+      "clicks": 130,
+      "ctr": 0.21922428330522767,
+      "position": 1.0286677908937605
+    },
+    {
+      "query": "\u00e9cole gustave bordeaux",
+      "impressions": 308,
+      "clicks": 123,
+      "ctr": 0.39935064935064934,
+      "position": 1.0649350649350648
+    },
+    {
+      "query": "gustave ecole",
+      "impressions": 346,
+      "clicks": 110,
+      "ctr": 0.3179190751445087,
+      "position": 1.1098265895953756
+    },
+    {
+      "query": "formation plombier",
+      "impressions": 10412,
+      "clicks": 109,
+      "ctr": 0.010468689973107952,
+      "position": 11.745870149827123
+    },
+    {
+      "query": "\u00e9cole gustave marseille",
+      "impressions": 480,
+      "clicks": 97,
+      "ctr": 0.20208333333333334,
+      "position": 1.7541666666666667
+    },
+    {
+      "query": "ecole gustave marcq en baroeul",
+      "impressions": 321,
+      "clicks": 90,
+      "ctr": 0.2803738317757009,
+      "position": 1.395638629283489
+    },
+    {
+      "query": "\u00e9cole gustave lille",
+      "impressions": 602,
+      "clicks": 89,
+      "ctr": 0.1478405315614618,
+      "position": 1.9617940199335548
+    },
+    {
+      "query": "formation plombier chauffagiste paris",
+      "impressions": 1478,
+      "clicks": 73,
+      "ctr": 0.04939106901217862,
+      "position": 8.660351826792963
+    },
+    {
+      "query": "cap plomberie",
+      "impressions": 5091,
+      "clicks": 71,
+      "ctr": 0.013946179532508348,
+      "position": 13.133961893537615
+    },
+    {
+      "query": "formation plomberie",
+      "impressions": 6363,
+      "clicks": 65,
+      "ctr": 0.010215307245010215,
+      "position": 10.68096809680968
+    },
+    {
+      "query": "formation cvc",
+      "impressions": 2358,
+      "clicks": 55,
+      "ctr": 0.02332485156912638,
+      "position": 8.038592027141647
+    },
+    {
+      "query": "\u00e9cole gustave \u00e9lectricien",
+      "impressions": 203,
+      "clicks": 51,
+      "ctr": 0.2512315270935961,
+      "position": 1.0591133004926108
+    }
+  ],
+  "device": [
+    {
+      "device": "MOBILE",
+      "impressions": 270739,
+      "clicks": 14004,
+      "ctr": 0.051725093170913686,
+      "position": 8.092011125105728
+    },
+    {
+      "device": "DESKTOP",
+      "impressions": 288652,
+      "clicks": 9593,
+      "ctr": 0.03323379016947743,
+      "position": 17.119881379654394
+    },
+    {
+      "device": "TABLET",
+      "impressions": 3416,
+      "clicks": 170,
+      "ctr": 0.049765807962529274,
+      "position": 8.572892271662763
+    }
+  ],
+  "country": [
+    {
+      "country": "fra",
+      "impressions": 482694,
+      "clicks": 22661,
+      "ctr": 0.04694692703866218,
+      "position": 12.531958134967494
+    },
+    {
+      "country": "bel",
+      "impressions": 3334,
+      "clicks": 118,
+      "ctr": 0.03539292141571686,
+      "position": 22.209358128374326
+    },
+    {
+      "country": "mar",
+      "impressions": 2116,
+      "clicks": 67,
+      "ctr": 0.03166351606805293,
+      "position": 10.8265595463138
+    },
+    {
+      "country": "dza",
+      "impressions": 2087,
+      "clicks": 65,
+      "ctr": 0.03114518447532343,
+      "position": 8.156205079060854
+    },
+    {
+      "country": "tun",
+      "impressions": 1216,
+      "clicks": 51,
+      "ctr": 0.04194078947368421,
+      "position": 9.666940789473685
+    }
+  ],
+  "cannibalization_plombier": [
+    {
+      "page": "https://ecole-gustave.com/formation-plombier-chauffagiste-paris/",
+      "impressions": 4207,
+      "clicks": 61,
+      "ctr": 0.014499643451390539,
+      "position": 11.432374613739006
+    },
+    {
+      "page": "https://ecole-gustave.com/formation-plombier-lille/",
+      "impressions": 583,
+      "clicks": 16,
+      "ctr": 0.0274442538593482,
+      "position": 11.099485420240137
+    },
+    {
+      "page": "https://ecole-gustave.com/formation-plombier-bordeaux/",
+      "impressions": 340,
+      "clicks": 13,
+      "ctr": 0.03823529411764706,
+      "position": 19.108823529411765
+    },
+    {
+      "page": "https://ecole-gustave.com/",
+      "impressions": 2558,
+      "clicks": 8,
+      "ctr": 0.003127443315089914,
+      "position": 10.068803752931979
+    },
+    {
+      "page": "https://ecole-gustave.com/formation-plombier-chauffagiste-lyon/",
+      "impressions": 437,
+      "clicks": 6,
+      "ctr": 0.013729977116704805,
+      "position": 24.23112128146453
+    },
+    {
+      "page": "https://ecole-gustave.com/formation-plombier-chauffagiste-bordeaux/",
+      "impressions": 122,
+      "clicks": 2,
+      "ctr": 0.01639344262295082,
+      "position": 10.491803278688524
+    },
+    {
+      "page": "https://ecole-gustave.com/formations/formation-plombier-chauffagiste/",
+      "impressions": 3600,
+      "clicks": 2,
+      "ctr": 0.0005555555555555556,
+      "position": 12.898055555555555
+    },
+    {
+      "page": "https://ecole-gustave.com/campus/paris/",
+      "impressions": 66,
+      "clicks": 1,
+      "ctr": 0.015151515151515152,
+      "position": 10.106060606060606
+    },
+    {
+      "page": "https://ecole-gustave.com/formation-plombier-chauffagiste/",
+      "impressions": 180,
+      "clicks": 1,
+      "ctr": 0.005555555555555556,
+      "position": 12.183333333333334
+    },
+    {
+      "page": "https://ecole-gustave.com/campus-ecole-gustave/",
+      "impressions": 1,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 9
+    }
+  ],
+  "cannibalization_brand": [
+    {
+      "page": "https://ecole-gustave.com/",
+      "impressions": 14757,
+      "clicks": 3582,
+      "ctr": 0.2427322626550112,
+      "position": 1.3279121772718032
+    },
+    {
+      "page": "https://ecole-gustave.com/campus/paris/",
+      "impressions": 10073,
+      "clicks": 190,
+      "ctr": 0.01886230517224263,
+      "position": 2.5119626724908173
+    },
+    {
+      "page": "https://ecole-gustave.com/campus/lyon/",
+      "impressions": 7325,
+      "clicks": 167,
+      "ctr": 0.02279863481228669,
+      "position": 2.108941979522184
+    },
+    {
+      "page": "https://ecole-gustave.com/campus/marseille/",
+      "impressions": 4147,
+      "clicks": 139,
+      "ctr": 0.033518205931999036,
+      "position": 2.4217506631299734
+    },
+    {
+      "page": "https://ecole-gustave.com/campus/lille/",
+      "impressions": 6930,
+      "clicks": 136,
+      "ctr": 0.019624819624819625,
+      "position": 2.6453102453102453
+    },
+    {
+      "page": "https://ecole-gustave.com/campus/bordeaux/",
+      "impressions": 3956,
+      "clicks": 93,
+      "ctr": 0.023508594539939334,
+      "position": 2.128159757330637
+    },
+    {
+      "page": "https://ecole-gustave.com/campus/rennes/",
+      "impressions": 2084,
+      "clicks": 75,
+      "ctr": 0.03598848368522073,
+      "position": 2.47936660268714
+    },
+    {
+      "page": "https://ecole-gustave.com/ecole-gustave/",
+      "impressions": 10061,
+      "clicks": 60,
+      "ctr": 0.005963621906371136,
+      "position": 3.980618228804294
+    },
+    {
+      "page": "https://ecole-gustave.com/les-formations/",
+      "impressions": 4284,
+      "clicks": 29,
+      "ctr": 0.00676937441643324,
+      "position": 4.084733893557424
+    },
+    {
+      "page": "https://ecole-gustave.com/formations/formation-plombier-chauffagiste/",
+      "impressions": 1909,
+      "clicks": 7,
+      "ctr": 0.003666841278156103,
+      "position": 3.6280775275013095
+    }
+  ],
+  "key_queries": {
+    "formation plombier": [
+      {
+        "query": "formation plombier",
+        "impressions": 10412,
+        "clicks": 109,
+        "ctr": 0.010468689973107952,
+        "position": 11.745870149827123
+      }
+    ],
+    "formation electricien": [
+      {
+        "query": "formation electricien",
+        "impressions": 5567,
+        "clicks": 24,
+        "ctr": 0.00431111909466499,
+        "position": 11.86833123765044
+      }
+    ],
+    "cap plomberie": [
+      {
+        "query": "cap plomberie",
+        "impressions": 5091,
+        "clicks": 71,
+        "ctr": 0.013946179532508348,
+        "position": 13.133961893537615
+      }
+    ],
+    "plombier chauffagiste": [
+      {
+        "query": "plombier chauffagiste",
+        "impressions": 565,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 21.658407079646018
+      }
+    ]
+  },
+  "campus_pages": []
+}

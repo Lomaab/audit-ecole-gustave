@@ -19,7 +19,9 @@
       "Audit accessibilite (WCAG, ARIA, contrastes)",
       "Audit social media (LinkedIn, Instagram, FB, TikTok, YouTube)",
       "Analyse RGPD (Facebook Pixel, cookies tiers)",
-      "Analyse WordPress (REST API, xmlrpc, wp-admin)"
+      "Analyse WordPress (REST API, xmlrpc, wp-admin)",
+      "Google Search Console API (donnees reelles 6 mois)",
+      "Google OAuth2 (client_secret.json + token.json)"
     ],
     "score_global_precedent": 36,
     "score_global_nouveau": 28,
@@ -129,6 +131,330 @@
       }
     ]
   },
+  "gsc_data": {
+    "source": "Google Search Console API - donnees reelles (Dec 2025 - Mai 2026)",
+    "method": "OAuth2 via client_secret.json + token.json, scope webmasters.readonly",
+    "gsc_property": "https://ecole-gustave.com/ (siteOwner - acces complet)",
+    "other_properties": [
+      "https://www.ecole-gustave.com/ (siteUnverifiedUser - pas de donnees)",
+      "sc-domain:ecole-gustave.com (siteUnverifiedUser - pas de donnees)"
+    ],
+    "ga4_access": "AUCUN - le token OAuth a le scope analytics.readonly mais aucun compte GA4 n'est lie a ce token Google",
+    "totaux_6_mois": {
+      "impressions": 562807,
+      "clicks": 23767,
+      "ctr": "4.22%",
+      "position_moyenne": 12.73,
+      "impressions_par_jour": "~3090",
+      "clicks_par_jour": "~130"
+    },
+    "tendance_mensuelle": [
+      {
+        "mois": "Dec 25",
+        "impressions": 88146,
+        "clicks": 3378,
+        "ctr": "3.83%",
+        "position": 14.25
+      },
+      {
+        "mois": "Jan 26",
+        "impressions": 126013,
+        "clicks": 5932,
+        "ctr": "4.71%",
+        "position": 16.16
+      },
+      {
+        "mois": "Fev 26",
+        "impressions": 99130,
+        "clicks": 3970,
+        "ctr": "4.00%",
+        "position": 14.73
+      },
+      {
+        "mois": "Mar 26",
+        "impressions": 74676,
+        "clicks": 4196,
+        "ctr": "5.62%",
+        "position": 10.57
+      },
+      {
+        "mois": "Avr 26",
+        "impressions": 77295,
+        "clicks": 2912,
+        "ctr": "3.77%",
+        "position": 11.28
+      },
+      {
+        "mois": "Mai 26",
+        "impressions": 97547,
+        "clicks": 3379,
+        "ctr": "3.46%",
+        "position": 7.67
+      }
+    ],
+    "top_25_requetes": {
+      "note": "Les 16 premieres requetes sont de marque (ecole gustave + ville). Premiere requete non-brand a la position 17.",
+      "top_brand": [
+        {
+          "requete": "ecole gustave",
+          "impressions": 14825,
+          "clicks": 4439,
+          "ctr": "29.9%",
+          "position": 1.3
+        },
+        {
+          "requete": "ecole gustave lyon",
+          "impressions": 3305,
+          "clicks": 1245,
+          "ctr": "37.7%",
+          "position": 1.4
+        },
+        {
+          "requete": "ecole gustave saint denis",
+          "impressions": 3067,
+          "clicks": 710,
+          "ctr": "23.1%",
+          "position": 1.0
+        },
+        {
+          "requete": "ecole gustave bordeaux",
+          "impressions": 1430,
+          "clicks": 621,
+          "ctr": "43.4%",
+          "position": 2.3
+        },
+        {
+          "requete": "ecole gustave rennes",
+          "impressions": 1579,
+          "clicks": 621,
+          "ctr": "39.3%",
+          "position": 2.5
+        },
+        {
+          "requete": "ecole gustave marseille",
+          "impressions": 2465,
+          "clicks": 570,
+          "ctr": "23.1%",
+          "position": 1.9
+        },
+        {
+          "requete": "ecole gustave lille",
+          "impressions": 2236,
+          "clicks": 513,
+          "ctr": "22.9%",
+          "position": 2.4
+        },
+        {
+          "requete": "ecole gustave paris",
+          "impressions": 1359,
+          "clicks": 295,
+          "ctr": "21.7%",
+          "position": 1.6
+        }
+      ],
+      "top_non_brand": [
+        {
+          "requete": "FORMATION PLOMBIER",
+          "impressions": 10412,
+          "clicks": 109,
+          "ctr": "1.05%",
+          "position": 11.7,
+          "note": "PREMIERE REQUETE NON-BRAND"
+        },
+        {
+          "requete": "FORMATION PLOMBERIE",
+          "impressions": 6363,
+          "clicks": 65,
+          "ctr": "1.02%",
+          "position": 10.7
+        },
+        {
+          "requete": "FORMATION ELECTRICIEN",
+          "impressions": 5567,
+          "clicks": 24,
+          "ctr": "0.43%",
+          "position": 11.9
+        },
+        {
+          "requete": "CAP PLOMBERIE",
+          "impressions": 5091,
+          "clicks": 71,
+          "ctr": "1.39%",
+          "position": 13.1
+        },
+        {
+          "requete": "FORMATION CVC",
+          "impressions": 2358,
+          "clicks": 55,
+          "ctr": "2.33%",
+          "position": 8.0
+        },
+        {
+          "requete": "FORMATION PLOMBIER CHAUFFAGISTE PARIS",
+          "impressions": 1478,
+          "clicks": 73,
+          "ctr": "4.94%",
+          "position": 8.7
+        }
+      ]
+    },
+    "repartition_appareil": [
+      {
+        "appareil": "MOBILE",
+        "impressions": 270739,
+        "clicks": 14004,
+        "ctr": "5.17%",
+        "position": 8.09,
+        "part_trafic_clics": "58.9%"
+      },
+      {
+        "appareil": "DESKTOP",
+        "impressions": 288652,
+        "clicks": 9593,
+        "ctr": "3.32%",
+        "position": 17.12,
+        "part_trafic_clics": "40.4%"
+      },
+      {
+        "appareil": "TABLET",
+        "impressions": 3416,
+        "clicks": 170,
+        "ctr": "4.98%",
+        "position": 8.57,
+        "part_trafic_clics": "0.7%"
+      }
+    ],
+    "repartition_pays": [
+      {
+        "pays": "France",
+        "code": "FRA",
+        "impressions": 482694,
+        "clicks": 22661,
+        "part": "85.8%"
+      },
+      { "pays": "Belgique", "code": "BEL", "impressions": 3334, "clicks": 118 },
+      { "pays": "Maroc", "code": "MAR", "impressions": 2116, "clicks": 67 },
+      { "pays": "Algerie", "code": "DZA", "impressions": 2087, "clicks": 65 },
+      { "pays": "Tunisie", "code": "TUN", "impressions": 1216, "clicks": 51 }
+    ],
+    "cannibalisation_gsc": {
+      "formation_plombier_pages_impactees": [
+        {
+          "page": "/formation-plombier-chauffagiste-paris/",
+          "impressions": 4207,
+          "clicks": 61,
+          "position": 11.4
+        },
+        {
+          "page": "/ (accueil)",
+          "impressions": 2558,
+          "clicks": 8,
+          "position": 10.1
+        },
+        {
+          "page": "/formations/formation-plombier-chauffagiste/",
+          "impressions": 3600,
+          "clicks": 2,
+          "position": 12.9
+        },
+        {
+          "page": "/formation-plombier-lille/",
+          "impressions": 583,
+          "clicks": 16,
+          "position": 11.1
+        },
+        {
+          "page": "/formation-plombier-chauffagiste-lyon/",
+          "impressions": 437,
+          "clicks": 6,
+          "position": 24.2
+        },
+        {
+          "page": "/formation-plombier-bordeaux/",
+          "impressions": 340,
+          "clicks": 13,
+          "position": 19.1
+        },
+        {
+          "page": "/formation-plombier-chauffagiste/",
+          "impressions": 180,
+          "clicks": 1,
+          "position": 12.2
+        },
+        {
+          "page": "/formation-plombier-chauffagiste-bordeaux/",
+          "impressions": 122,
+          "clicks": 2,
+          "position": 10.5
+        }
+      ],
+      "marque_pages_impactees": [
+        {
+          "page": "/ (accueil)",
+          "impressions": 14757,
+          "clicks": 3582,
+          "position": 1.3
+        },
+        {
+          "page": "/campus/paris/",
+          "impressions": 10073,
+          "clicks": 190,
+          "position": 2.5
+        },
+        {
+          "page": "/ecole-gustave/",
+          "impressions": 10061,
+          "clicks": 60,
+          "position": 4.0
+        },
+        {
+          "page": "/campus/lyon/",
+          "impressions": 7325,
+          "clicks": 167,
+          "position": 2.1
+        },
+        {
+          "page": "/campus/lille/",
+          "impressions": 6930,
+          "clicks": 136,
+          "position": 2.6
+        },
+        {
+          "page": "/campus/marseille/",
+          "impressions": 4147,
+          "clicks": 139,
+          "position": 2.4
+        },
+        {
+          "page": "/les-formations/",
+          "impressions": 4284,
+          "clicks": 29,
+          "position": 4.1
+        },
+        {
+          "page": "/campus/bordeaux/",
+          "impressions": 3956,
+          "clicks": 93,
+          "position": 2.1
+        },
+        {
+          "page": "/campus/rennes/",
+          "impressions": 2084,
+          "clicks": 75,
+          "position": 2.5
+        }
+      ]
+    },
+    "conclusions_cles": [
+      "DEPENDANCE QUASI-TOTALE AU TRAFIC DE MARQUE: >90% des impressions viennent de requetes 'ecole gustave'",
+      "POSITION DESKTOP CATASTROPHIQUE: 17.1 vs 8.1 en mobile - le desktop n'est pas optimise pour les metriques GSC",
+      "CTR NON-BRAND TRES FAIBLE: 0.4-5% vs 22-43% pour le brand - les pages ne convertissent pas la visibilite",
+      "CANNIBALISATION CONFIRMEE: 8+ pages en competition directe sur 'formation plombier' avec donnees reelles",
+      "AUCUN MOT-CLE NON-BRAND DANS LE TOP 10: la meilleure position non-brand est 8.0 (formation CVC)",
+      "TRAFFIC EXCLUSIVEMENT FRANCAIS: 86% des impressions viennent de France - pas d'audience internationale"
+    ],
+    "requete_sauvee": "gsc_data_6months.json"
+  },
   "seo_technique": {
     "crawl": {
       "total_pages": 169,
@@ -228,10 +554,7 @@
       "note": "Les 6 pages categorie en noindex ne sont pas dans le sitemap - correct"
     },
     "pagination": {
-      "pages_avec_pagination": [
-        "les-actualites/",
-        "les-temoignages/"
-      ],
+      "pages_avec_pagination": ["les-actualites/", "les-temoignages/"],
       "rel_next_prev": false,
       "probleme": "Aucune balise rel=next/prev sur les pages paginees",
       "impact": "Google peut mal comprendre la structure des paginations",
@@ -301,9 +624,7 @@
       "solution": "Ajouter des meta descriptions personnalisees dans Yoast SEO pour chaque page. Commencer par les pages les plus visitees."
     },
     "titres": {
-      "pages_sans_titre": [
-        "footer/"
-      ],
+      "pages_sans_titre": ["footer/"],
       "titres_auto_genere": [
         {
           "page": "formations/",
@@ -351,10 +672,7 @@
       "h1_dupliques": [
         {
           "h1": "Formation Macon Voirie Reseaux Divers (VRD)",
-          "pages": [
-            "formations/",
-            "formations/formation-macon-vrd/"
-          ],
+          "pages": ["formations/", "formations/formation-macon-vrd/"],
           "probleme": "L'archive utilise le H1 d'une formation specifique"
         }
       ]
@@ -402,14 +720,8 @@
       "organization_details": {
         "name": "Ecole Gustave",
         "logo_url": "https://ecole-gustave.com/wp-content/uploads/2025/10/Gustave-logo.svg",
-        "sameAs": [
-          "Facebook",
-          "LinkedIn",
-          "Instagram"
-        ],
-        "missing_sameAs": [
-          "TikTok (@ecole.gustave)"
-        ],
+        "sameAs": ["Facebook", "LinkedIn", "Instagram"],
+        "missing_sameAs": ["TikTok (@ecole.gustave)"],
         "impact": "Le schema Organization est correct mais ne lie pas TikTok, ce qui affaiblit le signal de marque aupres de Google."
       },
       "impact_global": "Les schemas de base (Organization, WebSite, WebPage) sont OK mais les schemas metier (Course, Review, FAQ) sont absents. C'est le probleme principal : Google ne peut pas comprendre que ce site est une ecole de formation avec des avis et des cursus.",
@@ -602,10 +914,7 @@
       "certificat": "Google Trust Services",
       "expiration": "30 aout 2026",
       "ciphers": "TLS_AES_256_GCM_SHA384",
-      "san": [
-        "ecole-gustave.com",
-        "*.ecole-gustave.com"
-      ],
+      "san": ["ecole-gustave.com", "*.ecole-gustave.com"],
       "hsts_preload": false
     },
     "dns": {
@@ -1056,6 +1365,13 @@
       "titre": "Aucun preconnect/preload HTTP",
       "impact": "Les ressources critiques (GTM, HubSpot) ne sont pas prechargees, ajoutant 200-400ms de latence.",
       "solution_rapide": "Ajouter <link rel='preconnect' href='https://www.googletagmanager.com'> et <link rel='preconnect' href='https://js-eu1.hs-scripts.com'>"
+    },
+    {
+      "titre": "90%+ du trafic depend de la marque (donnees GSC reelles)",
+      "impact": "Le site ne genere presque aucun trafic non-brand. 562K impressions/6 mois mais quasi-zero trafic organique pour les mots-cles metier. Position moyenne non-brand: 11.7.",
+      "donnees_gsc": "formation plombier: pos 11.7, CTR 1%. formation electricien: pos 11.9, CTR 0.4%. cap plomberie: pos 13.1, CTR 1.4%. formation cvc: pos 8.0 (meilleur).",
+      "priorite": "URGENTE",
+      "solution": "Creer des strategie de contenu ciblant les mots-cles de metier avec des pages optimisees (schema Course, contenu local, temoignages video)"
     }
   ],
   "points_positifs": [
@@ -1084,7 +1400,12 @@
     "Site Kit Google installe (bonne integration analytics)",
     "Complianz GDPR installe (mal configure mais present)",
     "Cloudflare WAF actif (protection DDoS de base)",
-    "Sendinblue (Brevo) configure pour les emails - SPF OK"
+    "Sendinblue (Brevo) configure pour les emails - SPF OK",
+    "GSC accessible via OAuth2 (client_secret.json + refresh_token fonctionnels)",
+    "562K impressions/6 mois generes (base de trafic solide a developper)",
+    "Tendance de position en amelioration: 14.2 (Dec) a 7.7 (Mai) - signe positif",
+    "Trafic mobile performant: position 8.1 et 59% des clics",
+    "Top 5 pays francophones (France, Belgique, Maroc, Algerie, Tunisie) - potentiel export"
   ],
   "plan_action_priorise": {
     "phase_1_urgence_7_jours": [
@@ -1117,6 +1438,11 @@
         "action": "Corriger le H1 de /formations/ (n'affiche plus une formation specifique)",
         "effort": "10 min",
         "impact": "ELEVE"
+      },
+      {
+        "action": "Analyser les donnees GSC (562K impressions/6 mois) pour prioriser les mots-cles non-brand a attaquer",
+        "effort": "30 min",
+        "impact": "TRES ELEVE"
       },
       {
         "action": "Ajouter X-Frame-Options et X-Content-Type-Options dans Cloudflare",
@@ -1194,6 +1520,17 @@
         "action": "Contacter les 6 journaux pour ajouter des backlinks",
         "effort": "2h",
         "impact": "TRES ELEVE"
+      },
+      {
+        "action": "Creer 3 pages pilotes optimisees pour mots-cles non-brand (formation electricien Paris, formation couvreur Paris, CAP plomberie Paris) avec schema Course + contenu local",
+        "effort": "8h",
+        "impact": "TRES ELEVE",
+        "donnees_gsc": "formation electricien: position 11.9, 5567 impressions/6 mois. cap plomberie: position 13.1, 5091 impressions"
+      },
+      {
+        "action": "Strategie de contenu non-brand: blog posts ciblant les 1000+ requetes non-brand identifiees via GSC",
+        "effort": "10h",
+        "impact": "ELEVE"
       }
     ],
     "phase_3_moyen_terme_90_jours": [

@@ -1,0 +1,660 @@
+{
+  "total_crawled": 169,
+  "total_ok": 169,
+  "total_errors": 0,
+  "avg_words": 1537,
+  "thin_content": 0,
+  "no_meta_count": 95,
+  "no_h1_count": 5,
+  "cannibalization": [
+    {
+      "keyword": "alternance",
+      "count": 9,
+      "pages": [
+        "apprentissage-dans-le-secteur-du-batiment-en-france/",
+        "une-alternance-cest-trouve-chez-douche-moduleau/",
+        "temoignage-de-martin-lelong-apprenti-chez-gustave/",
+        "comment-trouver-une-alternance-couvreur-2/",
+        "comment-trouver-une-alternance-en-tm-cvc/",
+        "comment-trouver-une-alternance-en-electricite/",
+        "remuneration-des-apprentis-du-btp-en-2026/",
+        "comment-trouver-une-alternance-en-plomberie/",
+        "informations-pratiques/"
+      ]
+    },
+    {
+      "keyword": "bordeaux",
+      "count": 7,
+      "pages": [
+        "cap-electricite-bordeaux/",
+        "cfa-plomberie-bordeaux/",
+        "cap-plomberie-bordeaux/",
+        "formation-plombier-chauffagiste-bordeaux/",
+        "formation-plombier-bordeaux/",
+        "cfa-electricite-bordeaux/",
+        "campus/bordeaux/"
+      ]
+    },
+    {
+      "keyword": "btp",
+      "count": 37,
+      "pages": [
+        "carriere-dans-le-batiment-international/",
+        "diversite-metiers-du-batiment/",
+        "lancer-son-entreprise-dans-le-batiment/",
+        "choisir-la-meilleure-ecole-de-batiment-en-france/",
+        "optimisez-vos-projets-avec-lequipement-professionnel-du-batiment/",
+        "les-atouts-dune-carriere-dans-le-batiment/",
+        "nouvelles-reglementations-batiment-a-connaitre-en-2024/",
+        "financer-ses-etudes-dans-le-batiment-un-guide-complet/",
+        "apprentissage-dans-le-secteur-du-batiment-en-france/",
+        "opportunites-demploi-dans-leco-construction/",
+        "metiers-en-vogue-dans-le-batiment-pour-2024/",
+        "guide-de-carriere-dans-le-batiment-en-2024/",
+        "technologies-de-construction-innovantes/",
+        "femmes-dans-le-batiment/",
+        "parcours-professionnel-batiment/",
+        "competences-cles-batiment/",
+        "metiers-du-batiment-carrieres/",
+        "causette-btp-gustave-une-ecole-pour-former-a-la-construction-et-deboulonner-les-stereotypes-de-genre/",
+        "effy-lecole-gustave-renove-limage-des-metiers-du-batiments/",
+        "devenir-electricien-du-batiment-metier-formation-et-salaire/",
+        "comment-creer-son-entreprise-dans-le-btp/",
+        "remuneration-des-apprentis-du-btp-en-2026/",
+        "top-des-metiers-qui-recrutent-dans-le-btp/",
+        "top-5-des-gestes-ecolo-a-adopter-dans-le-btp/",
+        "comment-lia-est-elle-utilisee-dans-le-btp/",
+        "comment-repondre-a-un-appel-doffre-dans-le-btp-le-guide-complet-pour-remporter-vos-marches/",
+        "les-femmes-dans-le-btp-chiffres-metiers-qui-recrutent-et-parcours-en-2026/",
+        "les-differents-types-de-formations-dans-le-btp-en-2026/",
+        "financer-sa-formation-btp-avec-france-travail-en-2026/",
+        "les-actualites/",
+        "ecole-gustave/",
+        "les-temoignages/",
+        "campus/bordeaux/",
+        "campus/lille/",
+        "campus/marseille/",
+        "campus/rennes/",
+        "temoignages/de-lanimation-au-btp-le-recit-de-corentin-2/"
+      ]
+    },
+    {
+      "keyword": "couvreur",
+      "count": 7,
+      "pages": [
+        "evenement-2-apprenant-couvreur/",
+        "devenir-couvreur-zingueur-metier-formation-salaire/",
+        "comment-trouver-une-alternance-couvreur-2/",
+        "comment-trouver-un-bon-couvreur-zingueur/",
+        "lhistoire-du-metier-de-couvreur/",
+        "quelles-sont-les-habilitations-a-avoir-pour-etre-couvreur/",
+        "formations/formation-couvreur/"
+      ]
+    },
+    {
+      "keyword": "cvc",
+      "count": 7,
+      "pages": [
+        "devenir-technicien-de-maintenance-cvc-formation-et-salaire/",
+        "journee-portes-ouvertes-technicien-ne-de-maintenance-cvc-10-fevrier-2026/",
+        "comment-trouver-une-alternance-en-tm-cvc/",
+        "comment-trouver-un-bon-technicien-de-maintenance-cvc/",
+        "quelles-sont-les-habilitations-a-avoir-pour-etre-technicien-cvc/",
+        "lhistoire-du-metier-technicien-de-maintenance-cvc/",
+        "formations/formation-maintenance-cvc/"
+      ]
+    },
+    {
+      "keyword": "electricien",
+      "count": 16,
+      "pages": [
+        "cap-electricite-bordeaux/",
+        "cfa-electricite-marseille/",
+        "cap-electricite-marseille/",
+        "cap-electricite-lyon/",
+        "cfa-electricite-paris/",
+        "cap-electricite-paris/",
+        "cfa-electricite-bordeaux/",
+        "cfa-electricite-lyon/",
+        "devenir-electricien-du-batiment-metier-formation-et-salaire/",
+        "comment-trouver-une-alternance-en-electricite/",
+        "comment-trouver-un-bon-electricien/",
+        "lhistoire-du-metier-delectricien/",
+        "quelles-sont-les-habilitations-a-avoir-pour-etre-electricien/",
+        "formations/formation-technicien-dequipement-et-dexploitation-en-electricite/",
+        "formations/formation-electricien/",
+        "temoignages/lou-la-precision-de-la-joaillerie-au-service-de-lelectricite/"
+      ]
+    },
+    {
+      "keyword": "lille",
+      "count": 3,
+      "pages": [
+        "formation-plombier-chauffagiste-lille/",
+        "formation-plombier-lille/",
+        "campus/lille/"
+      ]
+    },
+    {
+      "keyword": "lyon",
+      "count": 7,
+      "pages": [
+        "cap-electricite-lyon/",
+        "cfa-plomberie-lyon/",
+        "cap-plomberie-lyon/",
+        "formation-plombier-chauffagiste-lyon/",
+        "formation-plombier-lyon/",
+        "cfa-electricite-lyon/",
+        "campus/lyon/"
+      ]
+    },
+    {
+      "keyword": "macon",
+      "count": 3,
+      "pages": [
+        "comment-devenir-macon-voirie-et-reseaux-divers/",
+        "lhistoire-du-metier-de-macon-vrd/",
+        "formations/formation-macon-vrd/"
+      ]
+    },
+    {
+      "keyword": "marseille",
+      "count": 5,
+      "pages": [
+        "cfa-electricite-marseille/",
+        "cap-electricite-marseille/",
+        "cfa-plomberie-marseille/",
+        "cap-plomberie-marseille/",
+        "campus/marseille/"
+      ]
+    },
+    {
+      "keyword": "menuiserie",
+      "count": 4,
+      "pages": [
+        "devenir-menuisier-installateur-metier-formation-et-salaire-2/",
+        "comment-trouver-un-bon-menuisier-installateur/",
+        "lhistoire-du-metier-de-menuisier-installateur/",
+        "formations/formation-menuisier-installateur/"
+      ]
+    },
+    {
+      "keyword": "paris",
+      "count": 8,
+      "pages": [
+        "cfa-electricite-paris/",
+        "cap-electricite-paris/",
+        "cfa-plomberie-paris/",
+        "cap-plomberie-paris/",
+        "formation-plombier-chauffagiste-paris/",
+        "le-parisien-a-lecole-gustave-les-cols-blancs-en-reconversion-enfilent-le-bleu-de-travail/",
+        "journee-portes-ouvertes-100-femmes-10-mars-2026-paris/",
+        "campus/paris/"
+      ]
+    },
+    {
+      "keyword": "plombier",
+      "count": 39,
+      "pages": [
+        "reussir-son-cap-plomberie-les-conseils-dun-expert/",
+        "cap-plomberie-les-avantages-dune-formation-professionnelle/",
+        "comment-choisir-le-bon-cap-en-plomberie-pour-votre-carriere/",
+        "cfa-plomberie-bordeaux/",
+        "cap-plomberie-bordeaux/",
+        "cfa-plomberie-marseille/",
+        "cap-plomberie-marseille/",
+        "cfa-plomberie-lyon/",
+        "cap-plomberie-lyon/",
+        "cfa-plomberie-paris/",
+        "cap-plomberie-paris/",
+        "cfa-plomberie/",
+        "cap-plomberie/",
+        "formation-plombier-chauffagiste-bordeaux/",
+        "formation-plombier-chauffagiste-lille/",
+        "formation-plombier-chauffagiste-lyon/",
+        "formation-plombier-chauffagiste-paris/",
+        "formation-plombier-bordeaux/",
+        "formation-plombier-lille/",
+        "formation-plombier-lyon/",
+        "fin-du-bootcamp-de-la-promo-iii-de-plombiers-chauffagistes/",
+        "de-directeur-commercial-a-plombier-chauffagiste/",
+        "cap-plomberie-les-etapes-pour-devenir-un-plombier-qualifie/",
+        "cap-plomberie-les-debouches-dans-le-secteur-de-lartisanat/",
+        "cap-plomberie-les-erreurs-a-eviter-lors-de-votre-formation/",
+        "les-differentes-specialisations-possibles-apres-un-cap-en-plomberie/",
+        "comment-financer-sa-formation-en-cap-plomberie/",
+        "comment-trouver-un-bon-plombier-chauffagiste/",
+        "cap-plomberie-les-competences-indispensables-a-acquerir/",
+        "les-debouches-apres-lobtention-dun-cap-en-plomberie/",
+        "devenir-plombier-chauffagiste-metier-formation-et-salaire/",
+        "comment-trouver-une-alternance-en-plomberie/",
+        "quelles-sont-les-habilitations-a-avoir-pour-etre-plombier/",
+        "lhistoire-du-metier-de-plombier/",
+        "formations/formation-plombier-chauffagiste/",
+        "temoignages/jeremie-du-graphisme-a-la-plomberie/",
+        "temoignages/djimmy-futur-plombier-chauffagiste/",
+        "temoignages/noemie-du-spectacle-vivant-a-la-plomberie-chauffage/",
+        "temoignages/de-la-gendarmerie-a-la-plomberie-le-parcours-denzo/"
+      ]
+    },
+    {
+      "keyword": "reconversion",
+      "count": 2,
+      "pages": [
+        "le-parisien-a-lecole-gustave-les-cols-blancs-en-reconversion-enfilent-le-bleu-de-travail/",
+        "temoignages/du-marketing-au-tournevis-la-reconversion-de-fanny/"
+      ]
+    },
+    {
+      "keyword": "rennes",
+      "count": 2,
+      "pages": [
+        "evenement-2-apprenant-couvreur/",
+        "campus/rennes/"
+      ]
+    }
+  ],
+  "duplicate_titles": [
+    [
+      "Top des métiers qui recrutent dans le secteur du bâtiment - École Gustave",
+      2
+    ],
+    [
+      "Du développement web aux chantiers : l’histoire d&#039;Hugo - École Gustave",
+      2
+    ]
+  ],
+  "duplicate_h1": [
+    [
+      "",
+      5
+    ],
+    [
+      "Formation Maçon Voirie Réseaux Divers (VRD)",
+      2
+    ]
+  ],
+  "thin_pages": [],
+  "no_meta_pages": [
+    {
+      "url": "information-collective-nationale-9-decembre-2025/",
+      "title": "Information Collective Nationale – 9 décembre 2025 - École G"
+    },
+    {
+      "url": "information-collective-nationale-16-decembre-2025/",
+      "title": "Information Collective Nationale – 16 décembre 2025 - École "
+    },
+    {
+      "url": "la-presse-parle-de-nous/",
+      "title": "La presse parle de nous - École Gustave"
+    },
+    {
+      "url": "reussir-son-cap-plomberie-les-conseils-dun-expert/",
+      "title": "Réussir son cap plomberie : les conseils d&#039;un expert - "
+    },
+    {
+      "url": "cap-plomberie-les-avantages-dune-formation-professionnelle/",
+      "title": "Cap plomberie : les avantages d&#039;une formation professio"
+    },
+    {
+      "url": "comment-choisir-le-bon-cap-en-plomberie-pour-votre-carriere/",
+      "title": "Comment choisir le bon cap en plomberie pour votre carrière "
+    },
+    {
+      "url": "cap-electricite-bordeaux/",
+      "title": "CAP électricité bordeaux - École Gustave"
+    },
+    {
+      "url": "cfa-electricite-marseille/",
+      "title": "CFA électricité marseille - École Gustave"
+    },
+    {
+      "url": "cap-electricite-marseille/",
+      "title": "CAP électricité marseille - École Gustave"
+    },
+    {
+      "url": "cap-electricite-lyon/",
+      "title": "CAP électricité lyon - École Gustave"
+    },
+    {
+      "url": "cfa-electricite-paris/",
+      "title": "CFA électricité paris - École Gustave"
+    },
+    {
+      "url": "cap-electricite-paris/",
+      "title": "CAP électricité paris - École Gustave"
+    },
+    {
+      "url": "cfa-plomberie-bordeaux/",
+      "title": "CFA plomberie bordeaux - École Gustave"
+    },
+    {
+      "url": "cap-plomberie-bordeaux/",
+      "title": "CAP plomberie bordeaux - École Gustave"
+    },
+    {
+      "url": "cfa-plomberie-marseille/",
+      "title": "CFA plomberie marseille - École Gustave"
+    },
+    {
+      "url": "cap-plomberie-marseille/",
+      "title": "CAP plomberie marseille - École Gustave"
+    },
+    {
+      "url": "cfa-plomberie-lyon/",
+      "title": "CFA plomberie lyon - École Gustave"
+    },
+    {
+      "url": "cap-plomberie-lyon/",
+      "title": "CAP plomberie lyon - École Gustave"
+    },
+    {
+      "url": "cfa-plomberie-paris/",
+      "title": "CFA plomberie paris - École Gustave"
+    },
+    {
+      "url": "cap-plomberie-paris/",
+      "title": "CAP plomberie paris - École Gustave"
+    },
+    {
+      "url": "cfa-plomberie/",
+      "title": "CFA plomberie - École Gustave"
+    },
+    {
+      "url": "cap-plomberie/",
+      "title": "CAP plomberie - École Gustave"
+    },
+    {
+      "url": "formation-plombier-chauffagiste-bordeaux/",
+      "title": "Formation plombier chauffagiste bordeaux - École Gustave"
+    },
+    {
+      "url": "formation-plombier-chauffagiste-lille/",
+      "title": "Formation plombier chauffagiste lille - École Gustave"
+    },
+    {
+      "url": "carriere-dans-le-batiment-international/",
+      "title": "Une carrière dans le bâtiment à l&#039;international - École"
+    },
+    {
+      "url": "formation-plombier-chauffagiste-lyon/",
+      "title": "Formation plombier chauffagiste lyon - École Gustave"
+    },
+    {
+      "url": "diversite-metiers-du-batiment/",
+      "title": "Explorez la diversité des métiers du bâtiment - École Gustav"
+    },
+    {
+      "url": "formation-plombier-chauffagiste-paris/",
+      "title": "Formation plombier chauffagiste paris - École Gustave"
+    },
+    {
+      "url": "lancer-son-entreprise-dans-le-batiment/",
+      "title": "Lancer son entreprise dans le batîment - École Gustave"
+    },
+    {
+      "url": "choisir-la-meilleure-ecole-de-batiment-en-france/",
+      "title": "Choisir la meilleure école de bâtiment en France - École Gus"
+    },
+    {
+      "url": "decouvrir-la-vie-quotidienne-sur-un-chantier/",
+      "title": "Découvrir la vie quotidienne sur un chantier - École Gustave"
+    },
+    {
+      "url": "formation-plombier-bordeaux/",
+      "title": "Formation plombier Bordeaux - École Gustave"
+    },
+    {
+      "url": "optimisez-vos-projets-avec-lequipement-professionnel-du-batiment/",
+      "title": "Optimisez vos projets avec l&#039;équipement professionnel d"
+    },
+    {
+      "url": "les-atouts-dune-carriere-dans-le-batiment/",
+      "title": "Les atouts d&#039;une carrière dans le bâtiment - École Gust"
+    },
+    {
+      "url": "formation-plombier-lille/",
+      "title": "Formation plombier Lille - École Gustave"
+    },
+    {
+      "url": "nouvelles-reglementations-batiment-a-connaitre-en-2024/",
+      "title": "Nouvelles réglementations bâtiment à connaître en 2024 - Éco"
+    },
+    {
+      "url": "financer-ses-etudes-dans-le-batiment-un-guide-complet/",
+      "title": "Financer ses études dans le bâtiment : un guide complet - Éc"
+    },
+    {
+      "url": "apprentissage-dans-le-secteur-du-batiment-en-france/",
+      "title": "Apprentissage dans le secteur du bâtiment en France - École "
+    },
+    {
+      "url": "formation-plombier-lyon/",
+      "title": "Formation plombier Lyon - École Gustave"
+    },
+    {
+      "url": "securite-sur-les-chantiers-un-guide-pour-les-debutants/",
+      "title": "Sécurité sur les chantiers : un guide pour les débutants - É"
+    },
+    {
+      "url": "opportunites-demploi-dans-leco-construction/",
+      "title": "Opportunités d&#039;emploi dans l&#039;éco-construction - Éc"
+    },
+    {
+      "url": "metiers-en-vogue-dans-le-batiment-pour-2024/",
+      "title": "Métiers en vogue dans le bâtiment pour 2024 - École Gustave"
+    },
+    {
+      "url": "guide-de-carriere-dans-le-batiment-en-2024/",
+      "title": "Guide de carrière dans le bâtiment en 2024 - École Gustave"
+    },
+    {
+      "url": "technologies-de-construction-innovantes/",
+      "title": "Technologies de construction innovantes - École Gustave"
+    },
+    {
+      "url": "femmes-dans-le-batiment/",
+      "title": "Femmes dans le bâtiment - École Gustave"
+    },
+    {
+      "url": "parcours-professionnel-batiment/",
+      "title": "Parcours professionnel bâtiment - École Gustave"
+    },
+    {
+      "url": "competences-cles-batiment/",
+      "title": "Compétences clés bâtiment - École Gustave"
+    },
+    {
+      "url": "metiers-du-batiment-carrieres/",
+      "title": "Métiers du bâtiment carrières - École Gustave"
+    },
+    {
+      "url": "fin-du-bootcamp-de-la-promo-iii-de-plombiers-chauffagistes/",
+      "title": "Fin du bootcamp de la promo III de plombiers-chauffagistes !"
+    },
+    {
+      "url": "de-directeur-commercial-a-plombier-chauffagiste/",
+      "title": "De directeur commercial à plombier-chauffagiste ! - École Gu"
+    },
+    {
+      "url": "causette-btp-gustave-une-ecole-pour-former-a-la-construction-et-deboulonner-les-stereotypes-de-genre/",
+      "title": "Causette : BTP : Gustave, une école pour former à la constru"
+    },
+    {
+      "url": "effy-lecole-gustave-renove-limage-des-metiers-du-batiments/",
+      "title": "Effy : L&#039;École Gustave rénove l’image des métiers du bâ"
+    },
+    {
+      "url": "m6-le-1234-du-06-04-2022/",
+      "title": "M6 : Le 1234 du 06/04/2022 - École Gustave"
+    },
+    {
+      "url": "entretien-avec-souad-hamidi-bellahoues/",
+      "title": "Entretien avec Souad Hamidi Bellahoues - École Gustave"
+    },
+    {
+      "url": "le-moniteur-nous-recrutons-des-demandeurs-demploi-sur-motivation/",
+      "title": "Le Moniteur : « Nous recrutons des demandeurs d&#039;emploi "
+    },
+    {
+      "url": "les-echos-marie-blaize-un-cas-decole/",
+      "title": "Les Échos : Marie Blaise, un cas d’école - École Gustave"
+    },
+    {
+      "url": "une-alternance-cest-trouve-chez-douche-moduleau/",
+      "title": "Une alternance ? C&#039;est trouvé chez Douche Moduleau ! - "
+    },
+    {
+      "url": "temoignage-de-martin-lelong-apprenti-chez-gustave/",
+      "title": "Témoignage de Martin Lelong, apprenti chez Gustave - École G"
+    },
+    {
+      "url": "deuxieme-promotion-de-lecole-gustave/",
+      "title": "Deuxième promotion de l&#039;école Gustave - École Gustave"
+    },
+    {
+      "url": "les-echos-les-huit-pistes-a-explorer-pour-decrocher-son-premier-emploi/",
+      "title": "Les Echos : Les huit pistes à explorer pour décrocher son pr"
+    },
+    {
+      "url": "france-3-des-formations-gratuites-pour-les-metiers-en-tension/",
+      "title": "France 3 : des formations gratuites pour les métiers en tens"
+    },
+    {
+      "url": "le-parisien-a-lecole-gustave-les-cols-blancs-en-reconversion-enfilent-le-bleu-de-travail/",
+      "title": "Le Parisien : à l’école Gustave, les cols blancs en reconver"
+    },
+    {
+      "url": "cap-plomberie-les-etapes-pour-devenir-un-plombier-qualifie/",
+      "title": "Cap plomberie : les étapes pour devenir un plombier qualifié"
+    },
+    {
+      "url": "cfa-electricite-bordeaux/",
+      "title": "CFA électricité bordeaux - École Gustave"
+    },
+    {
+      "url": "cfa-electricite-lyon/",
+      "title": "CFA électricité lyon - École Gustave"
+    },
+    {
+      "url": "cap-plomberie-les-debouches-dans-le-secteur-de-lartisanat/",
+      "title": "Cap plomberie : les débouchés dans le secteur de l&#039;arti"
+    },
+    {
+      "url": "cap-plomberie-les-erreurs-a-eviter-lors-de-votre-formation/",
+      "title": "Cap plomberie : les erreurs à éviter lors de votre formation"
+    },
+    {
+      "url": "les-differentes-specialisations-possibles-apres-un-cap-en-plomberie/",
+      "title": "Les différentes spécialisations possibles après un cap en pl"
+    },
+    {
+      "url": "comment-financer-sa-formation-en-cap-plomberie/",
+      "title": "Comment financer sa formation en cap plomberie - École Gusta"
+    },
+    {
+      "url": "evenement-2-apprenant-couvreur/",
+      "title": "Événement - Jobdating Sonepar Rennes - École Gustave"
+    },
+    {
+      "url": "journee-portes-ouvertes-15-janvier-2026-decouvrez-lecole-gustave/",
+      "title": "Journée Portes Ouvertes – 15 janvier 2026 : Découvrez l’Écol"
+    },
+    {
+      "url": "journee-portes-ouvertes-technicien-ne-de-maintenance-cvc-10-fevrier-2026/",
+      "title": "Journée Portes Ouvertes Technicien.ne de maintenance CVC – 1"
+    },
+    {
+      "url": "cap-plomberie-les-competences-indispensables-a-acquerir/",
+      "title": "Cap plomberie : les compétences indispensables à acquérir - "
+    },
+    {
+      "url": "journee-portes-ouvertes-17-fevrier-2026-decouvrez-lecole-gustave/",
+      "title": "Journée Portes Ouvertes – 17 février 2026 : Découvrez l’Écol"
+    },
+    {
+      "url": "les-debouches-apres-lobtention-dun-cap-en-plomberie/",
+      "title": "Les débouchés après l&#039;obtention d&#039;un cap en plombe"
+    },
+    {
+      "url": "journee-portes-ouvertes-12-mars-2026-decouvrez-lecole-gustave/",
+      "title": "Journée Portes Ouvertes – 12 mars 2026 : Découvrez l’École G"
+    },
+    {
+      "url": "journee-portes-ouvertes-100-femmes-10-mars-2026-paris/",
+      "title": "Journée Portes Ouvertes 100% femmes – 10 mars 2026 - PARIS -"
+    },
+    {
+      "url": "journee-portes-ouvertes-24-avril-2026-decouvrez-lecole-gustave/",
+      "title": "Journée Portes Ouvertes – 23 Avril 2026 : Découvrez l’École "
+    },
+    {
+      "url": "journee-portes-ouvertes-19-mai-2026-decouvrez-lecole-gustave/",
+      "title": "Journée Portes Ouvertes – 19 Mai 2026 : Découvrez l’École Gu"
+    },
+    {
+      "url": "journee-portes-ouvertes-23-juin-2026-decouvrez-lecole-gustave-2/",
+      "title": "Journée Portes Ouvertes – 23 Juin 2026 : Découvrez l’École G"
+    },
+    {
+      "url": "plan-du-site/",
+      "title": "Plan du site - École Gustave"
+    },
+    {
+      "url": "donnees-personnelles/",
+      "title": "Données personnelles - École Gustave"
+    },
+    {
+      "url": "politique-de-confidentialite/",
+      "title": "Politique de confidentialité - École Gustave"
+    },
+    {
+      "url": "mentions-legales/",
+      "title": "Mentions légales - École Gustave"
+    },
+    {
+      "url": "politique-handicap/",
+      "title": "Politique handicap - École Gustave"
+    },
+    {
+      "url": "passerelles-et-poursuite-detudes/",
+      "title": "Passerelles et poursuite d&#039;études - École Gustave"
+    },
+    {
+      "url": "equivalences-de-nos-titres/",
+      "title": "Equivalences de nos titres - École Gustave"
+    },
+    {
+      "url": "conditions-generales-d-utilisation/",
+      "title": "Conditions Générales d&#039;Utilisation - École Gustave"
+    },
+    {
+      "url": "footer/",
+      "title": ""
+    },
+    {
+      "url": "formations/",
+      "title": "formations Archive - École Gustave"
+    },
+    {
+      "url": "campus/paris/",
+      "title": "Paris - École Gustave"
+    },
+    {
+      "url": "temoignages/",
+      "title": "temoignages Archive - École Gustave"
+    },
+    {
+      "url": "temoignages/hamadi-mballo/",
+      "title": "Hamadi Mballo - École Gustave"
+    },
+    {
+      "url": "temoignages/muhammad-sylla/",
+      "title": "Muhammad Sylla - École Gustave"
+    },
+    {
+      "url": "temoignages/romarin-duban/",
+      "title": "Romarin Duban - École Gustave"
+    }
+  ]
+}
